@@ -1,0 +1,8 @@
+pl/edu/pb/carassistant/LoginActivity.java
+ pl.edu.pb.carassistant.LoginActivity
+pl/edu/pb/carassistant/RegisterActivity.java
+ pl.edu.pb.carassistant.RegisterActivity
+pl/edu/pb/carassistant/BuildConfig.java
+ pl.edu.pb.carassistant.BuildConfig
+pl/edu/pb/carassistant/MainActivity.java
+ pl.edu.pb.carassistant.MainActivity
