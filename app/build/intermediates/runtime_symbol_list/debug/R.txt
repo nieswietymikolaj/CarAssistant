@@ -983,7 +983,7 @@ int color foreground_material_dark 0x7f05005b
 int color foreground_material_light 0x7f05005c
 int color highlighted_text_material_dark 0x7f05005d
 int color highlighted_text_material_light 0x7f05005e
-int color ic_launcher_background 0x7f05005f
+int color ic_launcher_background_red_car 0x7f05005f
 int color material_blue_grey_800 0x7f050060
 int color material_blue_grey_900 0x7f050061
 int color material_blue_grey_950 0x7f050062
@@ -1544,7 +1544,7 @@ int drawable design_password_eye 0x7f07006b
 int drawable design_snackbar_background 0x7f07006c
 int drawable ic_launcher_background 0x7f07006d
 int drawable ic_launcher_foreground 0x7f07006e
-int drawable ic_launcher_foreground_car 0x7f07006f
+int drawable ic_launcher_foreground_red_car 0x7f07006f
 int drawable ic_mtrl_checked_circle 0x7f070070
 int drawable ic_mtrl_chip_checked_black 0x7f070071
 int drawable ic_mtrl_chip_checked_circle 0x7f070072
