@@ -45,6 +45,10 @@ animator mtrl_fab_hide_motion_spec
 animator mtrl_fab_show_motion_spec
 animator mtrl_fab_transformation_sheet_collapse_spec
 animator mtrl_fab_transformation_sheet_expand_spec
+array com_google_android_gms_fonts_certs
+array com_google_android_gms_fonts_certs_dev
+array com_google_android_gms_fonts_certs_prod
+array preloaded_fonts
 attr actionBarDivider
 attr actionBarItemBackground
 attr actionBarPopupTheme
@@ -978,6 +982,7 @@ color dim_foreground_disabled_material_dark
 color dim_foreground_disabled_material_light
 color dim_foreground_material_dark
 color dim_foreground_material_light
+color edit_text_background
 color error_color_material_dark
 color error_color_material_light
 color foreground_material_dark
@@ -1094,9 +1099,13 @@ color teal_200
 color teal_700
 color test_mtrl_calendar_day
 color test_mtrl_calendar_day_selected
+color text_color
+color text_hint_color
 color tooltip_background_dark
 color tooltip_background_light
+color transparent
 color white
+color yellow_background
 dimen abc_action_bar_content_inset_material
 dimen abc_action_bar_content_inset_with_nav
 dimen abc_action_bar_default_height_material
@@ -1550,6 +1559,7 @@ drawable ic_mtrl_checked_circle
 drawable ic_mtrl_chip_checked_black
 drawable ic_mtrl_chip_checked_circle
 drawable ic_mtrl_chip_close_circle
+drawable ic_password_eye_24
 drawable material_ic_calendar_black_24dp
 drawable material_ic_clear_black_24dp
 drawable material_ic_edit_black_24dp
@@ -1582,6 +1592,7 @@ drawable notify_panel_notification_icon_bg
 drawable test_custom_background
 drawable tooltip_frame_dark
 drawable tooltip_frame_light
+font bungee
 id ALT
 id BOTTOM_END
 id BOTTOM_START
@@ -1751,6 +1762,8 @@ id graph_wrap
 id group_divider
 id grouping
 id groups
+id guideline_left
+id guideline_right
 id hideable
 id home
 id homeAsUp
@@ -1839,6 +1852,14 @@ id progress_horizontal
 id radio
 id ratio
 id rectangles
+id red_car_logo_image
+id register_button
+id register_email
+id register_header
+id register_login_button
+id register_password
+id register_repeat_password
+id register_welcome_header
 id reverseSawtooth
 id right
 id right_icon
@@ -2171,6 +2192,13 @@ string path_password_eye
 string path_password_eye_mask_strike_through
 string path_password_eye_mask_visible
 string path_password_strike_through
+string register_button
+string register_email
+string register_header
+string register_login_button
+string register_password
+string register_repeat_password
+string register_welcome_header
 string search_menu_title
 string status_bar_notification_info_overflow
 style AlertDialog_AppCompat

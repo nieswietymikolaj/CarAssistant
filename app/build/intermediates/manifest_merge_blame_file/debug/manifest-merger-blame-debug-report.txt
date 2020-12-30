@@ -11,7 +11,7 @@
 9-->C:\Users\Mateusz\Documents\GitHub\CarAssistant\app\src\main\AndroidManifest.xml
 10
 11    <application
-11-->C:\Users\Mateusz\Documents\GitHub\CarAssistant\app\src\main\AndroidManifest.xml:5:5-22:19
+11-->C:\Users\Mateusz\Documents\GitHub\CarAssistant\app\src\main\AndroidManifest.xml:5:5-26:19
 12        android:allowBackup="true"
 12-->C:\Users\Mateusz\Documents\GitHub\CarAssistant\app\src\main\AndroidManifest.xml:6:9-35
 13        android:appComponentFactory="androidx.core.app.CoreComponentFactory"
@@ -33,12 +33,12 @@
 23        <activity android:name="pl.edu.pb.carassistant.MainActivity" />
 23-->C:\Users\Mateusz\Documents\GitHub\CarAssistant\app\src\main\AndroidManifest.xml:13:9-50
 23-->C:\Users\Mateusz\Documents\GitHub\CarAssistant\app\src\main\AndroidManifest.xml:13:19-47
-24        <activity android:name="pl.edu.pb.carassistant.RegisterActivity" />
-24-->C:\Users\Mateusz\Documents\GitHub\CarAssistant\app\src\main\AndroidManifest.xml:14:9-54
-24-->C:\Users\Mateusz\Documents\GitHub\CarAssistant\app\src\main\AndroidManifest.xml:14:19-51
-25        <activity android:name="pl.edu.pb.carassistant.LoginActivity" >
+24        <activity android:name="pl.edu.pb.carassistant.LoginActivity" />
+24-->C:\Users\Mateusz\Documents\GitHub\CarAssistant\app\src\main\AndroidManifest.xml:14:9-51
+24-->C:\Users\Mateusz\Documents\GitHub\CarAssistant\app\src\main\AndroidManifest.xml:14:19-48
+25        <activity android:name="pl.edu.pb.carassistant.RegisterActivity" >
 25-->C:\Users\Mateusz\Documents\GitHub\CarAssistant\app\src\main\AndroidManifest.xml:15:9-21:20
-25-->C:\Users\Mateusz\Documents\GitHub\CarAssistant\app\src\main\AndroidManifest.xml:15:19-48
+25-->C:\Users\Mateusz\Documents\GitHub\CarAssistant\app\src\main\AndroidManifest.xml:15:19-51
 26            <intent-filter>
 26-->C:\Users\Mateusz\Documents\GitHub\CarAssistant\app\src\main\AndroidManifest.xml:16:13-20:29
 27                <action android:name="android.intent.action.MAIN" />
@@ -50,6 +50,13 @@
 29-->C:\Users\Mateusz\Documents\GitHub\CarAssistant\app\src\main\AndroidManifest.xml:19:27-74
 30            </intent-filter>
 31        </activity>
-32    </application>
-33
-34</manifest>
+32
+33        <meta-data
+33-->C:\Users\Mateusz\Documents\GitHub\CarAssistant\app\src\main\AndroidManifest.xml:23:9-25:57
+34            android:name="preloaded_fonts"
+34-->C:\Users\Mateusz\Documents\GitHub\CarAssistant\app\src\main\AndroidManifest.xml:24:13-43
+35            android:resource="@array/preloaded_fonts" />
+35-->C:\Users\Mateusz\Documents\GitHub\CarAssistant\app\src\main\AndroidManifest.xml:25:13-54
+36    </application>
+37
+38</manifest>
