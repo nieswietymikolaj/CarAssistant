@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item
+        android:id="@+id/nav_bar_history"
+        android:icon="@drawable/ic_list_24"
+        android:title="@string/nav_bar_history" />
+
+    <item
+        android:id="@+id/nav_bar_parking"
+        android:icon="@drawable/ic_parking_24"
+        android:title="@string/nav_bar_parking" />
+
+    <item
+        android:id="@+id/nav_bar_user"
+        android:icon="@drawable/ic_car_24"
+        android:title="@string/nav_bar_user" />
+
+</menu>

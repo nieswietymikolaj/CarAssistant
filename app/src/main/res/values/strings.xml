@@ -1,6 +1,11 @@
 <resources>
     <string name="app_name">CarAssistant</string>
 
+    <!--PASEK NAWIGACJI-->
+    <string name="nav_bar_parking">Parking</string>
+    <string name="nav_bar_history">Historia</string>
+    <string name="nav_bar_user">Profil</string>
+
     <!--REJESTRACJA-->
     <string name="register_welcome_header">Witaj</string>
     <string name="register_header">Zarejestruj się</string>
