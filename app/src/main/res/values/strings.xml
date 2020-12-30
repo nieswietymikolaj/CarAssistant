@@ -22,6 +22,17 @@
     <string name="register_error_short_password">Hasło musi zawierać co najmniej 8 znaków</string>
     <string name="register_error_different_password">Podane hasła są inne</string>
 
+    <!--NOWY UŻYTKOWNIK-->
+    <string name="new_user_welcome_header">Uzupełnij dane</string>
+    <string name="new_user">Użytkownik</string>
+    <string name="new_user_name">Nazwa użytkownika</string>
+    <string name="new_user_car">Samochód</string>
+    <string name="new_user_car_brand">Marka</string>
+    <string name="new_user_car_model">Model</string>
+    <string name="new_user_car_registration_number">Numer rejestracyjny</string>
+    <string name="new_user_car_year">Rok</string>
+    <string name="next_button">Dalej</string>
+
     <!--LOGOWANIE-->
     <string name="login_welcome_header">Witaj ponownie</string>
     <string name="login_header">Zaloguj się</string>
