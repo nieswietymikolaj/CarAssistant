@@ -67,7 +67,7 @@ public class RegisterActivity extends AppCompatActivity implements TextWatcher {
 
             progressBar.setVisibility(View.VISIBLE);
 
-            firebaseAuth.fetchSignInMethodsForEmail(email).addOnCompleteListener(this, new OnCompleteListener<SignInMethodQueryResult>() {
+            firebaseAuth.fetchSignInMethodsForEmail(email).addOnCompleteListener(new OnCompleteListener<SignInMethodQueryResult>() {
                 @Override
                 public void onComplete(@NonNull Task<SignInMethodQueryResult> task) {
                     if (task.isSuccessful()) {
