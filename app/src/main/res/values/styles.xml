@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <style name="GrayButtonStyle">
+        <item name="android:textColor">@color/edit_text_yellow_background</item>
+        <item name="android:backgroundTint">@color/text_gray</item>
+    </style>
+
+    <style name="YellowButtonStyle">
+        <item name="android:textColor">@color/text_gray</item>
+        <item name="android:backgroundTint">@color/main_yellow</item>
+    </style>
+
+    <style name="RegisterLoginEditTextStyle">
+        <item name="android:background">@color/edit_text_yellow_background</item>
+        <item name="android:textColorHint">@color/hint_gray</item>
+        <item name="android:padding">@dimen/edit_text_padding</item>
+    </style>
+
+</resources>
