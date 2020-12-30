@@ -1,3 +1,35 @@
 <resources>
     <string name="app_name">CarAssistant</string>
+
+    <!--PASEK NAWIGACJI-->
+    <string name="nav_bar_parking">Parking</string>
+    <string name="nav_bar_history">Historia</string>
+    <string name="nav_bar_user">Profil</string>
+
+    <!--REJESTRACJA-->
+    <string name="register_welcome_header">Witaj</string>
+    <string name="register_header">Zarejestruj się</string>
+    <string name="register_email">E-mail</string>
+    <string name="register_password">Hasło</string>
+    <string name="register_repeat_password">Powtórz hasło</string>
+    <string name="register_button">Zarejestruj</string>
+    <string name="register_login_button">Posiadasz już konto?</string>
+
+    <!--WALIDACJA REJESTRACJI-->
+    <string name="register_error_empty_email">Pole nie może być puste</string>
+    <string name="register_error_incorrect_email">Niepoprawny adres e-mail</string>
+    <string name="register_error_existing_email">Podany adres e-mail już istnieje</string>
+    <string name="register_error_short_password">Hasło musi zawierać co najmniej 8 znaków</string>
+    <string name="register_error_different_password">Podane hasła są inne</string>
+
+    <!--LOGOWANIE-->
+    <string name="login_welcome_header">Witaj ponownie</string>
+    <string name="login_header">Zaloguj się</string>
+    <string name="login_email">E-mail</string>
+    <string name="login_password">Hasło</string>
+    <string name="login_button">Zaloguj</string>
+    <string name="login_forgot_button">Nie pamiętasz hasła?</string>
+    <string name="login_register_button">Utwórz nowe konto</string>
+
+
 </resources>
