@@ -17,4 +17,9 @@
         <item name="android:padding">@dimen/edit_text_padding</item>
     </style>
 
+    <style name="RegisterLoginPasswordStyle">
+        <item name="android:background">@color/edit_text_yellow_background</item>
+        <item name="android:textColorHint">@color/hint_gray</item>
+    </style>
+
 </resources>

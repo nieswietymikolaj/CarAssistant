@@ -1,5 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
+
+    <dimen name="red_stroke_width">1dp</dimen>
+    <dimen name="red_stroke_radius">2dp</dimen>
+
     <dimen name="edit_text_padding">14dp</dimen>
 
 </resources>

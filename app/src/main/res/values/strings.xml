@@ -15,6 +15,13 @@
     <string name="register_button">Zarejestruj</string>
     <string name="register_login_button">Posiadasz już konto?</string>
 
+    <!--WALIDACJA REJESTRACJI-->
+    <string name="register_error_empty_email">Pole nie może być puste</string>
+    <string name="register_error_incorrect_email">Niepoprawny adres e-mail</string>
+    <string name="register_error_existing_email">Podany adres e-mail już istnieje</string>
+    <string name="register_error_short_password">Hasło musi zawierać co najmniej 8 znaków</string>
+    <string name="register_error_different_password">Podane hasła są inne</string>
+
     <!--LOGOWANIE-->
     <string name="login_welcome_header">Witaj ponownie</string>
     <string name="login_header">Zaloguj się</string>

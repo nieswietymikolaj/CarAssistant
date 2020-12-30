@@ -1,4 +1,4 @@
-#Wed Dec 30 03:17:01 CET 2020
+#Wed Dec 30 18:28:45 CET 2020
 base.0=C\:\\Users\\Mateusz\\Documents\\GitHub\\CarAssistant\\app\\build\\intermediates\\dex\\debug\\mergeExtDexDebug\\classes.dex
 path.1=classes.dex
 renamed.1=classes2.dex
