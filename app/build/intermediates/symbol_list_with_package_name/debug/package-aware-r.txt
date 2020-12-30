@@ -1936,9 +1936,10 @@ id new_user_car_brand
 id new_user_car_model
 id new_user_car_registration_number
 id new_user_car_year
+id new_user_confirm_button
 id new_user_name
+id new_user_progress_bar
 id new_user_welcome_header
-id next_button
 id noScroll
 id none
 id normal
@@ -2357,9 +2358,14 @@ string new_user_car_brand
 string new_user_car_model
 string new_user_car_registration_number
 string new_user_car_year
+string new_user_confirm_button
+string new_user_created
+string new_user_error
+string new_user_error_empty
+string new_user_error_year
 string new_user_name
+string new_user_success
 string new_user_welcome_header
-string next_button
 string password_toggle_content_description
 string path_password_eye
 string path_password_eye_mask_strike_through

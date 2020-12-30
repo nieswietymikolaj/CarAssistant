@@ -120,14 +120,25 @@
         app:layout_constraintTop_toBottomOf="@+id/new_user_car_model" />
 
     <Button
-        android:id="@+id/next_button"
+        android:id="@+id/new_user_confirm_button"
         style="@style/GrayButtonStyle"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="32dp"
-        android:text="@string/next_button"
+        android:text="@string/new_user_confirm_button"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/new_user_car_year" />
+
+    <ProgressBar
+        android:id="@+id/new_user_progress_bar"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:visibility="invisible"
+        android:indeterminate="true"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/new_user_confirm_button" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

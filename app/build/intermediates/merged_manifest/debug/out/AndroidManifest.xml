@@ -21,11 +21,11 @@
         android:supportsRtl="true"
         android:testOnly="true"
         android:theme="@style/Theme.CarAssistant" >
-        <activity android:name="pl.edu.pb.carassistant.User.NewUserDataActivity" />
         <activity android:name="pl.edu.pb.carassistant.History.HistoryFragment" />
         <activity android:name="pl.edu.pb.carassistant.Parking.ParkingFragment" />
         <activity android:name="pl.edu.pb.carassistant.User.UserFragment" />
         <activity android:name="pl.edu.pb.carassistant.MainActivity" />
+        <activity android:name="pl.edu.pb.carassistant.User.NewUserDataActivity" />
         <activity android:name="pl.edu.pb.carassistant.RegisterActivity" />
         <activity android:name="pl.edu.pb.carassistant.LoginActivity" >
             <intent-filter>
@@ -92,6 +92,16 @@
             android:exported="false" >
             <meta-data
                 android:name="com.google.firebase.components:com.google.firebase.auth.FirebaseAuthRegistrar"
+                android:value="com.google.firebase.components.ComponentRegistrar" />
+            <meta-data
+                android:name="com.google.firebase.components:com.google.firebase.firestore.FirestoreRegistrar"
+                android:value="com.google.firebase.components.ComponentRegistrar" />
+            <!--
+                This registrar is not defined in the dynamic-module-support sdk itself to allow non-firebase
+                clients to use it as well, by defining this registrar in their own core/common library.
+            -->
+            <meta-data
+                android:name="com.google.firebase.components:com.google.firebase.dynamicloading.DynamicLoadingRegistrar"
                 android:value="com.google.firebase.components.ComponentRegistrar" />
         </service>
 

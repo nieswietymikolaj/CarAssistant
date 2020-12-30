@@ -2,6 +2,9 @@ pl/edu/pb/carassistant/Parking/ParkingFragment.java
  pl.edu.pb.carassistant.Parking.ParkingFragment
 pl/edu/pb/carassistant/User/NewUserDataActivity.java
  pl.edu.pb.carassistant.User.NewUserDataActivity
+ pl.edu.pb.carassistant.User.NewUserDataActivity$1
+ pl.edu.pb.carassistant.User.NewUserDataActivity$2
+ pl.edu.pb.carassistant.User.NewUserDataActivity$3
 pl/edu/pb/carassistant/LoginActivity.java
  pl.edu.pb.carassistant.LoginActivity
 pl/edu/pb/carassistant/RegisterActivity.java
