@@ -120,6 +120,7 @@
         android:background="@color/transparent"
         android:text="@string/register_login_button"
         android:textColor="@color/text_gray"
+        android:textStyle="bold"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.497"
         app:layout_constraintStart_toStartOf="parent"

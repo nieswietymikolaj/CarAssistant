@@ -21,6 +21,7 @@
     <string name="login_email">E-mail</string>
     <string name="login_password">Hasło</string>
     <string name="login_button">Zaloguj</string>
+    <string name="login_forgot_button">Nie pamiętasz hasła?</string>
     <string name="login_register_button">Utwórz nowe konto</string>
 
 
