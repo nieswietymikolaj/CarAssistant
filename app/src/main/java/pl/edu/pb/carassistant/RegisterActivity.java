@@ -102,7 +102,6 @@ public class RegisterActivity extends AppCompatActivity implements TextWatcher {
             registerEmail.setBackgroundResource(R.drawable.edit_text_error);
             return false;
         }
-
         return true;
     }
 
@@ -118,7 +117,6 @@ public class RegisterActivity extends AppCompatActivity implements TextWatcher {
             registerRepeatPassword.setBackgroundResource(R.drawable.edit_text_error);
             return false;
         }
-
         return true;
     }
 

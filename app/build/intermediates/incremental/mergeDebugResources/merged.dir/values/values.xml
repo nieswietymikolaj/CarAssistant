@@ -1111,9 +1111,14 @@
     <string name="new_user_car_model">Model</string>
     <string name="new_user_car_registration_number">Numer rejestracyjny</string>
     <string name="new_user_car_year">Rok</string>
+    <string name="new_user_confirm_button">Dalej</string>
+    <string name="new_user_created">Pomyślnie utworzono konto</string>
+    <string name="new_user_error">Błąd:</string>
+    <string name="new_user_error_empty">Pole nie może być puste</string>
+    <string name="new_user_error_year">Podany rok jest niepoprawny</string>
     <string name="new_user_name">Nazwa użytkownika</string>
+    <string name="new_user_success">Sukces!</string>
     <string name="new_user_welcome_header">Uzupełnij dane</string>
-    <string name="next_button">Dalej</string>
     <string name="password_toggle_content_description">Show password</string>
     <string name="path_password_eye" translatable="false">M12,4.5C7,4.5 2.73,7.61 1,12c1.73,4.39 6,7.5 11,7.5s9.27,-3.11 11,-7.5c-1.73,-4.39 -6,-7.5 -11,-7.5zM12,17c-2.76,0 -5,-2.24 -5,-5s2.24,-5 5,-5 5,2.24 5,5 -2.24,5 -5,5zM12,9c-1.66,0 -3,1.34 -3,3s1.34,3 3,3 3,-1.34 3,-3 -1.34,-3 -3,-3z</string>
     <string name="path_password_eye_mask_strike_through" translatable="false">M2,4.27 L19.73,22 L22.27,19.46 L4.54,1.73 L4.54,1 L23,1 L23,23 L1,23 L1,4.27 Z</string>

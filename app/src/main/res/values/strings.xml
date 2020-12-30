@@ -31,7 +31,14 @@
     <string name="new_user_car_model">Model</string>
     <string name="new_user_car_registration_number">Numer rejestracyjny</string>
     <string name="new_user_car_year">Rok</string>
-    <string name="next_button">Dalej</string>
+    <string name="new_user_confirm_button">Dalej</string>
+
+    <!--WALIDACJA DANYCH UŻYTKOWNIKA-->
+    <string name="new_user_error_empty">Pole nie może być puste</string>
+    <string name="new_user_error_year">Podany rok jest niepoprawny</string>
+    <string name="new_user_created">Pomyślnie utworzono konto</string>
+    <string name="new_user_error">Błąd:</string>
+    <string name="new_user_success">Sukces!</string>
 
     <!--LOGOWANIE-->
     <string name="login_welcome_header">Witaj ponownie</string>
