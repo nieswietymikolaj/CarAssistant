@@ -96,14 +96,12 @@
     <EditText
         android:id="@+id/new_user_car_registration_number"
         style="@style/RegisterLoginEditTextStyle"
-        android:layout_width="228dp"
+        android:layout_width="210dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="24dp"
         android:layout_marginTop="16dp"
-        android:layout_marginEnd="16dp"
         android:hint="@string/new_user_car_registration_number"
         android:inputType="textCapCharacters"
-        app:layout_constraintEnd_toStartOf="@+id/new_user_car_year"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/new_user_car_model" />
 
@@ -112,11 +110,14 @@
         style="@style/RegisterLoginEditTextStyle"
         android:layout_width="120dp"
         android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
         android:layout_marginTop="16dp"
         android:layout_marginEnd="24dp"
         android:hint="@string/new_user_car_year"
         android:inputType="number"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toEndOf="@+id/new_user_car_registration_number"
         app:layout_constraintTop_toBottomOf="@+id/new_user_car_model" />
 
     <Button

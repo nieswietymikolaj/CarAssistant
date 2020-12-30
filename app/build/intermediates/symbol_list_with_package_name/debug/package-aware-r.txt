@@ -1852,7 +1852,7 @@ id groups
 id guideline_left
 id guideline_right
 id hideable
-id historyFragment
+id history_fragment
 id home
 id homeAsUp
 id honorRequest
@@ -1884,9 +1884,11 @@ id login_email
 id login_forgot_button
 id login_header
 id login_password
+id login_progress_bar
 id login_red_car_logo_image
 id login_register_button
 id login_welcome_header
+id logout_button
 id masked
 id message
 id middle
@@ -1921,9 +1923,6 @@ id mtrl_picker_text_input_range_end
 id mtrl_picker_text_input_range_start
 id mtrl_picker_title_text
 id multiply
-id nav_bar_history
-id nav_bar_parking
-id nav_bar_user
 id nav_controller_view_tag
 id nav_host_fragment
 id nav_host_fragment_container
@@ -1955,7 +1954,7 @@ id parent
 id parentPanel
 id parentRelative
 id parent_matrix
-id parkingFragment
+id parking_fragment
 id password_toggle
 id path
 id pathRelative
@@ -2085,7 +2084,7 @@ id uniform
 id unlabeled
 id up
 id useLogo
-id userFragment
+id user_fragment
 id view_offset_helper
 id visible
 id visible_removing_fragment_view_tag
@@ -2310,6 +2309,7 @@ string login_header
 string login_password
 string login_register_button
 string login_welcome_header
+string logout_button
 string material_slider_range_end
 string material_slider_range_start
 string mtrl_badge_numberless_content_description

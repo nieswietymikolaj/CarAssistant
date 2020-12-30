@@ -3,22 +3,22 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/mobile_navigation"
-    app:startDestination="@id/userFragment">
+    app:startDestination="@id/user_fragment">
 
-    <activity
-        android:id="@+id/historyFragment"
+    <fragment
+        android:id="@+id/history_fragment"
         android:name="pl.edu.pb.carassistant.History.HistoryFragment"
         android:label="fragment_history"
         tools:layout="@layout/fragment_history" />
 
-    <activity
-        android:id="@+id/parkingFragment"
+    <fragment
+        android:id="@+id/parking_fragment"
         android:name="pl.edu.pb.carassistant.Parking.ParkingFragment"
         android:label="fragment_parking"
         tools:layout="@layout/fragment_parking" />
 
-    <activity
-        android:id="@+id/userFragment"
+    <fragment
+        android:id="@+id/user_fragment"
         android:name="pl.edu.pb.carassistant.User.UserFragment"
         android:label="fragment_user"
         tools:layout="@layout/fragment_user" />

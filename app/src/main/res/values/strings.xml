@@ -49,5 +49,7 @@
     <string name="login_forgot_button">Nie pamiętasz hasła?</string>
     <string name="login_register_button">Utwórz nowe konto</string>
 
+    <string name="logout_button">Wyloguj</string>
+
 
 </resources>

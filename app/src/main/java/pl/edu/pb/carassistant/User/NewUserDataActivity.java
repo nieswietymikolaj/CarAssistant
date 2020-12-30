@@ -88,7 +88,7 @@ public class NewUserDataActivity extends AppCompatActivity implements TextWatche
 
         progressBar.setVisibility(View.VISIBLE);
 
-        firebaseAuth.createUserWithEmailAndPassword(email, password).addOnCompleteListener(new OnCompleteListener<AuthResult>() {
+        firebaseAuth.createUserWithEmailAndPassword(email, password).addOnCompleteListener(this, new OnCompleteListener<AuthResult>() {
             @Override
             public void onComplete(@NonNull Task<AuthResult> task) {
                 if (task.isSuccessful()) {
@@ -121,7 +121,8 @@ public class NewUserDataActivity extends AppCompatActivity implements TextWatche
 
         documentReference.set(user).addOnSuccessListener(aVoid -> {
             Toast.makeText(getApplicationContext(), getResources().getString(R.string.new_user_success), Toast.LENGTH_SHORT).show();
-            startActivity(new Intent(getApplicationContext(), MainActivity.class));
+            Intent intent = new Intent(getApplicationContext(), MainActivity.class);
+            startActivity(intent);
             finish();
         }).addOnFailureListener(e -> Toast.makeText(getApplicationContext(), getResources().getString(R.string.new_user_error) + " " + e.getLocalizedMessage(), Toast.LENGTH_LONG).show());
     }
