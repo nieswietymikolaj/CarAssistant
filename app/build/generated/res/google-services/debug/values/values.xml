@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="default_web_client_id" translatable="false">380119712095-2acfpsak6v6bevv8738m6hn18ago40kb.apps.googleusercontent.com</string>
+    <string name="gcm_defaultSenderId" translatable="false">380119712095</string>
+    <string name="google_api_key" translatable="false">AIzaSyD-r6k-o7X68kUUBYDL3dqTwXyJFaoEa8w</string>
+    <string name="google_app_id" translatable="false">1:380119712095:android:0f54509bd104237ffbf6ea</string>
+    <string name="google_crash_reporting_api_key" translatable="false">AIzaSyD-r6k-o7X68kUUBYDL3dqTwXyJFaoEa8w</string>
+    <string name="google_storage_bucket" translatable="false">carassistant-9b8e5.appspot.com</string>
+    <string name="project_id" translatable="false">carassistant-9b8e5</string>
+</resources>

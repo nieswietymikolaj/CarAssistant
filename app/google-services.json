@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "380119712095",
+    "project_id": "carassistant-9b8e5",
+    "storage_bucket": "carassistant-9b8e5.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:380119712095:android:0f54509bd104237ffbf6ea",
+        "android_client_info": {
+          "package_name": "pl.edu.pb.carassistant"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "380119712095-2acfpsak6v6bevv8738m6hn18ago40kb.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyD-r6k-o7X68kUUBYDL3dqTwXyJFaoEa8w"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "380119712095-2acfpsak6v6bevv8738m6hn18ago40kb.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
