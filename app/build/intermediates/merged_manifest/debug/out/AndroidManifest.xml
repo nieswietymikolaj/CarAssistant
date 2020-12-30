@@ -18,11 +18,12 @@
         android:supportsRtl="true"
         android:testOnly="true"
         android:theme="@style/Theme.CarAssistant" >
-
-        <!-- <activity android:name=".LoginActivity"></activity> -->
+        <activity android:name="pl.edu.pb.carassistant.History.HistoryFragment" />
+        <activity android:name="pl.edu.pb.carassistant.Parking.ParkingFragment" />
+        <activity android:name="pl.edu.pb.carassistant.User.UserFragment" />
         <activity android:name="pl.edu.pb.carassistant.MainActivity" />
-        <activity android:name="pl.edu.pb.carassistant.LoginActivity" />
-        <activity android:name="pl.edu.pb.carassistant.RegisterActivity" >
+        <activity android:name="pl.edu.pb.carassistant.RegisterActivity" />
+        <activity android:name="pl.edu.pb.carassistant.LoginActivity" >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
