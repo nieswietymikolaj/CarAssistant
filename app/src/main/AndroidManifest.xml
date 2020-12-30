@@ -11,10 +11,10 @@
         android:theme="@style/Theme.CarAssistant">
         <activity android:name=".History.HistoryFragment"></activity>
         <activity android:name=".Parking.ParkingFragment" />
-        <activity android:name=".User.UserFragment" /> <!-- <activity android:name=".LoginActivity"></activity> -->
+        <activity android:name=".User.UserFragment" />
         <activity android:name=".MainActivity" />
-        <activity android:name=".LoginActivity" />
-        <activity android:name=".RegisterActivity">
+        <activity android:name=".RegisterActivity" />
+        <activity android:name=".LoginActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 

@@ -1,16 +1,16 @@
 package pl.edu.pb.carassistant.History;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.fragment.app.Fragment;
 
 import android.os.Bundle;
 
 import pl.edu.pb.carassistant.R;
 
-public class HistoryFragment extends AppCompatActivity {
+public class HistoryFragment extends Fragment {
 
     @Override
-    protected void onCreate(Bundle savedInstanceState) {
+    public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.fragment_history);
     }
 }
