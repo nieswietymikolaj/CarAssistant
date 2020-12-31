@@ -52,7 +52,7 @@ public class RegisterActivity extends AppCompatActivity implements TextWatcher {
         progressBar = findViewById(R.id.register_progress_bar);
 
         goLoginButton.setOnClickListener(v -> {
-            startActivity(new Intent(getApplicationContext(), LoginActivity.class));
+            startActivity(new Intent(this, LoginActivity.class));
             finish();
         });
 
@@ -136,5 +136,11 @@ public class RegisterActivity extends AppCompatActivity implements TextWatcher {
     @Override
     public void afterTextChanged(Editable s) {
 
+    }
+
+    @Override
+    public void onBackPressed() {
+        startActivity(new Intent(this, LoginActivity.class));
+        finish();
     }
 }

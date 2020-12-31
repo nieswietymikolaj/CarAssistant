@@ -21,6 +21,7 @@
         android:supportsRtl="true"
         android:testOnly="true"
         android:theme="@style/Theme.CarAssistant" >
+        <activity android:name="pl.edu.pb.carassistant.Dialogs.ResetPasswordDialog" />
         <activity android:name="pl.edu.pb.carassistant.MainActivity" />
         <activity android:name="pl.edu.pb.carassistant.User.NewUserDataActivity" />
         <activity android:name="pl.edu.pb.carassistant.RegisterActivity" />

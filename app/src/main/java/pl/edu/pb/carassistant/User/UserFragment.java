@@ -17,14 +17,15 @@ import android.widget.Button;
 import com.google.firebase.auth.FirebaseAuth;
 
 import pl.edu.pb.carassistant.LoginActivity;
+import pl.edu.pb.carassistant.MainActivity;
 import pl.edu.pb.carassistant.R;
 
 public class UserFragment extends Fragment {
 
     Button logoutButton;
 
-    Activity myActivity;
-    Context myContext;
+    Activity activity;
+    Context context;
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
@@ -35,11 +36,15 @@ public class UserFragment extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.fragment_user, container, false);
 
+        activity = getActivity();
+
         logoutButton = view.findViewById(R.id.logout_button);
+
         logoutButton.setOnClickListener(v -> {
             FirebaseAuth.getInstance().signOut();
-            startActivity(new Intent(myContext, LoginActivity.class));
-            myActivity.finish();
+            Intent intent = new Intent(context, LoginActivity.class);
+            startActivity(intent);
+            activity.finish();
         });
 
         return view;

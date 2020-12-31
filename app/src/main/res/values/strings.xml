@@ -49,6 +49,13 @@
     <string name="login_forgot_button">Nie pamiętasz hasła?</string>
     <string name="login_register_button">Utwórz nowe konto</string>
 
+    <!--RESET HASLA-->
+    <string name="reset_password_header">Reset hasła</string>
+    <string name="reset_password_message">Wpisz adres e-mail</string>
+    <string name="reset_password_email">E-mail</string>
+    <string name="reset_password_button">Reset</string>
+    <string name="reset_password_sent">Link resetujący hasło został wysłany na podany adres e-mail</string>
+
     <string name="logout_button">Wyloguj</string>
 
 
