@@ -4,9 +4,11 @@ import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.annotation.SuppressLint;
+import android.app.AlertDialog;
 import android.content.Intent;
 import android.os.Bundle;
 import android.text.Editable;
+import android.text.InputType;
 import android.text.TextWatcher;
 import android.util.Patterns;
 import android.view.View;
@@ -22,6 +24,7 @@ import com.google.firebase.auth.SignInMethodQueryResult;
 
 import java.util.List;
 
+import pl.edu.pb.carassistant.Dialogs.ResetPasswordDialog;
 import pl.edu.pb.carassistant.User.NewUserDataActivity;
 
 public class LoginActivity extends AppCompatActivity implements TextWatcher {
@@ -57,7 +60,7 @@ public class LoginActivity extends AppCompatActivity implements TextWatcher {
         progressBar = findViewById(R.id.login_progress_bar);
 
         goRegisterButton.setOnClickListener(v -> {
-            startActivity(new Intent(getApplicationContext(), RegisterActivity.class));
+            startActivity(new Intent(this, RegisterActivity.class));
             finish();
         });
 
@@ -73,18 +76,23 @@ public class LoginActivity extends AppCompatActivity implements TextWatcher {
 
             firebaseAuth.signInWithEmailAndPassword(email, password).addOnCompleteListener(task -> {
                 if (task.isSuccessful()) {
-                    Toast.makeText(LoginActivity.this, getResources().getString(R.string.new_user_success), Toast.LENGTH_SHORT).show();
+                    Toast.makeText(this, getResources().getString(R.string.new_user_success), Toast.LENGTH_SHORT).show();
                     Intent intent = new Intent(this, MainActivity.class);
                     startActivity(intent);
                     finish();
                 } else {
-                    Toast.makeText(LoginActivity.this, getResources().getString(R.string.new_user_error) + " " + task.getException(), Toast.LENGTH_SHORT).show();
+                    Toast.makeText(this, getResources().getString(R.string.new_user_error) + " " + task.getException(), Toast.LENGTH_SHORT).show();
                     progressBar.setVisibility(View.INVISIBLE);
                 }
             }).addOnFailureListener(e -> {
-                Toast.makeText(LoginActivity.this, getResources().getString(R.string.new_user_error) + " " + e.getLocalizedMessage(), Toast.LENGTH_LONG).show();
+                Toast.makeText(this, getResources().getString(R.string.new_user_error) + " " + e.getLocalizedMessage(), Toast.LENGTH_LONG).show();
                 progressBar.setVisibility(View.INVISIBLE);
             });
+        });
+
+        forgotPassword.setOnClickListener(v -> {
+            ResetPasswordDialog resetPasswordDialog = new ResetPasswordDialog();
+            resetPasswordDialog.showDialog(LoginActivity.this);
         });
     }
 

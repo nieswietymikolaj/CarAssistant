@@ -27,6 +27,7 @@ import java.util.Map;
 
 import pl.edu.pb.carassistant.MainActivity;
 import pl.edu.pb.carassistant.R;
+import pl.edu.pb.carassistant.RegisterActivity;
 
 public class NewUserDataActivity extends AppCompatActivity implements TextWatcher {
 
@@ -120,11 +121,11 @@ public class NewUserDataActivity extends AppCompatActivity implements TextWatche
         user.put("Year", year);
 
         documentReference.set(user).addOnSuccessListener(aVoid -> {
-            Toast.makeText(getApplicationContext(), getResources().getString(R.string.new_user_success), Toast.LENGTH_SHORT).show();
-            Intent intent = new Intent(getApplicationContext(), MainActivity.class);
+            Toast.makeText(this, getResources().getString(R.string.new_user_success), Toast.LENGTH_SHORT).show();
+            Intent intent = new Intent(this, MainActivity.class);
             startActivity(intent);
             finish();
-        }).addOnFailureListener(e -> Toast.makeText(getApplicationContext(), getResources().getString(R.string.new_user_error) + " " + e.getLocalizedMessage(), Toast.LENGTH_LONG).show());
+        }).addOnFailureListener(e -> Toast.makeText(this, getResources().getString(R.string.new_user_error) + " " + e.getLocalizedMessage(), Toast.LENGTH_LONG).show());
     }
 
     private boolean ValidateUserName(String name) {
@@ -196,5 +197,11 @@ public class NewUserDataActivity extends AppCompatActivity implements TextWatche
     @Override
     public void afterTextChanged(Editable s) {
 
+    }
+
+    @Override
+    public void onBackPressed() {
+        startActivity(new Intent(this, RegisterActivity.class));
+        finish();
     }
 }

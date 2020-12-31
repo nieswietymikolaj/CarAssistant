@@ -1977,6 +1977,10 @@ id register_progress_bar
 id register_red_car_logo_image
 id register_repeat_password
 id register_welcome_header
+id reset_password_button
+id reset_password_email
+id reset_password_header
+id reset_password_message
 id reverseSawtooth
 id right
 id right_icon
@@ -2176,6 +2180,7 @@ layout design_navigation_menu
 layout design_navigation_menu_item
 layout design_text_input_end_icon
 layout design_text_input_start_icon
+layout dialog_reset_password
 layout fragment_history
 layout fragment_parking
 layout fragment_user
@@ -2384,6 +2389,11 @@ string register_login_button
 string register_password
 string register_repeat_password
 string register_welcome_header
+string reset_password_button
+string reset_password_email
+string reset_password_header
+string reset_password_message
+string reset_password_sent
 string search_menu_title
 string status_bar_notification_info_overflow
 style AlertDialog_AppCompat
