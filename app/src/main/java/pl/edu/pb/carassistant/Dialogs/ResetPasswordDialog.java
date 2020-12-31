@@ -53,6 +53,7 @@ public class ResetPasswordDialog {
 
         resetEmail = dialog.findViewById(R.id.reset_password_email_text);
         resetButton = dialog.findViewById(R.id.reset_password_button);
+        
         resetEmail.requestFocus();
 
         resetButton.setOnClickListener(new View.OnClickListener() {
