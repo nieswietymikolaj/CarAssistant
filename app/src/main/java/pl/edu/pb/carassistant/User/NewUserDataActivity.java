@@ -51,11 +51,11 @@ public class NewUserDataActivity extends AppCompatActivity implements TextWatche
         String email = bundle.getString("NEW_USER_EMAIL");
         String password = bundle.getString("NEW_USER_PASSWORD");
 
-        userName = findViewById(R.id.new_user_name);
-        carBrand = findViewById(R.id.new_user_car_brand);
-        carModel = findViewById(R.id.new_user_car_model);
-        carRegistrationNumber = findViewById(R.id.new_user_car_registration_number);
-        carYear = findViewById(R.id.new_user_car_year);
+        userName = findViewById(R.id.new_user_name_text);
+        carBrand = findViewById(R.id.new_user_car_brand_text);
+        carModel = findViewById(R.id.new_user_car_model_text);
+        carRegistrationNumber = findViewById(R.id.new_user_car_registration_number_text);
+        carYear = findViewById(R.id.new_user_car_year_text);
 
         userName.addTextChangedListener(this);
         carBrand.addTextChangedListener(this);

@@ -38,9 +38,9 @@ public class RegisterActivity extends AppCompatActivity implements TextWatcher {
 
         firebaseAuth = FirebaseAuth.getInstance();
 
-        registerEmail = findViewById(R.id.register_email);
-        registerPassword = findViewById(R.id.register_password);
-        registerRepeatPassword = findViewById(R.id.register_repeat_password);
+        registerEmail = findViewById(R.id.register_email_text);
+        registerPassword = findViewById(R.id.register_password_text);
+        registerRepeatPassword = findViewById(R.id.register_repeat_password_text);
 
         registerEmail.addTextChangedListener(this);
         registerPassword.addTextChangedListener(this);

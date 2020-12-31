@@ -58,34 +58,53 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/login_red_car_logo_image" />
 
-    <EditText
+    <com.google.android.material.textfield.TextInputLayout
         android:id="@+id/login_email"
-        style="@style/RegisterLoginEditTextStyle"
+        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginStart="24dp"
         android:layout_marginTop="30dp"
         android:layout_marginEnd="24dp"
         android:hint="@string/login_email"
-        android:inputType="textEmailAddress"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/login_header" />
+        app:layout_constraintTop_toBottomOf="@+id/login_header" >
 
-    <EditText
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/login_email_text"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/edit_text_yellow_background"
+            android:inputType="textEmailAddress"
+            android:textColorHint="@color/text_gray" />
+
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <com.google.android.material.textfield.TextInputLayout
         android:id="@+id/login_password"
-        style="@style/RegisterLoginEditTextStyle"
+        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginStart="24dp"
-        android:layout_marginTop="16dp"
+        android:layout_marginTop="12dp"
         android:layout_marginEnd="24dp"
-        android:drawableRight="@drawable/ic_password_eye_24"
         android:hint="@string/login_password"
-        android:inputType="textPassword"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/login_email" />
+        app:layout_constraintTop_toBottomOf="@+id/login_email"
+        app:passwordToggleEnabled="true"
+        app:passwordToggleTint="@color/text_gray">
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/login_password_text"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/edit_text_yellow_background"
+            android:inputType="textPassword"
+            android:textColorHint="@color/text_gray" />
+
+    </com.google.android.material.textfield.TextInputLayout>
 
     <Button
         android:id="@+id/login_button"
@@ -115,9 +134,9 @@
         android:id="@+id/login_progress_bar"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginTop="3dp"
         android:indeterminate="true"
         android:visibility="invisible"
-        android:layout_marginTop="3dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/login_forgot_button" />
