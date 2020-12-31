@@ -19,6 +19,8 @@ import android.widget.Toast;
 
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
+import com.google.android.material.internal.CheckableImageButton;
+import com.google.android.material.textfield.TextInputLayout;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.SignInMethodQueryResult;
 
@@ -27,13 +29,16 @@ import java.util.List;
 import pl.edu.pb.carassistant.Dialogs.ResetPasswordDialog;
 import pl.edu.pb.carassistant.User.NewUserDataActivity;
 
-public class LoginActivity extends AppCompatActivity implements TextWatcher {
+public class LoginActivity extends AppCompatActivity /*implements TextWatcher*/ {
 
     EditText loginEmail, loginPassword;
+    TextInputLayout loginTextPassword;
     Button loginButton, forgotPassword, goRegisterButton;
     ProgressBar progressBar;
 
     FirebaseAuth firebaseAuth;
+
+    View view;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -50,8 +55,9 @@ public class LoginActivity extends AppCompatActivity implements TextWatcher {
         loginEmail = findViewById(R.id.login_email_text);
         loginPassword = findViewById(R.id.login_password_text);
 
-        loginEmail.addTextChangedListener(this);
-        loginPassword.addTextChangedListener(this);
+        loginTextPassword = findViewById(R.id.login_password);
+
+        TextChangedListeners();
 
         loginButton = findViewById(R.id.login_button);
         forgotPassword = findViewById(R.id.login_forgot_button);
@@ -113,6 +119,7 @@ public class LoginActivity extends AppCompatActivity implements TextWatcher {
 
     private boolean ValidatePassword(String password) {
         if (password.length() < 8) {
+            loginTextPassword.setEndIconVisible(false);
             loginPassword.setError(getString(R.string.register_error_short_password));
             loginPassword.setBackgroundResource(R.drawable.edit_text_error);
             return false;
@@ -120,20 +127,43 @@ public class LoginActivity extends AppCompatActivity implements TextWatcher {
         return true;
     }
 
-    @SuppressLint("UseCompatLoadingForDrawables")
-    @Override
-    public void onTextChanged(CharSequence s, int start, int before, int count) {
-        loginEmail.setBackground(getDrawable(R.color.edit_text_yellow_background));
-        loginPassword.setBackground(getDrawable(R.color.edit_text_yellow_background));
-    }
+    private void TextChangedListeners() {
+        loginEmail.addTextChangedListener(new TextWatcher() {
+            @Override
+            public void beforeTextChanged(CharSequence s, int start, int count, int after) {
 
-    @Override
-    public void beforeTextChanged(CharSequence s, int start, int count, int after) {
+            }
 
-    }
+            @Override
+            public void onTextChanged(CharSequence s, int start, int before, int count) {
+                loginEmail.setBackground(getDrawable(R.color.edit_text_yellow_background));
+            }
 
-    @Override
-    public void afterTextChanged(Editable s) {
+            @Override
+            public void afterTextChanged(Editable s) {
 
+            }
+        });
+
+        loginPassword.addTextChangedListener(new TextWatcher() {
+            @Override
+            public void beforeTextChanged(CharSequence s, int start, int count, int after) {
+
+            }
+
+            @Override
+            public void onTextChanged(CharSequence s, int start, int before, int count) {
+                if(loginPassword.length() > 8 || loginPassword != null)
+                {
+                    loginTextPassword.setEndIconVisible(true);
+                }
+                loginPassword.setBackground(getDrawable(R.color.edit_text_yellow_background));
+            }
+
+            @Override
+            public void afterTextChanged(Editable s) {
+
+            }
+        });
     }
 }
