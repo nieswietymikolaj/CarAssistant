@@ -1632,6 +1632,7 @@ drawable design_snackbar_background
 drawable edit_text_error
 drawable googleg_disabled_color_18
 drawable googleg_standard_color_18
+drawable ic_add_24
 drawable ic_car_24
 drawable ic_launcher_background
 drawable ic_launcher_foreground
@@ -1839,6 +1840,7 @@ id fitToContents
 id fixed
 id flip
 id floating
+id floatingActionButton
 id forever
 id fragment_container_view_tag
 id ghost_view
@@ -1968,6 +1970,7 @@ id progress_horizontal
 id radio
 id ratio
 id rectangles
+id recycler_view
 id register_button
 id register_email
 id register_header
@@ -2162,6 +2165,7 @@ layout abc_select_dialog_material
 layout abc_tooltip
 layout activity_login
 layout activity_main
+layout activity_new_expense
 layout activity_new_user_data
 layout activity_register
 layout custom_dialog
@@ -2313,6 +2317,7 @@ string login_forgot_button
 string login_header
 string login_password
 string login_register_button
+string login_success
 string login_welcome_header
 string logout_button
 string material_slider_range_end
