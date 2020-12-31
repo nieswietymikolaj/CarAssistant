@@ -47,8 +47,8 @@ public class LoginActivity extends AppCompatActivity implements TextWatcher {
             finish();
         }
 
-        loginEmail = findViewById(R.id.login_email);
-        loginPassword = findViewById(R.id.login_password);
+        loginEmail = findViewById(R.id.login_email_text);
+        loginPassword = findViewById(R.id.login_password_text);
 
         loginEmail.addTextChangedListener(this);
         loginPassword.addTextChangedListener(this);
