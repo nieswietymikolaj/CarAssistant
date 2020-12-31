@@ -9,8 +9,8 @@
     <color name="white">#FFFFFFFF</color>
     <color name="red">#FF0000</color>
 
-    <color name="primary_500">#148DE2</color>
-    <color name="primary_700">#3AA2EB</color>
+    <color name="primary_500">#3AA2EB</color>
+    <color name="primary_700">#148DE2</color>
 
     <color name="transparent">#00000000</color>
 
