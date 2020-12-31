@@ -48,6 +48,7 @@
     <string name="login_button">Zaloguj</string>
     <string name="login_forgot_button">Nie pamiętasz hasła?</string>
     <string name="login_register_button">Utwórz nowe konto</string>
+    <string name="login_success">Zalogowano pomyślnie</string>
 
     <!--RESET HASLA-->
     <string name="reset_password_header">Reset hasła</string>

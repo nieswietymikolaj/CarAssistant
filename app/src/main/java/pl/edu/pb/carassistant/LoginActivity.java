@@ -76,7 +76,7 @@ public class LoginActivity extends AppCompatActivity implements TextWatcher {
 
             firebaseAuth.signInWithEmailAndPassword(email, password).addOnCompleteListener(task -> {
                 if (task.isSuccessful()) {
-                    Toast.makeText(this, getResources().getString(R.string.new_user_success), Toast.LENGTH_SHORT).show();
+                    Toast.makeText(this, getResources().getString(R.string.login_success), Toast.LENGTH_SHORT).show();
                     Intent intent = new Intent(this, MainActivity.class);
                     startActivity(intent);
                     finish();
