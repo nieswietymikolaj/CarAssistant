@@ -36,19 +36,19 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/new_user_welcome_header" />
 
-<!--    <EditText
-        android:id="@+id/new_user_name"
-        style="@style/RegisterLoginEditTextStyle"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="24dp"
-        android:layout_marginTop="16dp"
-        android:layout_marginEnd="24dp"
-        android:hint="@string/new_user_name"
-        android:inputType="text"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/new_user" />-->
+    <!--    <EditText
+            android:id="@+id/new_user_name"
+            style="@style/RegisterLoginEditTextStyle"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="24dp"
+            android:layout_marginTop="16dp"
+            android:layout_marginEnd="24dp"
+            android:hint="@string/new_user_name"
+            android:inputType="text"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/new_user" />-->
 
     <com.google.android.material.textfield.TextInputLayout
         android:id="@+id/new_user_name"
@@ -61,7 +61,7 @@
         android:hint="@string/new_user_name"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/new_user" >
+        app:layout_constraintTop_toBottomOf="@+id/new_user">
 
         <com.google.android.material.textfield.TextInputEditText
             android:id="@+id/new_user_name_text"
@@ -88,19 +88,19 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/new_user_name" />
 
-<!--    <EditText
-        android:id="@+id/new_user_car_brand"
-        style="@style/RegisterLoginEditTextStyle"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="24dp"
-        android:layout_marginTop="16dp"
-        android:layout_marginEnd="24dp"
-        android:hint="@string/new_user_car_brand"
-        android:inputType="text"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/new_user_car" />-->
+    <!--    <EditText
+            android:id="@+id/new_user_car_brand"
+            style="@style/RegisterLoginEditTextStyle"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="24dp"
+            android:layout_marginTop="16dp"
+            android:layout_marginEnd="24dp"
+            android:hint="@string/new_user_car_brand"
+            android:inputType="text"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/new_user_car" />-->
 
     <com.google.android.material.textfield.TextInputLayout
         android:id="@+id/new_user_car_brand"
@@ -113,7 +113,7 @@
         android:hint="@string/new_user_car_brand"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/new_user_car" >
+        app:layout_constraintTop_toBottomOf="@+id/new_user_car">
 
         <com.google.android.material.textfield.TextInputEditText
             android:id="@+id/new_user_car_brand_text"
@@ -125,19 +125,19 @@
 
     </com.google.android.material.textfield.TextInputLayout>
 
-<!--    <EditText
-        android:id="@+id/new_user_car_model"
-        style="@style/RegisterLoginEditTextStyle"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="24dp"
-        android:layout_marginTop="16dp"
-        android:layout_marginEnd="24dp"
-        android:hint="@string/new_user_car_model"
-        android:inputType="text"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/new_user_car_brand" />-->
+    <!--    <EditText
+            android:id="@+id/new_user_car_model"
+            style="@style/RegisterLoginEditTextStyle"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="24dp"
+            android:layout_marginTop="16dp"
+            android:layout_marginEnd="24dp"
+            android:hint="@string/new_user_car_model"
+            android:inputType="text"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/new_user_car_brand" />-->
 
     <com.google.android.material.textfield.TextInputLayout
         android:id="@+id/new_user_car_model"
@@ -150,7 +150,7 @@
         android:hint="@string/new_user_car_model"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/new_user_car_brand" >
+        app:layout_constraintTop_toBottomOf="@+id/new_user_car_brand">
 
         <com.google.android.material.textfield.TextInputEditText
             android:id="@+id/new_user_car_model_text"
@@ -162,17 +162,17 @@
 
     </com.google.android.material.textfield.TextInputLayout>
 
-<!--    <EditText
-        android:id="@+id/new_user_car_registration_number"
-        style="@style/RegisterLoginEditTextStyle"
-        android:layout_width="210dp"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="24dp"
-        android:layout_marginTop="16dp"
-        android:hint="@string/new_user_car_registration_number"
-        android:inputType="textCapCharacters"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/new_user_car_model" />-->
+    <!--    <EditText
+            android:id="@+id/new_user_car_registration_number"
+            style="@style/RegisterLoginEditTextStyle"
+            android:layout_width="210dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="24dp"
+            android:layout_marginTop="16dp"
+            android:hint="@string/new_user_car_registration_number"
+            android:inputType="textCapCharacters"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/new_user_car_model" />-->
 
     <com.google.android.material.textfield.TextInputLayout
         android:id="@+id/new_user_car_registration_number"
@@ -183,7 +183,7 @@
         android:layout_marginTop="12dp"
         android:hint="@string/new_user_car_registration_number"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/new_user_car_model" >
+        app:layout_constraintTop_toBottomOf="@+id/new_user_car_model">
 
         <com.google.android.material.textfield.TextInputEditText
             android:id="@+id/new_user_car_registration_number_text"
@@ -195,20 +195,20 @@
 
     </com.google.android.material.textfield.TextInputLayout>
 
-<!--    <EditText
-        android:id="@+id/new_user_car_year"
-        style="@style/RegisterLoginEditTextStyle"
-        android:layout_width="120dp"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="16dp"
-        android:layout_marginTop="16dp"
-        android:layout_marginEnd="24dp"
-        android:hint="@string/new_user_car_year"
-        android:inputType="number"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="1.0"
-        app:layout_constraintStart_toEndOf="@+id/new_user_car_registration_number"
-        app:layout_constraintTop_toBottomOf="@+id/new_user_car_model" />-->
+    <!--    <EditText
+            android:id="@+id/new_user_car_year"
+            style="@style/RegisterLoginEditTextStyle"
+            android:layout_width="120dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="16dp"
+            android:layout_marginEnd="24dp"
+            android:hint="@string/new_user_car_year"
+            android:inputType="number"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="1.0"
+            app:layout_constraintStart_toEndOf="@+id/new_user_car_registration_number"
+            app:layout_constraintTop_toBottomOf="@+id/new_user_car_model" />-->
 
     <com.google.android.material.textfield.TextInputLayout
         android:id="@+id/new_user_car_year"
@@ -222,7 +222,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="1.0"
         app:layout_constraintStart_toEndOf="@+id/new_user_car_registration_number"
-        app:layout_constraintTop_toBottomOf="@+id/new_user_car_model" >
+        app:layout_constraintTop_toBottomOf="@+id/new_user_car_model">
 
         <com.google.android.material.textfield.TextInputEditText
             android:id="@+id/new_user_car_year_text"
@@ -230,6 +230,7 @@
             android:layout_height="wrap_content"
             android:background="@color/edit_text_yellow_background"
             android:inputType="number"
+            android:maxLength="4"
             android:textColorHint="@color/text_gray" />
 
     </com.google.android.material.textfield.TextInputLayout>
@@ -250,8 +251,8 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="8dp"
-        android:visibility="invisible"
         android:indeterminate="true"
+        android:visibility="invisible"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/new_user_confirm_button" />
