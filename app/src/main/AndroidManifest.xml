@@ -9,11 +9,9 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.CarAssistant">
-        <activity android:name=".User.NewUserDataActivity"></activity>
-        <activity android:name=".History.HistoryFragment" />
-        <activity android:name=".Parking.ParkingFragment" />
-        <activity android:name=".User.UserFragment" />
+        <activity android:name=".History.NewExpenseActivity"></activity>
         <activity android:name=".MainActivity" />
+        <activity android:name=".User.NewUserDataActivity" />
         <activity android:name=".RegisterActivity" />
         <activity android:name=".LoginActivity">
             <intent-filter>

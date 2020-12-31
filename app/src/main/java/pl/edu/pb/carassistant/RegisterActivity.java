@@ -16,6 +16,7 @@ import android.widget.ProgressBar;
 
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
+import com.google.android.material.textfield.TextInputLayout;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.SignInMethodQueryResult;
 
@@ -23,9 +24,10 @@ import java.util.List;
 
 import pl.edu.pb.carassistant.User.NewUserDataActivity;
 
-public class RegisterActivity extends AppCompatActivity implements TextWatcher {
+public class RegisterActivity extends AppCompatActivity {
 
     EditText registerEmail, registerPassword, registerRepeatPassword;
+    TextInputLayout registerTextPassword, registerTextRepeatPassword;
     Button registerButton, goLoginButton;
     ProgressBar progressBar;
 
@@ -38,13 +40,14 @@ public class RegisterActivity extends AppCompatActivity implements TextWatcher {
 
         firebaseAuth = FirebaseAuth.getInstance();
 
-        registerEmail = findViewById(R.id.register_email);
-        registerPassword = findViewById(R.id.register_password);
-        registerRepeatPassword = findViewById(R.id.register_repeat_password);
+        registerEmail = findViewById(R.id.register_email_text);
+        registerPassword = findViewById(R.id.register_password_text);
+        registerRepeatPassword = findViewById(R.id.register_repeat_password_text);
 
-        registerEmail.addTextChangedListener(this);
-        registerPassword.addTextChangedListener(this);
-        registerRepeatPassword.addTextChangedListener(this);
+        registerTextPassword = findViewById(R.id.register_password);
+        registerTextRepeatPassword = findViewById(R.id.register_repeat_password);
+
+        TextChangedListeners();
 
         registerButton = findViewById(R.id.register_button);
         goLoginButton = findViewById(R.id.register_login_button);
@@ -52,7 +55,7 @@ public class RegisterActivity extends AppCompatActivity implements TextWatcher {
         progressBar = findViewById(R.id.register_progress_bar);
 
         goLoginButton.setOnClickListener(v -> {
-            startActivity(new Intent(getApplicationContext(), LoginActivity.class));
+            startActivity(new Intent(this, LoginActivity.class));
             finish();
         });
 
@@ -67,7 +70,7 @@ public class RegisterActivity extends AppCompatActivity implements TextWatcher {
 
             progressBar.setVisibility(View.VISIBLE);
 
-            firebaseAuth.fetchSignInMethodsForEmail(email).addOnCompleteListener(this, new OnCompleteListener<SignInMethodQueryResult>() {
+            firebaseAuth.fetchSignInMethodsForEmail(email).addOnCompleteListener(new OnCompleteListener<SignInMethodQueryResult>() {
                 @Override
                 public void onComplete(@NonNull Task<SignInMethodQueryResult> task) {
                     if (task.isSuccessful()) {
@@ -102,41 +105,91 @@ public class RegisterActivity extends AppCompatActivity implements TextWatcher {
             registerEmail.setBackgroundResource(R.drawable.edit_text_error);
             return false;
         }
-
         return true;
     }
 
     private boolean ValidatePassword(String password, String repeatPassword) {
         if (password.length() < 8) {
+            registerTextPassword.setEndIconVisible(false);
             registerPassword.setError(getString(R.string.register_error_short_password));
             registerPassword.setBackgroundResource(R.drawable.edit_text_error);
             return false;
         }
 
         if (!password.equals(repeatPassword)) {
+            registerTextRepeatPassword.setEndIconVisible(false);
             registerRepeatPassword.setError(getString(R.string.register_error_different_password));
             registerRepeatPassword.setBackgroundResource(R.drawable.edit_text_error);
             return false;
         }
-
         return true;
     }
 
-    @SuppressLint("UseCompatLoadingForDrawables")
-    @Override
-    public void onTextChanged(CharSequence s, int start, int before, int count) {
-        registerEmail.setBackground(getDrawable(R.color.edit_text_yellow_background));
-        registerPassword.setBackground(getDrawable(R.color.edit_text_yellow_background));
-        registerRepeatPassword.setBackground(getDrawable(R.color.edit_text_yellow_background));
+    private void TextChangedListeners()
+    {
+        registerEmail.addTextChangedListener(new TextWatcher() {
+            @Override
+            public void beforeTextChanged(CharSequence s, int start, int count, int after) {
+
+            }
+
+            @Override
+            public void onTextChanged(CharSequence s, int start, int before, int count) {
+                registerEmail.setBackground(getDrawable(R.color.edit_text_yellow_background));
+            }
+
+            @Override
+            public void afterTextChanged(Editable s) {
+
+            }
+        });
+
+        registerPassword.addTextChangedListener(new TextWatcher() {
+            @Override
+            public void beforeTextChanged(CharSequence s, int start, int count, int after) {
+
+            }
+
+            @Override
+            public void onTextChanged(CharSequence s, int start, int before, int count) {
+                if(registerPassword.length() > 8 || registerPassword != null)
+                {
+                    registerTextPassword.setEndIconVisible(true);
+                }
+                registerPassword.setBackground(getDrawable(R.color.edit_text_yellow_background));
+            }
+
+            @Override
+            public void afterTextChanged(Editable s) {
+
+            }
+        });
+
+        registerRepeatPassword.addTextChangedListener(new TextWatcher() {
+            @Override
+            public void beforeTextChanged(CharSequence s, int start, int count, int after) {
+
+            }
+
+            @Override
+            public void onTextChanged(CharSequence s, int start, int before, int count) {
+                if(registerRepeatPassword.length() > 8 || registerRepeatPassword != null)
+                {
+                    registerTextRepeatPassword.setEndIconVisible(true);
+                }
+                registerRepeatPassword.setBackground(getDrawable(R.color.edit_text_yellow_background));
+            }
+
+            @Override
+            public void afterTextChanged(Editable s) {
+
+            }
+        });
     }
 
     @Override
-    public void beforeTextChanged(CharSequence s, int start, int count, int after) {
-
-    }
-
-    @Override
-    public void afterTextChanged(Editable s) {
-
+    public void onBackPressed() {
+        startActivity(new Intent(this, LoginActivity.class));
+        finish();
     }
 }
