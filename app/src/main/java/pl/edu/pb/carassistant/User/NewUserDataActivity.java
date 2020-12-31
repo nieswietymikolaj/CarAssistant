@@ -121,7 +121,7 @@ public class NewUserDataActivity extends AppCompatActivity implements TextWatche
         user.put("Year", year);
 
         documentReference.set(user).addOnSuccessListener(aVoid -> {
-            Toast.makeText(this, getResources().getString(R.string.new_user_success), Toast.LENGTH_SHORT).show();
+            Toast.makeText(this, getResources().getString(R.string.new_user_data_added), Toast.LENGTH_SHORT).show();
             Intent intent = new Intent(this, MainActivity.class);
             startActivity(intent);
             finish();

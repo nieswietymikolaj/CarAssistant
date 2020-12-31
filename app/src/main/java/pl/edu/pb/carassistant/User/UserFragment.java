@@ -30,13 +30,14 @@ public class UserFragment extends Fragment {
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+
+        activity = getActivity();
+        context = getContext();  /*activity.getApplicationContext();*/
     }
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.fragment_user, container, false);
-
-        activity = getActivity();
 
         logoutButton = view.findViewById(R.id.logout_button);
 

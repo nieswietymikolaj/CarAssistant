@@ -37,6 +37,7 @@
     <string name="new_user_error_empty">Pole nie może być puste</string>
     <string name="new_user_error_year">Podany rok jest niepoprawny</string>
     <string name="new_user_created">Pomyślnie utworzono konto</string>
+    <string name="new_user_data_added">Dodano dane użytkownika</string>
     <string name="new_user_error">Błąd:</string>
     <string name="new_user_success">Sukces!</string>
 

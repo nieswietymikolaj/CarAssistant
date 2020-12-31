@@ -2383,6 +2383,7 @@ string new_user_car_registration_number
 string new_user_car_year
 string new_user_confirm_button
 string new_user_created
+string new_user_data_added
 string new_user_error
 string new_user_error_empty
 string new_user_error_year
@@ -2641,6 +2642,8 @@ style Base_Widget_MaterialComponents_TextView
 style CardView
 style CardView_Dark
 style CardView_Light
+style EditTextAppearance
+style EditTextThemeOverlay
 style EmptyTheme
 style GrayButtonStyle
 style MaterialAlertDialog_MaterialComponents
