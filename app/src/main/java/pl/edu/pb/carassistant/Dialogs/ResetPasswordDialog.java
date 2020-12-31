@@ -38,7 +38,7 @@ public class ResetPasswordDialog {
         Dialog dialog = new Dialog(activity);
 
         dialog.requestWindowFeature(Window.FEATURE_NO_TITLE);
-        dialog.setCancelable(false);
+        dialog.setCancelable(true);
         dialog.setContentView(R.layout.dialog_reset_password);
 
         resetEmail = dialog.findViewById(R.id.reset_password_email_text);
@@ -70,7 +70,7 @@ public class ResetPasswordDialog {
             }
         });
 
-        dialog.setOnKeyListener(new Dialog.OnKeyListener() {
+        /*dialog.setOnKeyListener(new Dialog.OnKeyListener() {
             @Override
             public boolean onKey(DialogInterface dialog, int keyCode, KeyEvent event) {
                 if (keyCode == KeyEvent.KEYCODE_BACK) {
@@ -78,7 +78,7 @@ public class ResetPasswordDialog {
                 }
                 return true;
             }
-        });
+        });*/
 
         dialog.show();
     }

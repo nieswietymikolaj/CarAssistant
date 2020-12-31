@@ -5,8 +5,8 @@ pl/edu/pb/carassistant/User/NewUserDataActivity.java
  pl.edu.pb.carassistant.User.NewUserDataActivity$1
  pl.edu.pb.carassistant.User.NewUserDataActivity$2
  pl.edu.pb.carassistant.User.NewUserDataActivity$3
-pl/edu/pb/carassistant/LoginActivity.java
- pl.edu.pb.carassistant.LoginActivity
+pl/edu/pb/carassistant/MainActivity.java
+ pl.edu.pb.carassistant.MainActivity
 pl/edu/pb/carassistant/RegisterActivity.java
  pl.edu.pb.carassistant.RegisterActivity
  pl.edu.pb.carassistant.RegisterActivity$1
@@ -14,15 +14,14 @@ pl/edu/pb/carassistant/User/UserFragment.java
  pl.edu.pb.carassistant.User.UserFragment
 pl/edu/pb/carassistant/BuildConfig.java
  pl.edu.pb.carassistant.BuildConfig
+pl/edu/pb/carassistant/History/NewExpenseActivity.java
+ pl.edu.pb.carassistant.History.NewExpenseActivity
+pl/edu/pb/carassistant/History/HistoryFragment.java
+ pl.edu.pb.carassistant.History.HistoryFragment
+pl/edu/pb/carassistant/LoginActivity.java
+ pl.edu.pb.carassistant.LoginActivity
 pl/edu/pb/carassistant/Dialogs/ResetPasswordDialog.java
  pl.edu.pb.carassistant.Dialogs.ResetPasswordDialog
  pl.edu.pb.carassistant.Dialogs.ResetPasswordDialog$1
  pl.edu.pb.carassistant.Dialogs.ResetPasswordDialog$1$1
  pl.edu.pb.carassistant.Dialogs.ResetPasswordDialog$1$2
- pl.edu.pb.carassistant.Dialogs.ResetPasswordDialog$2
-pl/edu/pb/carassistant/History/HistoryFragment.java
- pl.edu.pb.carassistant.History.HistoryFragment
-pl/edu/pb/carassistant/History/NewExpenseActivity.java
- pl.edu.pb.carassistant.History.NewExpenseActivity
-pl/edu/pb/carassistant/MainActivity.java
- pl.edu.pb.carassistant.MainActivity
