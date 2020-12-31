@@ -24,7 +24,7 @@ import java.util.List;
 
 import pl.edu.pb.carassistant.User.NewUserDataActivity;
 
-public class RegisterActivity extends AppCompatActivity /*implements TextWatcher*/ {
+public class RegisterActivity extends AppCompatActivity {
 
     EditText registerEmail, registerPassword, registerRepeatPassword;
     TextInputLayout registerTextPassword, registerTextRepeatPassword;

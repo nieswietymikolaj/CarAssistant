@@ -29,7 +29,7 @@ import java.util.List;
 import pl.edu.pb.carassistant.Dialogs.ResetPasswordDialog;
 import pl.edu.pb.carassistant.User.NewUserDataActivity;
 
-public class LoginActivity extends AppCompatActivity /*implements TextWatcher*/ {
+public class LoginActivity extends AppCompatActivity {
 
     EditText loginEmail, loginPassword;
     TextInputLayout loginTextPassword;
