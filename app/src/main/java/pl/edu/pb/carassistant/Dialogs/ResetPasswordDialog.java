@@ -17,12 +17,18 @@ import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.OnFailureListener;
 import com.google.android.gms.tasks.OnSuccessListener;
+import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.auth.SignInMethodQueryResult;
+
+import java.util.List;
 
 import pl.edu.pb.carassistant.LoginActivity;
 import pl.edu.pb.carassistant.R;
+import pl.edu.pb.carassistant.User.NewUserDataActivity;
 
 public class ResetPasswordDialog {
 
@@ -31,9 +37,13 @@ public class ResetPasswordDialog {
 
     Activity activity;
 
+    FirebaseAuth firebaseAuth;
+
     public void showDialog(Activity activity) {
 
         this.activity = activity;
+
+        firebaseAuth = FirebaseAuth.getInstance();
 
         Dialog dialog = new Dialog(activity);
 
@@ -54,19 +64,32 @@ public class ResetPasswordDialog {
                     return;
                 }
 
-                FirebaseAuth.getInstance().sendPasswordResetEmail(email).addOnSuccessListener(new OnSuccessListener<Void>() {
+                firebaseAuth.fetchSignInMethodsForEmail(email).addOnCompleteListener(new OnCompleteListener<SignInMethodQueryResult>() {
                     @Override
-                    public void onSuccess(Void aVoid) {
-                        Toast.makeText(activity.getApplicationContext(), activity.getResources().getString(R.string.reset_password_sent), Toast.LENGTH_LONG).show();
-                    }
-                }).addOnFailureListener(new OnFailureListener() {
-                    @Override
-                    public void onFailure(@NonNull Exception e) {
-                        Toast.makeText(activity.getApplicationContext(), activity.getResources().getString(R.string.new_user_error) + " " + e.getMessage(), Toast.LENGTH_LONG).show();
+                    public void onComplete(@NonNull Task<SignInMethodQueryResult> task) {
+                        if (task.isSuccessful()) {
+                            List<String> methods = task.getResult().getSignInMethods();
+                            if (methods.isEmpty()) {
+                                resetEmail.setError(activity.getResources().getString(R.string.reset_password_error_email));
+                                resetEmail.setBackgroundResource(R.drawable.edit_text_error);
+                                resetEmail.requestFocus();
+                            } else {
+                                firebaseAuth.sendPasswordResetEmail(email).addOnSuccessListener(new OnSuccessListener<Void>() {
+                                    @Override
+                                    public void onSuccess(Void aVoid) {
+                                        Toast.makeText(activity.getApplicationContext(), activity.getResources().getString(R.string.reset_password_sent), Toast.LENGTH_LONG).show();
+                                        dialog.dismiss();
+                                    }
+                                }).addOnFailureListener(new OnFailureListener() {
+                                    @Override
+                                    public void onFailure(@NonNull Exception e) {
+                                        Toast.makeText(activity.getApplicationContext(), activity.getResources().getString(R.string.new_user_error) + " " + e.getMessage(), Toast.LENGTH_LONG).show();
+                                    }
+                                });
+                            }
+                        }
                     }
                 });
-
-                dialog.dismiss();
             }
         });
 

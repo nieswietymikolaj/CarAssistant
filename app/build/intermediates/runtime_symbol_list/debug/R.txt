@@ -2409,11 +2409,12 @@ int string register_repeat_password 0x7f120094
 int string register_welcome_header 0x7f120095
 int string reset_password_button 0x7f120096
 int string reset_password_email 0x7f120097
-int string reset_password_header 0x7f120098
-int string reset_password_message 0x7f120099
-int string reset_password_sent 0x7f12009a
-int string search_menu_title 0x7f12009b
-int string status_bar_notification_info_overflow 0x7f12009c
+int string reset_password_error_email 0x7f120098
+int string reset_password_header 0x7f120099
+int string reset_password_message 0x7f12009a
+int string reset_password_sent 0x7f12009b
+int string search_menu_title 0x7f12009c
+int string status_bar_notification_info_overflow 0x7f12009d
 int style AlertDialog_AppCompat 0x7f130000
 int style AlertDialog_AppCompat_Light 0x7f130001
 int style AndroidThemeColorAccentYellow 0x7f130002

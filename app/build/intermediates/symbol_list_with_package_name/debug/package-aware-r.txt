@@ -2410,6 +2410,7 @@ string register_repeat_password
 string register_welcome_header
 string reset_password_button
 string reset_password_email
+string reset_password_error_email
 string reset_password_header
 string reset_password_message
 string reset_password_sent
