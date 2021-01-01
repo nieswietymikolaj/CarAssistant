@@ -30,7 +30,7 @@
     <string name="new_user_car_brand">Marka</string>
     <string name="new_user_car_model">Model</string>
     <string name="new_user_car_registration_number">Numer rejestracyjny</string>
-    <string name="new_user_car_year">Rok</string>
+    <string name="new_user_car_year">Rocznik</string>
     <string name="new_user_car_mileage">Przebieg</string>
     <string name="new_user_confirm_button">Dalej</string>
 
@@ -61,7 +61,18 @@
     <string name="reset_password_sent">Link resetujący hasło został wysłany na podany adres e-mail</string>
     <string name="reset_password_error_email">Podany e-mail nie istnieje w bazie</string>
 
+    <!--WYLOGOWANIE-->
     <string name="logout_button">Wyloguj</string>
+
+    <!--UŻYTKOWNIK-->
+    <string name="user_name">Użytkownik</string>
+    <string name="user_car_brand">Marka</string>
+    <string name="user_car_model">Model</string>
+    <string name="user_car_year">Rocznik</string>
+    <string name="user_car_registration_number">BI 3685S</string>
+    <string name="user_car_mileage">Przebieg</string>
+    <string name="user_edit_profile">Edytuj</string>
+    <string name="user_logout">Wyloguj</string>
 
 
 </resources>
