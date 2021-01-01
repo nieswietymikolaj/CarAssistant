@@ -4,6 +4,11 @@
     <dimen name="red_stroke_width">1dp</dimen>
     <dimen name="red_stroke_radius">2dp</dimen>
 
+    <dimen name="black_stroke_width">2dp</dimen>
+    <dimen name="black_stroke_radius">5dp</dimen>
+    <dimen name="black_shape_heigth">50dp</dimen>
+    <dimen name="black_shape_margin">-25dp</dimen>
+
     <dimen name="edit_text_padding">14dp</dimen>
 
 </resources>
