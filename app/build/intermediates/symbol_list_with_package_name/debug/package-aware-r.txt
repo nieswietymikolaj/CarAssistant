@@ -1939,6 +1939,8 @@ id new_user
 id new_user_car
 id new_user_car_brand
 id new_user_car_brand_text
+id new_user_car_mileage
+id new_user_car_mileage_text
 id new_user_car_model
 id new_user_car_model_text
 id new_user_car_registration_number
@@ -2378,6 +2380,7 @@ string nav_bar_user
 string new_user
 string new_user_car
 string new_user_car_brand
+string new_user_car_mileage
 string new_user_car_model
 string new_user_car_registration_number
 string new_user_car_year
@@ -2386,6 +2389,7 @@ string new_user_created
 string new_user_data_added
 string new_user_error
 string new_user_error_empty
+string new_user_error_mileage
 string new_user_error_year
 string new_user_name
 string new_user_success

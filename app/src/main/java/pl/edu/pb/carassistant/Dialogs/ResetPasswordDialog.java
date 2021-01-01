@@ -64,7 +64,7 @@ public class ResetPasswordDialog {
                 if (!ValidateEmail(email)) {
                     return;
                 }
-
+                
                 firebaseAuth.fetchSignInMethodsForEmail(email).addOnCompleteListener(new OnCompleteListener<SignInMethodQueryResult>() {
                     @Override
                     public void onComplete(@NonNull Task<SignInMethodQueryResult> task) {
