@@ -1112,6 +1112,7 @@
     <string name="new_user">Użytkownik</string>
     <string name="new_user_car">Samochód</string>
     <string name="new_user_car_brand">Marka</string>
+    <string name="new_user_car_mileage">Przebieg</string>
     <string name="new_user_car_model">Model</string>
     <string name="new_user_car_registration_number">Numer rejestracyjny</string>
     <string name="new_user_car_year">Rok</string>
@@ -1120,6 +1121,7 @@
     <string name="new_user_data_added">Dodano dane użytkownika</string>
     <string name="new_user_error">Błąd:</string>
     <string name="new_user_error_empty">Pole nie może być puste</string>
+    <string name="new_user_error_mileage">Podany przebieg jest niepoprawny</string>
     <string name="new_user_error_year">Podany rok jest niepoprawny</string>
     <string name="new_user_name">Nazwa użytkownika</string>
     <string name="new_user_success">Sukces!</string>
