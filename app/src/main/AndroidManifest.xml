@@ -10,7 +10,7 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.CarAssistant">
         <activity android:name=".User.EditUserDataActivity"></activity>
-        <activity android:name=".History.NewExpenseActivity" />
+        <activity android:name=".History.NewRefuelingActivity" />
         <activity android:name=".MainActivity" />
         <activity android:name=".User.NewUserDataActivity" />
         <activity android:name=".RegisterActivity" />

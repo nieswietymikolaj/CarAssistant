@@ -22,7 +22,7 @@
         android:testOnly="true"
         android:theme="@style/Theme.CarAssistant" >
         <activity android:name="pl.edu.pb.carassistant.User.EditUserDataActivity" />
-        <activity android:name="pl.edu.pb.carassistant.History.NewExpenseActivity" />
+        <activity android:name="pl.edu.pb.carassistant.History.NewRefuelingActivity" />
         <activity android:name="pl.edu.pb.carassistant.MainActivity" />
         <activity android:name="pl.edu.pb.carassistant.User.NewUserDataActivity" />
         <activity android:name="pl.edu.pb.carassistant.RegisterActivity" />

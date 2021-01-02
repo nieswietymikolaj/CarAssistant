@@ -12,6 +12,7 @@ import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.ProgressBar;
 
 import pl.edu.pb.carassistant.Dialogs.ChangePasswordDialog;
 import pl.edu.pb.carassistant.R;
@@ -20,6 +21,7 @@ public class EditUserDataActivity extends AppCompatActivity implements TextWatch
 
     EditText userName, carBrand, carModel, carYear, carMileage, carRegistrationNumber;
     Button saveButton, changePasswordButton;
+    ProgressBar progressBar;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -49,10 +51,11 @@ public class EditUserDataActivity extends AppCompatActivity implements TextWatch
         saveButton = findViewById(R.id.edit_user_save_button);
         changePasswordButton = findViewById(R.id.edit_change_password_button);
 
+        progressBar = findViewById(R.id.edit_user_progress_bar);
+
         saveButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                ValidateData();
                 UpdateUserData();
             }
         });
@@ -63,7 +66,7 @@ public class EditUserDataActivity extends AppCompatActivity implements TextWatch
         });
     }
 
-    private void ValidateData()
+    private void UpdateUserData()
     {
         String name = userName.getText().toString().trim();
         String brand = carBrand.getText().toString().trim();
@@ -75,11 +78,11 @@ public class EditUserDataActivity extends AppCompatActivity implements TextWatch
         if (!ValidateUserName(name) || !ValidateCarBrand(brand) || !ValidateCarModel(model) || !ValidateCarYear(year) || !ValidateCarMileage(mileage) || !ValidateCarRegistration(registration)) {
             return;
         }
-    }
 
-    private void UpdateUserData()
-    {
+        progressBar.setVisibility(View.VISIBLE);
 
+
+        progressBar.setVisibility(View.INVISIBLE);
     }
 
     private boolean ValidateUserName(String name) {

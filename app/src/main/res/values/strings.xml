@@ -89,5 +89,16 @@
     <string name="change_password_sent">Link resetujący hasło został wysłany na adres e-mail</string>
     <string name="change_password_error_password">Podane hasło jest błędne:</string>
 
+    <!--NOWE TANKOWANIE-->
+    <string name="new_refueling_header">Tankowanie</string>
+    <string name="new_refueling_date">Data</string>
+    <string name="new_refueling_time">Godzina</string>
+    <string name="new_refueling_mileage">Przebieg</string>
+    <string name="new_refueling_price_liter">Cena / L</string>
+    <string name="new_refueling_cost">Koszt</string>
+    <string name="new_refueling_liters">Litrów</string>
+    <string name="new_refueling_save_button">Dodaj</string>
+    <string name="new_refueling_created">Pomyślnie dodano tankowanie</string>
+
 
 </resources>
