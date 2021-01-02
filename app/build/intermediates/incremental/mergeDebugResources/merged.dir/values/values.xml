@@ -1141,12 +1141,15 @@
     <string name="new_refueling_cost">Koszt</string>
     <string name="new_refueling_created">Pomyślnie dodano tankowanie</string>
     <string name="new_refueling_date">Data</string>
+    <string name="new_refueling_date_error">Błędna data lub format daty (DD/MM/YYYY)</string>
     <string name="new_refueling_header">Tankowanie</string>
     <string name="new_refueling_liters">Litrów</string>
     <string name="new_refueling_mileage">Przebieg</string>
     <string name="new_refueling_price_liter">Cena / L</string>
+    <string name="new_refueling_price_liters_error">Błędny format (NNNN.NN)</string>
     <string name="new_refueling_save_button">Dodaj</string>
     <string name="new_refueling_time">Godzina</string>
+    <string name="new_refueling_time_error">Błędna godzina lub błędny format godziny (HH:MM)</string>
     <string name="new_user">Użytkownik</string>
     <string name="new_user_car">Samochód</string>
     <string name="new_user_car_brand">Marka</string>
