@@ -16,8 +16,11 @@ import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
+import android.widget.Toast;
 
 import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.storage.FirebaseStorage;
+import com.google.firebase.storage.StorageReference;
 import com.theartofdev.edmodo.cropper.CropImage;
 import com.theartofdev.edmodo.cropper.CropImageView;
 
@@ -28,8 +31,12 @@ public class UserFragment extends Fragment {
 
     ImageView userPhoto;
 
+    StorageReference storageReference;
+
     Activity activity;
     Context context;
+
+    UserDatabase userDatabase;
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
@@ -44,6 +51,8 @@ public class UserFragment extends Fragment {
         View view = inflater.inflate(R.layout.fragment_user, container, false);
 
         setHasOptionsMenu(true);
+
+        storageReference = FirebaseStorage.getInstance().getReference();
 
         userPhoto = view.findViewById(R.id.user_photo);
 /*        userPhoto.setOnClickListener(view1 -> CropImage.activity()
@@ -61,6 +70,16 @@ public class UserFragment extends Fragment {
         ((AppCompatActivity) activity).setSupportActionBar(toolbar);
         ((AppCompatActivity) activity).getSupportActionBar().setDisplayShowTitleEnabled(false);
     }
+
+    /*private void SaveUserPhotoInDatabase()
+    {
+        StorageReference photoReference = storageReference.child("users/" + userId + "/profile.jpg");
+        photoReference.putFile(user.getProfileImage()).addOnSuccessListener(taskSnapshot -> {
+            Toast.makeText(context, "Photo has been loaded", Toast.LENGTH_SHORT).show();
+        }).addOnFailureListener(e -> {
+            Toast.makeText(context, "Error: " + e.getLocalizedMessage(), Toast.LENGTH_LONG).show();
+        });
+    }*/
 
     @Override
     public void onCreateOptionsMenu(@NonNull Menu menu, @NonNull MenuInflater inflater) {
