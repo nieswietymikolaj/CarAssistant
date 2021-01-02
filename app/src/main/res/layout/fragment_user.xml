@@ -30,7 +30,7 @@
                 android:id="@+id/user_photo"
                 android:layout_width="120dp"
                 android:layout_height="120dp"
-                android:layout_marginStart="8dp"
+                android:layout_marginStart="16dp"
                 android:layout_marginTop="57dp"
                 android:src="@drawable/ic_launcher_foreground_red_car"
                 app:civ_border_color="@color/hint_gray"
@@ -49,7 +49,6 @@
                 android:fontFamily="@font/bungee"
                 android:gravity="center"
                 android:text="@string/user_name"
-                android:textAllCaps="false"
                 android:textColor="@color/text_gray"
                 android:textSize="22sp"
                 app:layout_constraintEnd_toEndOf="parent"
@@ -112,15 +111,15 @@
 
 
         <com.google.android.material.card.MaterialCardView
-            android:id="@+id/need_help_user_data_card_view"
+            android:id="@+id/registration_card_view"
             android:layout_width="wrap_content"
-            android:layout_height="@dimen/black_shape_heigth"
+            android:layout_height="@dimen/registration_card_height"
             android:layout_gravity="center"
-            android:layout_marginTop="@dimen/black_shape_margin"
-            app:cardCornerRadius="@dimen/black_stroke_radius"
-            app:cardElevation="5dp"
+            android:layout_marginTop="@dimen/registration_card_margin"
+            app:cardCornerRadius="@dimen/registration_card_radius"
+            app:cardElevation="@dimen/registration_card_elevation"
             app:strokeColor="@color/black"
-            app:strokeWidth="@dimen/black_stroke_width">
+            app:strokeWidth="@dimen/registration_card_stroke">
 
             <RelativeLayout
                 android:layout_width="wrap_content"
@@ -128,13 +127,13 @@
 
                 <TextView
                     android:id="@+id/registration_blue"
-                    android:layout_width="25dp"
+                    android:layout_width="@dimen/registration_blue_width"
                     android:layout_height="match_parent"
                     android:background="@color/european_blue" />
 
                 <ImageView
-                    android:layout_width="27dp"
-                    android:layout_height="33dp"
+                    android:layout_width="@dimen/registration_stars_width"
+                    android:layout_height="@dimen/registration_stars_height"
                     android:src="@drawable/ic_european_flag" />
 
                 <TextView
@@ -158,18 +157,130 @@
             android:layout_width="match_parent"
             android:layout_height="match_parent">
 
-            <!--            <Button
-                            android:id="@+id/logout_button"
-                            style="@style/GrayButtonStyle"
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:layout_marginTop="104dp"
-                            android:text="@string/logout_button"
-                            app:layout_constraintEnd_toEndOf="parent"
-                            app:layout_constraintStart_toStartOf="parent"
-                            app:layout_constraintTop_toTopOf="parent" />-->
+            <com.google.android.material.card.MaterialCardView
+                android:id="@+id/mileage_card_view"
+                android:layout_width="160dp"
+                android:layout_height="130dp"
+                android:layout_gravity="center"
+                android:layout_marginStart="24dp"
+                android:layout_marginTop="30dp"
+                android:layout_marginEnd="24dp"
+                app:cardCornerRadius="@dimen/data_card_radius"
+                app:cardElevation="@dimen/data_card_elevation"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.0"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent">
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:background="@color/main_yellow">
+
+                    <TextView
+                        android:id="@+id/user_car_mileage_header"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="16dp"
+                        android:layout_marginTop="8dp"
+                        android:layout_marginEnd="16dp"
+                        android:fontFamily="@font/bungee"
+                        android:text="@string/user_car_mileage"
+                        android:textColor="@color/text_gray"
+                        android:textSize="20sp"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent" />
+
+                    <TextView
+                        android:id="@+id/user_car_mileage"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="24dp"
+                        android:layout_marginEnd="24dp"
+                        android:text="@string/user_car_mileage"
+                        android:textAllCaps="true"
+                        android:textColor="@color/text_gray"
+                        android:textSize="22sp"
+                        android:textStyle="bold"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent"
+                        app:layout_constraintVertical_bias="0.74" />
+
+
+                </androidx.constraintlayout.widget.ConstraintLayout>
+
+            </com.google.android.material.card.MaterialCardView>
+
+            <com.google.android.material.card.MaterialCardView
+                android:id="@+id/avg_fuel_consumption_card_view"
+                android:layout_width="160dp"
+                android:layout_height="130dp"
+                android:layout_gravity="center"
+                android:layout_marginStart="16dp"
+                android:layout_marginTop="30dp"
+                android:layout_marginEnd="24dp"
+                app:cardCornerRadius="@dimen/data_card_radius"
+                app:cardElevation="@dimen/data_card_elevation"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="1.0"
+                app:layout_constraintStart_toEndOf="@+id/mileage_card_view"
+                app:layout_constraintTop_toTopOf="parent">
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:background="@color/main_yellow">
+
+                    <TextView
+                        android:id="@+id/user_car_avg_fuel_consumption_header"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:fontFamily="@font/bungee"
+                        android:text="@string/user_car_avg_fuel_consumption_header"
+                        android:textAlignment="center"
+                        android:textColor="@color/text_gray"
+                        android:textSize="20sp"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent" />
+
+                    <TextView
+                        android:id="@+id/user_car_avg_fuel_consumption"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/user_car_avg_fuel_consumption"
+                        android:textAllCaps="true"
+                        android:textColor="@color/text_gray"
+                        android:textSize="22sp"
+                        android:textStyle="bold"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent"
+                        app:layout_constraintVertical_bias="0.74" />
+
+
+                </androidx.constraintlayout.widget.ConstraintLayout>
+
+            </com.google.android.material.card.MaterialCardView>
+
 
         </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <!--            <Button
+                android:id="@+id/logout_button"
+                style="@style/GrayButtonStyle"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="104dp"
+                android:text="@string/logout_button"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />-->
+
     </LinearLayout>
 
 </FrameLayout>
