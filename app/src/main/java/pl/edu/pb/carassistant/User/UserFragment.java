@@ -75,7 +75,7 @@ public class UserFragment extends Fragment {
 
         switch (item.getItemId()) {
             case R.id.user_data_edit:
-                startActivity(new Intent(context, NewExpenseActivity.class));
+                startActivity(new Intent(context, EditUserDataActivity.class));
                 return true;
 
             case R.id.user_logout:

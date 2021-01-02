@@ -5,6 +5,7 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.app.Activity;
 import android.app.Dialog;
+import android.content.Context;
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.os.Bundle;
@@ -36,12 +37,14 @@ public class ResetPasswordDialog {
     Button resetButton;
 
     Activity activity;
+    Context context;
 
     FirebaseAuth firebaseAuth;
 
     public void showDialog(Activity activity) {
 
         this.activity = activity;
+        context = activity.getApplicationContext();
 
         firebaseAuth = FirebaseAuth.getInstance();
 
@@ -78,13 +81,13 @@ public class ResetPasswordDialog {
                                 firebaseAuth.sendPasswordResetEmail(email).addOnSuccessListener(new OnSuccessListener<Void>() {
                                     @Override
                                     public void onSuccess(Void aVoid) {
-                                        Toast.makeText(activity.getApplicationContext(), activity.getResources().getString(R.string.reset_password_sent), Toast.LENGTH_LONG).show();
+                                        Toast.makeText(context, activity.getResources().getString(R.string.reset_password_sent), Toast.LENGTH_LONG).show();
                                         dialog.dismiss();
                                     }
                                 }).addOnFailureListener(new OnFailureListener() {
                                     @Override
                                     public void onFailure(@NonNull Exception e) {
-                                        Toast.makeText(activity.getApplicationContext(), activity.getResources().getString(R.string.new_user_error) + " " + e.getMessage(), Toast.LENGTH_LONG).show();
+                                        Toast.makeText(context, activity.getResources().getString(R.string.new_user_error) + " " + e.getMessage(), Toast.LENGTH_LONG).show();
                                     }
                                 });
                             }

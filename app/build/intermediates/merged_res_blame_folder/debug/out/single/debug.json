@@ -8,20 +8,20 @@
         "source": "C:\\Users\\Mateusz\\Documents\\GitHub\\CarAssistant\\app\\src\\main\\res\\font\\bungee.xml"
     },
     {
-        "merged": "C:\\Users\\Mateusz\\Documents\\GitHub\\CarAssistant\\app\\build\\intermediates\\res\\merged\\debug\\layout_dialog_reset_password.xml.flat",
-        "source": "C:\\Users\\Mateusz\\Documents\\GitHub\\CarAssistant\\app\\src\\main\\res\\layout\\dialog_reset_password.xml"
-    },
-    {
-        "merged": "C:\\Users\\Mateusz\\Documents\\GitHub\\CarAssistant\\app\\build\\intermediates\\res\\merged\\debug\\drawable_ic_edit_24.xml.flat",
-        "source": "C:\\Users\\Mateusz\\Documents\\GitHub\\CarAssistant\\app\\src\\main\\res\\drawable\\ic_edit_24.xml"
+        "merged": "C:\\Users\\Mateusz\\Documents\\GitHub\\CarAssistant\\app\\build\\intermediates\\res\\merged\\debug\\navigation_mobile_navigation.xml.flat",
+        "source": "C:\\Users\\Mateusz\\Documents\\GitHub\\CarAssistant\\app\\src\\main\\res\\navigation\\mobile_navigation.xml"
     },
     {
         "merged": "C:\\Users\\Mateusz\\Documents\\GitHub\\CarAssistant\\app\\build\\intermediates\\res\\merged\\debug\\drawable_ic_european_flag.xml.flat",
         "source": "C:\\Users\\Mateusz\\Documents\\GitHub\\CarAssistant\\app\\src\\main\\res\\drawable\\ic_european_flag.xml"
     },
     {
-        "merged": "C:\\Users\\Mateusz\\Documents\\GitHub\\CarAssistant\\app\\build\\intermediates\\res\\merged\\debug\\navigation_mobile_navigation.xml.flat",
-        "source": "C:\\Users\\Mateusz\\Documents\\GitHub\\CarAssistant\\app\\src\\main\\res\\navigation\\mobile_navigation.xml"
+        "merged": "C:\\Users\\Mateusz\\Documents\\GitHub\\CarAssistant\\app\\build\\intermediates\\res\\merged\\debug\\drawable_ic_edit_24.xml.flat",
+        "source": "C:\\Users\\Mateusz\\Documents\\GitHub\\CarAssistant\\app\\src\\main\\res\\drawable\\ic_edit_24.xml"
+    },
+    {
+        "merged": "C:\\Users\\Mateusz\\Documents\\GitHub\\CarAssistant\\app\\build\\intermediates\\res\\merged\\debug\\layout_dialog_reset_password.xml.flat",
+        "source": "C:\\Users\\Mateusz\\Documents\\GitHub\\CarAssistant\\app\\src\\main\\res\\layout\\dialog_reset_password.xml"
     },
     {
         "merged": "C:\\Users\\Mateusz\\Documents\\GitHub\\CarAssistant\\app\\build\\intermediates\\res\\merged\\debug\\drawable_ic_parking_24.xml.flat",
@@ -142,6 +142,10 @@
     {
         "merged": "C:\\Users\\Mateusz\\Documents\\GitHub\\CarAssistant\\app\\build\\intermediates\\res\\merged\\debug\\mipmap-xxhdpi_ic_launcher_round.png.flat",
         "source": "C:\\Users\\Mateusz\\Documents\\GitHub\\CarAssistant\\app\\src\\main\\res\\mipmap-xxhdpi\\ic_launcher_round.png"
+    },
+    {
+        "merged": "C:\\Users\\Mateusz\\Documents\\GitHub\\CarAssistant\\app\\build\\intermediates\\res\\merged\\debug\\layout_dialog_change_password.xml.flat",
+        "source": "C:\\Users\\Mateusz\\Documents\\GitHub\\CarAssistant\\app\\src\\main\\res\\layout\\dialog_change_password.xml"
     },
     {
         "merged": "C:\\Users\\Mateusz\\Documents\\GitHub\\CarAssistant\\app\\build\\intermediates\\res\\merged\\debug\\layout_fragment_parking.xml.flat",
