@@ -34,14 +34,14 @@ pl/edu/pb/carassistant/RegisterActivity.java
  pl.edu.pb.carassistant.RegisterActivity$5
 pl/edu/pb/carassistant/User/UserFragment.java
  pl.edu.pb.carassistant.User.UserFragment
+pl/edu/pb/carassistant/MainActivity.java
+ pl.edu.pb.carassistant.MainActivity
+pl/edu/pb/carassistant/BuildConfig.java
+ pl.edu.pb.carassistant.BuildConfig
 pl/edu/pb/carassistant/History/NewRefuelingActivity.java
  pl.edu.pb.carassistant.History.NewRefuelingActivity
  pl.edu.pb.carassistant.History.NewRefuelingActivity$1
  pl.edu.pb.carassistant.History.NewRefuelingActivity$2
  pl.edu.pb.carassistant.History.NewRefuelingActivity$3
-pl/edu/pb/carassistant/BuildConfig.java
- pl.edu.pb.carassistant.BuildConfig
 pl/edu/pb/carassistant/History/HistoryFragment.java
  pl.edu.pb.carassistant.History.HistoryFragment
-pl/edu/pb/carassistant/MainActivity.java
- pl.edu.pb.carassistant.MainActivity

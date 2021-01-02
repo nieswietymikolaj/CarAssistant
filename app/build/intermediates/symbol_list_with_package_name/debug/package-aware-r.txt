@@ -2523,12 +2523,15 @@ string nav_bar_user
 string new_refueling_cost
 string new_refueling_created
 string new_refueling_date
+string new_refueling_date_error
 string new_refueling_header
 string new_refueling_liters
 string new_refueling_mileage
 string new_refueling_price_liter
+string new_refueling_price_liters_error
 string new_refueling_save_button
 string new_refueling_time
+string new_refueling_time_error
 string new_user
 string new_user_car
 string new_user_car_brand
