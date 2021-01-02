@@ -45,3 +45,7 @@ pl/edu/pb/carassistant/History/NewRefuelingActivity.java
  pl.edu.pb.carassistant.History.NewRefuelingActivity$3
 pl/edu/pb/carassistant/History/HistoryFragment.java
  pl.edu.pb.carassistant.History.HistoryFragment
+pl/edu/pb/carassistant/User/UserDatabase.java
+ pl.edu.pb.carassistant.User.UserDatabase
+pl/edu/pb/carassistant/User/User.java
+ pl.edu.pb.carassistant.User.User
