@@ -65,14 +65,17 @@
     <string name="logout_button">Wyloguj</string>
 
     <!--UŻYTKOWNIK-->
+    <string name="user_edit_profile">Edytuj</string>
+    <string name="user_logout">Wyloguj</string>
     <string name="user_name">Użytkownik</string>
     <string name="user_car_brand">Marka</string>
     <string name="user_car_model">Model</string>
     <string name="user_car_year">Rocznik</string>
-    <string name="user_car_registration_number">BI 3685S</string>
+    <string name="user_car_registration_number">Rejestracja</string>
     <string name="user_car_mileage">Przebieg</string>
-    <string name="user_edit_profile">Edytuj</string>
-    <string name="user_logout">Wyloguj</string>
+    <string name="user_car_avg_fuel_consumption_header">Średnie spalanie</string>
+    <string name="user_car_avg_fuel_consumption">Spalanie</string>
+
 
 
 </resources>
