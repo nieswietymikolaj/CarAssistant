@@ -1,6 +1,8 @@
 package pl.edu.pb.carassistant.History;
 
 import androidx.fragment.app.Fragment;
+import androidx.recyclerview.widget.LinearLayoutManager;
+import androidx.recyclerview.widget.RecyclerView;
 
 import android.app.Activity;
 import android.content.Context;
@@ -15,6 +17,8 @@ import com.google.android.material.floatingactionbutton.FloatingActionButton;
 import pl.edu.pb.carassistant.R;
 
 public class HistoryFragment extends Fragment {
+
+    RecyclerView recyclerView;
 
     Activity activity;
     Context context;
@@ -35,6 +39,10 @@ public class HistoryFragment extends Fragment {
         floatingActionButton.setOnClickListener(v -> {
             activity.startActivity(new Intent(context, NewRefuelingActivity.class));
         });
+
+        recyclerView = view.findViewById(R.id.refueling_recycler_view);
+        recyclerView.setLayoutManager(new LinearLayoutManager(context));
+
 
         return view;
     }

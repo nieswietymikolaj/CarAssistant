@@ -103,5 +103,18 @@
     <string name="new_refueling_time_error">Błędna godzina lub błędny format godziny (HH:MM)</string>
     <string name="new_refueling_price_liters_error">Błędny format (NNNN.NN)</string>
 
+    <!--TANKOWANIE ITEM-->
+    <string name="refueling_date_time">Data i godzina</string>
+    <string name="refueling_mileage">Przebieg</string>
+    <string name="refueling_liters">Litrów</string>
+    <string name="refueling_cost">Koszt</string>
+    <string name="refueling_avg_fuel_consumption">Spalanie</string>
+
+    <!--POGODA-->
+    <string name="weather_search">Wyszukaj</string>
+    <string name="weather_clear">Wyczyść wyszukanie</string>
+    <string name="weather_temperature">Temperatura</string>
+    <string name="weather_humidity">Wilgotność</string>
+    <string name="weather_pressure">Ciśnienie</string>
 
 </resources>
