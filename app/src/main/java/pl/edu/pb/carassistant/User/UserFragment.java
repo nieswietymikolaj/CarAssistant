@@ -15,15 +15,18 @@ import android.view.MenuInflater;
 import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ImageView;
 
 import com.google.firebase.auth.FirebaseAuth;
+import com.theartofdev.edmodo.cropper.CropImage;
+import com.theartofdev.edmodo.cropper.CropImageView;
 
 import pl.edu.pb.carassistant.LoginActivity;
 import pl.edu.pb.carassistant.R;
 
 public class UserFragment extends Fragment {
 
-    //Button logoutButton;
+    ImageView userPhoto;
 
     Activity activity;
     Context context;
@@ -42,14 +45,10 @@ public class UserFragment extends Fragment {
 
         setHasOptionsMenu(true);
 
-/*        logoutButton = view.findViewById(R.id.logout_button);
-
-        logoutButton.setOnClickListener(v -> {
-            FirebaseAuth.getInstance().signOut();
-            Intent intent = new Intent(context, LoginActivity.class);
-            startActivity(intent);
-            activity.finish();
-        });*/
+        userPhoto = view.findViewById(R.id.user_photo);
+/*        userPhoto.setOnClickListener(view1 -> CropImage.activity()
+                .setGuidelines(CropImageView.Guidelines.ON).setCropShape(CropImageView.CropShape.OVAL)
+                .start(getActivity()));*/
 
         return view;
     }

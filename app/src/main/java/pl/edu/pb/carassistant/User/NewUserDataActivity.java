@@ -124,15 +124,15 @@ public class NewUserDataActivity extends AppCompatActivity implements TextWatche
         String userId = firebaseAuth.getUid();
         DocumentReference documentReference = firebaseFirestore.collection("users").document(userId);
 
-        Map<String, Object> user = new HashMap<>();
-        user.put("Name", name);
-        user.put("Brand", brand);
-        user.put("Model", model);
-        user.put("Year", year);
-        user.put("Mileage", mileage);
-        user.put("Registration", registration);
+        Map<String, Object> map = new HashMap<>();
+        map.put("Name", name);
+        map.put("Brand", brand);
+        map.put("Model", model);
+        map.put("Year", year);
+        map.put("Mileage", mileage);
+        map.put("Registration", registration);
 
-        documentReference.set(user).addOnSuccessListener(aVoid -> {
+        documentReference.set(map).addOnSuccessListener(aVoid -> {
             Toast.makeText(this, getResources().getString(R.string.new_user_data_added), Toast.LENGTH_SHORT).show();
             Intent intent = new Intent(this, MainActivity.class);
             startActivity(intent);

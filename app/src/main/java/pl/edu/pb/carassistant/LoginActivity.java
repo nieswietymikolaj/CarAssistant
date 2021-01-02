@@ -16,7 +16,7 @@ import android.widget.Toast;
 import com.google.android.material.textfield.TextInputLayout;
 import com.google.firebase.auth.FirebaseAuth;
 
-import pl.edu.pb.carassistant.Dialogs.ResetPasswordDialog;
+import pl.edu.pb.carassistant.Dialogs.ForgotPasswordDialog;
 
 public class LoginActivity extends AppCompatActivity {
 
@@ -57,35 +57,42 @@ public class LoginActivity extends AppCompatActivity {
             finish();
         });
 
-        loginButton.setOnClickListener(v -> {
-            String email = loginEmail.getText().toString().trim();
-            String password = loginPassword.getText().toString().trim();
-
-            if (!ValidateEmail(email) || !ValidatePassword(password)) {
-                return;
+        loginButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                LoginUser();
             }
-
-            progressBar.setVisibility(View.VISIBLE);
-
-            firebaseAuth.signInWithEmailAndPassword(email, password).addOnCompleteListener(task -> {
-                if (task.isSuccessful()) {
-                    Toast.makeText(this, getResources().getString(R.string.login_success), Toast.LENGTH_SHORT).show();
-                    Intent intent = new Intent(this, MainActivity.class);
-                    startActivity(intent);
-                    finish();
-                } else {
-                    Toast.makeText(this, getResources().getString(R.string.new_user_error) + " " + task.getException(), Toast.LENGTH_SHORT).show();
-                    progressBar.setVisibility(View.INVISIBLE);
-                }
-            }).addOnFailureListener(e -> {
-                Toast.makeText(this, getResources().getString(R.string.new_user_error) + " " + e.getLocalizedMessage(), Toast.LENGTH_LONG).show();
-                progressBar.setVisibility(View.INVISIBLE);
-            });
         });
 
         forgotPasswordButton.setOnClickListener(v -> {
-            ResetPasswordDialog resetPasswordDialog = new ResetPasswordDialog();
-            resetPasswordDialog.showDialog(LoginActivity.this);
+            ForgotPasswordDialog forgotPasswordDialog = new ForgotPasswordDialog();
+            forgotPasswordDialog.showDialog(LoginActivity.this);
+        });
+    }
+
+    private void LoginUser() {
+        String email = loginEmail.getText().toString().trim();
+        String password = loginPassword.getText().toString().trim();
+
+        if (!ValidateEmail(email) || !ValidatePassword(password)) {
+            return;
+        }
+
+        progressBar.setVisibility(View.VISIBLE);
+
+        firebaseAuth.signInWithEmailAndPassword(email, password).addOnCompleteListener(task -> {
+            if (task.isSuccessful()) {
+                Toast.makeText(this, getResources().getString(R.string.login_success), Toast.LENGTH_SHORT).show();
+                Intent intent = new Intent(this, MainActivity.class);
+                startActivity(intent);
+                finish();
+            } else {
+                Toast.makeText(this, getResources().getString(R.string.new_user_error) + " " + task.getException(), Toast.LENGTH_SHORT).show();
+                progressBar.setVisibility(View.INVISIBLE);
+            }
+        }).addOnFailureListener(e -> {
+            Toast.makeText(this, getResources().getString(R.string.new_user_error) + " " + e.getLocalizedMessage(), Toast.LENGTH_LONG).show();
+            progressBar.setVisibility(View.INVISIBLE);
         });
     }
 
@@ -140,8 +147,7 @@ public class LoginActivity extends AppCompatActivity {
 
             @Override
             public void onTextChanged(CharSequence s, int start, int before, int count) {
-                if(loginPassword.length() > 8 || loginPassword != null)
-                {
+                if (loginPassword.length() > 8 || loginPassword != null) {
                     loginTextPassword.setEndIconVisible(true);
                 }
                 loginPassword.setBackground(getDrawable(R.color.edit_text_yellow_background));
