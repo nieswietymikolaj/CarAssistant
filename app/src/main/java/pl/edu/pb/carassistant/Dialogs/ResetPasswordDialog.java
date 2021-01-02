@@ -1,21 +1,15 @@
 package pl.edu.pb.carassistant.Dialogs;
 
 import androidx.annotation.NonNull;
-import androidx.appcompat.app.AppCompatActivity;
 
 import android.app.Activity;
 import android.app.Dialog;
 import android.content.Context;
-import android.content.DialogInterface;
-import android.content.Intent;
-import android.os.Bundle;
 import android.util.Patterns;
-import android.view.KeyEvent;
 import android.view.View;
 import android.view.Window;
 import android.widget.Button;
 import android.widget.EditText;
-import android.widget.TextView;
 import android.widget.Toast;
 
 import com.google.android.gms.tasks.OnCompleteListener;
@@ -27,9 +21,7 @@ import com.google.firebase.auth.SignInMethodQueryResult;
 
 import java.util.List;
 
-import pl.edu.pb.carassistant.LoginActivity;
 import pl.edu.pb.carassistant.R;
-import pl.edu.pb.carassistant.User.NewUserDataActivity;
 
 public class ResetPasswordDialog {
 

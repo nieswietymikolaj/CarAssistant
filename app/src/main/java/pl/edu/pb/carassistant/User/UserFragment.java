@@ -18,7 +18,6 @@ import android.view.ViewGroup;
 
 import com.google.firebase.auth.FirebaseAuth;
 
-import pl.edu.pb.carassistant.History.NewExpenseActivity;
 import pl.edu.pb.carassistant.LoginActivity;
 import pl.edu.pb.carassistant.R;
 
