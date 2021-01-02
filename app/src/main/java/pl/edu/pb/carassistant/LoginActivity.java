@@ -1,14 +1,10 @@
 package pl.edu.pb.carassistant;
 
-import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
-import android.annotation.SuppressLint;
-import android.app.AlertDialog;
 import android.content.Intent;
 import android.os.Bundle;
 import android.text.Editable;
-import android.text.InputType;
 import android.text.TextWatcher;
 import android.util.Patterns;
 import android.view.View;
@@ -17,28 +13,19 @@ import android.widget.EditText;
 import android.widget.ProgressBar;
 import android.widget.Toast;
 
-import com.google.android.gms.tasks.OnCompleteListener;
-import com.google.android.gms.tasks.Task;
-import com.google.android.material.internal.CheckableImageButton;
 import com.google.android.material.textfield.TextInputLayout;
 import com.google.firebase.auth.FirebaseAuth;
-import com.google.firebase.auth.SignInMethodQueryResult;
-
-import java.util.List;
 
 import pl.edu.pb.carassistant.Dialogs.ResetPasswordDialog;
-import pl.edu.pb.carassistant.User.NewUserDataActivity;
 
 public class LoginActivity extends AppCompatActivity {
 
     EditText loginEmail, loginPassword;
     TextInputLayout loginTextPassword;
-    Button loginButton, forgotPassword, goRegisterButton;
+    Button loginButton, forgotPasswordButton, goRegisterButton;
     ProgressBar progressBar;
 
     FirebaseAuth firebaseAuth;
-
-    View view;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -60,7 +47,7 @@ public class LoginActivity extends AppCompatActivity {
         TextChangedListeners();
 
         loginButton = findViewById(R.id.login_button);
-        forgotPassword = findViewById(R.id.login_forgot_button);
+        forgotPasswordButton = findViewById(R.id.login_forgot_button);
         goRegisterButton = findViewById(R.id.login_register_button);
 
         progressBar = findViewById(R.id.login_progress_bar);
@@ -96,7 +83,7 @@ public class LoginActivity extends AppCompatActivity {
             });
         });
 
-        forgotPassword.setOnClickListener(v -> {
+        forgotPasswordButton.setOnClickListener(v -> {
             ResetPasswordDialog resetPasswordDialog = new ResetPasswordDialog();
             resetPasswordDialog.showDialog(LoginActivity.this);
         });

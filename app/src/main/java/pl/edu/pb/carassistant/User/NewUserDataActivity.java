@@ -204,8 +204,9 @@ public class NewUserDataActivity extends AppCompatActivity implements TextWatche
         userName.setBackground(getDrawable(R.color.edit_text_yellow_background));
         carBrand.setBackground(getDrawable(R.color.edit_text_yellow_background));
         carModel.setBackground(getDrawable(R.color.edit_text_yellow_background));
-        carRegistrationNumber.setBackground(getDrawable(R.color.edit_text_yellow_background));
         carYear.setBackground(getDrawable(R.color.edit_text_yellow_background));
+        carMileage.setBackground(getDrawable(R.color.edit_text_yellow_background));
+        carRegistrationNumber.setBackground(getDrawable(R.color.edit_text_yellow_background));
     }
 
     @Override

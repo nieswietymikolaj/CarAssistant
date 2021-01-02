@@ -76,6 +76,18 @@
     <string name="user_car_avg_fuel_consumption_header">Średnie spalanie</string>
     <string name="user_car_avg_fuel_consumption">Spalanie</string>
 
+    <!--EDYCJA DANYCH UŻYTKOWNIKA-->
+    <string name="edit_user_header">Edytuj dane</string>
+    <string name="edit_user_save_button">Zapisz</string>
+    <string name="edit_change_password_button">Zmiana hasła</string>
+
+    <!--ZMIANA HASLA-->
+    <string name="change_password_header">Zmiana hasła</string>
+    <string name="change_password_message">Wpisz stare hasło</string>
+    <string name="change_password_old_password">Stare hasło</string>
+    <string name="change_password_button">Zmień</string>
+    <string name="change_password_sent">Link resetujący hasło został wysłany na adres e-mail</string>
+    <string name="change_password_error_password">Podane hasło jest błędne:</string>
 
 
 </resources>
