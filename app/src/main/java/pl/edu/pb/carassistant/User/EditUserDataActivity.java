@@ -1,11 +1,14 @@
 package pl.edu.pb.carassistant.User;
 
+import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.appcompat.widget.Toolbar;
 
 import android.annotation.SuppressLint;
 import android.os.Bundle;
 import android.text.Editable;
 import android.text.TextWatcher;
+import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
@@ -22,6 +25,12 @@ public class EditUserDataActivity extends AppCompatActivity implements TextWatch
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_edit_user_data);
+
+        Toolbar toolbar = findViewById(R.id.edit_user_toolbar);
+        setSupportActionBar(toolbar);
+        getSupportActionBar().setDisplayShowTitleEnabled(false);
+        getSupportActionBar().setHomeAsUpIndicator(R.drawable.ic_arrow_back_24);
+        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
 
         userName = findViewById(R.id.user_name_text);
         carBrand = findViewById(R.id.user_car_brand_text);
@@ -158,5 +167,17 @@ public class EditUserDataActivity extends AppCompatActivity implements TextWatch
     @Override
     public void afterTextChanged(Editable s) {
 
+    }
+
+    @Override
+    public boolean onOptionsItemSelected(@NonNull MenuItem item) {
+        switch (item.getItemId()) {
+            case android.R.id.home:
+                onBackPressed();
+                return true;
+
+            default:
+                return super.onOptionsItemSelected(item);
+        }
     }
 }
