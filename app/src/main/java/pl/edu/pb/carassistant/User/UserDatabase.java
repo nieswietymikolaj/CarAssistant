@@ -9,6 +9,12 @@ import com.google.firebase.firestore.FirebaseFirestore;
 
 public class UserDatabase {
 
+    public interface UserDataLoaded {
+        void UserDataLoaded();
+    }
+
+    public UserDataLoaded userDataLoaded;
+
     static UserDatabase INSTANCE;
 
     FirebaseAuth firebaseAuth;
@@ -27,7 +33,7 @@ public class UserDatabase {
         firebaseAuth = FirebaseAuth.getInstance();
         firebaseFirestore = FirebaseFirestore.getInstance();
 
-        GetUserData(userId);
+        getUserData(userId);
     }
 
     public static UserDatabase getDatabase(Activity activity, String userId) {
@@ -37,11 +43,11 @@ public class UserDatabase {
         return INSTANCE;
     }
 
-    public static void ClearInstance() {
+    public static void clearInstance() {
         INSTANCE = null;
     }
 
-    public void GetUserData(String userId)
+    public void getUserData(String userId)
     {
         userModel = new UserModel(userId);
 
@@ -54,6 +60,14 @@ public class UserDatabase {
             userModel.setUserCarYear(documentSnapshot.getString("Year"));
             userModel.setUserCarMileage(documentSnapshot.getString("Mileage"));
             userModel.setUserCarRegistrationNumber(documentSnapshot.getString("Registration"));
+
+            if (userDataLoaded != null) {
+                userDataLoaded.UserDataLoaded();
+            }
         });
+    }
+
+    public UserModel getUser() {
+        return userModel;
     }
 }

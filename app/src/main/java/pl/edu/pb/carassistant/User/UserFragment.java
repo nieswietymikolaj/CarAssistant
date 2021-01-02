@@ -16,6 +16,8 @@ import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
+import android.widget.ProgressBar;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import com.google.firebase.auth.FirebaseAuth;
@@ -29,14 +31,19 @@ import pl.edu.pb.carassistant.R;
 
 public class UserFragment extends Fragment {
 
+    TextView userName, carBrand, carModel, carYear, carMileage, carRegistrationNumber;
     ImageView userPhoto;
 
+    FirebaseAuth firebaseAuth;
     StorageReference storageReference;
+
+    ProgressBar progressBar, photoProgressBar;
 
     Activity activity;
     Context context;
 
     UserDatabase userDatabase;
+    UserModel userModel;
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
@@ -52,12 +59,25 @@ public class UserFragment extends Fragment {
 
         setHasOptionsMenu(true);
 
+        firebaseAuth = FirebaseAuth.getInstance();
         storageReference = FirebaseStorage.getInstance().getReference();
 
+        userName = view.findViewById(R.id.user_name);
+        carBrand = view.findViewById(R.id.user_car_brand);
+        carModel = view.findViewById(R.id.user_car_model);
+        carYear = view.findViewById(R.id.user_car_year);
+        carMileage = view.findViewById(R.id.user_car_mileage);
+        carRegistrationNumber = view.findViewById(R.id.user_car_registration_number);
+
         userPhoto = view.findViewById(R.id.user_photo);
+
+        progressBar = view.findViewById(R.id.user_progress_bar);
+
 /*        userPhoto.setOnClickListener(view1 -> CropImage.activity()
                 .setGuidelines(CropImageView.Guidelines.ON).setCropShape(CropImageView.CropShape.OVAL)
                 .start(getActivity()));*/
+
+        progressBar.setVisibility(View.VISIBLE);
 
         return view;
     }
@@ -97,6 +117,7 @@ public class UserFragment extends Fragment {
 
             case R.id.user_logout:
                 FirebaseAuth.getInstance().signOut();
+                UserDatabase.clearInstance();
                 startActivity(new Intent(context, LoginActivity.class));
                 activity.finish();
                 return true;
@@ -104,5 +125,28 @@ public class UserFragment extends Fragment {
             default:
                 return super.onOptionsItemSelected(item);
         }
+    }
+
+    @Override
+    public void onResume() {
+        super.onResume();
+
+        userDatabase = UserDatabase.getDatabase(activity, firebaseAuth.getUid());
+        userDatabase.getUserData(firebaseAuth.getUid());
+        userDatabase.userDataLoaded = this::GetUserProfileData;
+    }
+
+    private void GetUserProfileData() {
+
+        userModel = userDatabase.getUser();
+
+        userName.setText(userModel.getUserName());
+        carBrand.setText(userModel.getUserCarBrand());
+        carModel.setText(userModel.getUserCarModel());
+        carYear.setText(userModel.getUserCarYear());
+        carMileage.setText(userModel.getUserCarMileage());
+        carRegistrationNumber.setText(userModel.getUserCarRegistrationNumber());
+
+        progressBar.setVisibility(View.INVISIBLE);
     }
 }
