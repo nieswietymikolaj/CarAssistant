@@ -30,12 +30,14 @@
     <string name="new_user_car_brand">Marka</string>
     <string name="new_user_car_model">Model</string>
     <string name="new_user_car_registration_number">Numer rejestracyjny</string>
-    <string name="new_user_car_year">Rok</string>
+    <string name="new_user_car_year">Rocznik</string>
+    <string name="new_user_car_mileage">Przebieg</string>
     <string name="new_user_confirm_button">Dalej</string>
 
     <!--WALIDACJA DANYCH UŻYTKOWNIKA-->
     <string name="new_user_error_empty">Pole nie może być puste</string>
     <string name="new_user_error_year">Podany rok jest niepoprawny</string>
+    <string name="new_user_error_mileage">Podany przebieg jest niepoprawny</string>
     <string name="new_user_created">Pomyślnie utworzono konto</string>
     <string name="new_user_data_added">Dodano dane użytkownika</string>
     <string name="new_user_error">Błąd:</string>
@@ -59,7 +61,47 @@
     <string name="reset_password_sent">Link resetujący hasło został wysłany na podany adres e-mail</string>
     <string name="reset_password_error_email">Podany e-mail nie istnieje w bazie</string>
 
+    <!--WYLOGOWANIE-->
     <string name="logout_button">Wyloguj</string>
+
+    <!--UŻYTKOWNIK-->
+    <string name="user_edit_profile">Edytuj</string>
+    <string name="user_logout">Wyloguj</string>
+    <string name="user_name">Użytkownik</string>
+    <string name="user_car_brand">Marka</string>
+    <string name="user_car_model">Model</string>
+    <string name="user_car_year">Rocznik</string>
+    <string name="user_car_registration_number">Rejestracja</string>
+    <string name="user_car_mileage">Przebieg</string>
+    <string name="user_car_avg_fuel_consumption_header">Średnie spalanie</string>
+    <string name="user_car_avg_fuel_consumption">Spalanie</string>
+
+    <!--EDYCJA DANYCH UŻYTKOWNIKA-->
+    <string name="edit_user_header">Edytuj dane</string>
+    <string name="edit_user_save_button">Zapisz</string>
+    <string name="edit_change_password_button">Zmiana hasła</string>
+
+    <!--ZMIANA HASLA-->
+    <string name="change_password_header">Zmiana hasła</string>
+    <string name="change_password_message">Wpisz stare hasło</string>
+    <string name="change_password_old_password">Stare hasło</string>
+    <string name="change_password_button">Zmień</string>
+    <string name="change_password_sent">Link resetujący hasło został wysłany na adres e-mail</string>
+    <string name="change_password_error_password">Podane hasło jest błędne:</string>
+
+    <!--NOWE TANKOWANIE-->
+    <string name="new_refueling_header">Tankowanie</string>
+    <string name="new_refueling_date">Data</string>
+    <string name="new_refueling_time">Godzina</string>
+    <string name="new_refueling_mileage">Przebieg</string>
+    <string name="new_refueling_price_liter">Cena / L</string>
+    <string name="new_refueling_cost">Koszt</string>
+    <string name="new_refueling_liters">Litrów</string>
+    <string name="new_refueling_save_button">Dodaj</string>
+    <string name="new_refueling_created">Pomyślnie dodano tankowanie</string>
+    <string name="new_refueling_date_error">Błędna data lub format daty (DD/MM/YYYY)</string>
+    <string name="new_refueling_time_error">Błędna godzina lub błędny format godziny (HH:MM)</string>
+    <string name="new_refueling_price_liters_error">Błędny format (NNNN.NN)</string>
 
 
 </resources>

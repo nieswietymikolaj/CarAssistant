@@ -7,11 +7,22 @@
     android:background="@color/main_yellow"
     tools:context=".User.NewUserDataActivity">
 
+    <androidx.appcompat.widget.Toolbar
+        android:id="@+id/new_user_toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="?attr/actionBarSize"
+        android:elevation="4dp"
+        android:theme="@style/ThemeOverlay.AppCompat.ActionBar"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:popupTheme="@style/ThemeOverlay.AppCompat.Light" />
+
     <TextView
         android:id="@+id/new_user_welcome_header"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="24dp"
+        android:layout_marginTop="20dp"
         android:fontFamily="@font/bungee"
         android:gravity="center"
         android:text="@string/new_user_welcome_header"
@@ -25,7 +36,7 @@
         android:id="@+id/new_user"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="32dp"
+        android:layout_marginTop="12dp"
         android:gravity="center"
         android:text="@string/new_user"
         android:textAllCaps="true"
@@ -78,7 +89,7 @@
         android:id="@+id/new_user_car"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="40dp"
+        android:layout_marginTop="30dp"
         android:gravity="center"
         android:text="@string/new_user_car"
         android:textAllCaps="true"
@@ -166,68 +177,33 @@
     </com.google.android.material.textfield.TextInputLayout>
 
     <!--    <EditText
-            android:id="@+id/new_user_car_registration_number"
-            style="@style/RegisterLoginEditTextStyle"
-            android:layout_width="210dp"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="24dp"
-            android:layout_marginTop="16dp"
-            android:hint="@string/new_user_car_registration_number"
-            android:inputType="textCapCharacters"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/new_user_car_model" />-->
-
-    <com.google.android.material.textfield.TextInputLayout
-        android:id="@+id/new_user_car_registration_number"
-        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
-        android:layout_width="210dp"
+        android:id="@+id/new_user_car_year"
+        style="@style/RegisterLoginEditTextStyle"
+        android:layout_width="120dp"
         android:layout_height="wrap_content"
-        android:layout_marginStart="24dp"
-        android:layout_marginTop="12dp"
-        android:hint="@string/new_user_car_registration_number"
-        android:textColorHint="@color/text_gray"
-        app:hintTextColor="@color/text_gray"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/new_user_car_model">
-
-        <com.google.android.material.textfield.TextInputEditText
-            android:id="@+id/new_user_car_registration_number_text"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:background="@color/edit_text_yellow_background"
-            android:inputType="textCapCharacters" />
-
-    </com.google.android.material.textfield.TextInputLayout>
-
-    <!--    <EditText
-            android:id="@+id/new_user_car_year"
-            style="@style/RegisterLoginEditTextStyle"
-            android:layout_width="120dp"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="16dp"
-            android:layout_marginTop="16dp"
-            android:layout_marginEnd="24dp"
-            android:hint="@string/new_user_car_year"
-            android:inputType="number"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="1.0"
-            app:layout_constraintStart_toEndOf="@+id/new_user_car_registration_number"
-            app:layout_constraintTop_toBottomOf="@+id/new_user_car_model" />-->
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="16dp"
+        android:layout_marginEnd="24dp"
+        android:hint="@string/new_user_car_year"
+        android:inputType="number"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toEndOf="@+id/new_user_car_registration_number"
+        app:layout_constraintTop_toBottomOf="@+id/new_user_car_model" />-->
 
     <com.google.android.material.textfield.TextInputLayout
         android:id="@+id/new_user_car_year"
         style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
         android:layout_width="120dp"
         android:layout_height="wrap_content"
-        android:layout_marginStart="16dp"
+        android:layout_marginStart="24dp"
         android:layout_marginTop="12dp"
-        android:layout_marginEnd="24dp"
         android:hint="@string/new_user_car_year"
         android:textColorHint="@color/text_gray"
         app:hintTextColor="@color/text_gray"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="1.0"
-        app:layout_constraintStart_toEndOf="@+id/new_user_car_registration_number"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/new_user_car_model">
 
         <com.google.android.material.textfield.TextInputEditText
@@ -240,16 +216,79 @@
 
     </com.google.android.material.textfield.TextInputLayout>
 
+    <!--    <EditText
+            android:id="@+id/new_user_car_registration_number"
+            style="@style/RegisterLoginEditTextStyle"
+            android:layout_width="210dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="24dp"
+            android:layout_marginTop="16dp"
+            android:hint="@string/new_user_car_registration_number"
+            android:inputType="textCapCharacters"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/new_user_car_model" />-->
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/new_user_car_mileage"
+        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+        android:layout_width="210dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="12dp"
+        android:layout_marginEnd="24dp"
+        android:hint="@string/new_user_car_mileage"
+        android:textColorHint="@color/text_gray"
+        app:hintTextColor="@color/text_gray"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toEndOf="@+id/new_user_car_year"
+        app:layout_constraintTop_toBottomOf="@+id/new_user_car_model">
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/new_user_car_mileage_text"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/edit_text_yellow_background"
+            android:inputType="number"
+            android:maxLength="7" />
+
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/new_user_car_registration_number"
+        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="24dp"
+        android:layout_marginTop="12dp"
+        android:layout_marginEnd="24dp"
+        android:hint="@string/new_user_car_registration_number"
+        android:textColorHint="@color/text_gray"
+        app:hintTextColor="@color/text_gray"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/new_user_car_year">
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/new_user_car_registration_number_text"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/edit_text_yellow_background"
+            android:inputType="textCapCharacters"
+            android:maxLength="15" />
+
+    </com.google.android.material.textfield.TextInputLayout>
+
     <Button
         android:id="@+id/new_user_confirm_button"
         style="@style/GrayButtonStyle"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="32dp"
+        android:layout_marginTop="24dp"
         android:text="@string/new_user_confirm_button"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/new_user_car_year" />
+        app:layout_constraintTop_toBottomOf="@+id/new_user_car_registration_number" />
 
     <ProgressBar
         android:id="@+id/new_user_progress_bar"

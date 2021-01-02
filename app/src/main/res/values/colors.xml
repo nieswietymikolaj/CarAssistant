@@ -19,4 +19,6 @@
     <color name="text_gray">#505050</color>
     <color name="hint_gray">#696969</color>
 
+    <color name="european_blue">#012AF8</color>
+
 </resources>

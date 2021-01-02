@@ -2,13 +2,14 @@ package pl.edu.pb.carassistant;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.appcompat.widget.Toolbar;
 
-import android.annotation.SuppressLint;
 import android.content.Intent;
 import android.os.Bundle;
 import android.text.Editable;
 import android.text.TextWatcher;
 import android.util.Patterns;
+import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
@@ -38,6 +39,12 @@ public class RegisterActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_register);
 
+        Toolbar toolbar = findViewById(R.id.register_toolbar);
+        setSupportActionBar(toolbar);
+        getSupportActionBar().setDisplayShowTitleEnabled(false);
+        getSupportActionBar().setHomeAsUpIndicator(R.drawable.ic_arrow_back_24);
+        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+
         firebaseAuth = FirebaseAuth.getInstance();
 
         registerEmail = findViewById(R.id.register_email_text);
@@ -59,37 +66,44 @@ public class RegisterActivity extends AppCompatActivity {
             finish();
         });
 
-        registerButton.setOnClickListener(v -> {
-            String email = registerEmail.getText().toString().trim();
-            String password = registerPassword.getText().toString().trim();
-            String repeatPassword = registerRepeatPassword.getText().toString().trim();
-
-            if (!ValidateEmail(email) || !ValidatePassword(password, repeatPassword)) {
-                return;
+        registerButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                CheckEmailExistence();
             }
+        });
+    }
 
-            progressBar.setVisibility(View.VISIBLE);
+    private void CheckEmailExistence() {
+        String email = registerEmail.getText().toString().trim();
+        String password = registerPassword.getText().toString().trim();
+        String repeatPassword = registerRepeatPassword.getText().toString().trim();
 
-            firebaseAuth.fetchSignInMethodsForEmail(email).addOnCompleteListener(new OnCompleteListener<SignInMethodQueryResult>() {
-                @Override
-                public void onComplete(@NonNull Task<SignInMethodQueryResult> task) {
-                    if (task.isSuccessful()) {
-                        List<String> methods = task.getResult().getSignInMethods();
-                        if (!methods.isEmpty()) {
-                            registerEmail.setError(getString(R.string.register_error_existing_email));
-                            registerEmail.setBackgroundResource(R.drawable.edit_text_error);
-                            registerEmail.requestFocus();
-                        } else {
-                            Intent intent = new Intent(getApplicationContext(), NewUserDataActivity.class);
-                            intent.putExtra("NEW_USER_EMAIL", email);
-                            intent.putExtra("NEW_USER_PASSWORD", password);
-                            startActivity(intent);
-                            finish();
-                        }
+        if (!ValidateEmail(email) || !ValidatePassword(password, repeatPassword)) {
+            return;
+        }
+
+        progressBar.setVisibility(View.VISIBLE);
+
+        firebaseAuth.fetchSignInMethodsForEmail(email).addOnCompleteListener(new OnCompleteListener<SignInMethodQueryResult>() {
+            @Override
+            public void onComplete(@NonNull Task<SignInMethodQueryResult> task) {
+                if (task.isSuccessful()) {
+                    List<String> methods = task.getResult().getSignInMethods();
+                    if (!methods.isEmpty()) {
+                        registerEmail.setError(getString(R.string.register_error_existing_email));
+                        registerEmail.setBackgroundResource(R.drawable.edit_text_error);
+                        registerEmail.requestFocus();
+                    } else {
+                        Intent intent = new Intent(getApplicationContext(), NewUserDataActivity.class);
+                        intent.putExtra("NEW_USER_EMAIL", email);
+                        intent.putExtra("NEW_USER_PASSWORD", password);
+                        startActivity(intent);
+                        finish();
                     }
-                    progressBar.setVisibility(View.INVISIBLE);
                 }
-            });
+                progressBar.setVisibility(View.INVISIBLE);
+            }
         });
     }
 
@@ -125,8 +139,7 @@ public class RegisterActivity extends AppCompatActivity {
         return true;
     }
 
-    private void TextChangedListeners()
-    {
+    private void TextChangedListeners() {
         registerEmail.addTextChangedListener(new TextWatcher() {
             @Override
             public void beforeTextChanged(CharSequence s, int start, int count, int after) {
@@ -152,8 +165,7 @@ public class RegisterActivity extends AppCompatActivity {
 
             @Override
             public void onTextChanged(CharSequence s, int start, int before, int count) {
-                if(registerPassword.length() > 8 || registerPassword != null)
-                {
+                if (registerPassword.length() > 8 || registerPassword != null) {
                     registerTextPassword.setEndIconVisible(true);
                 }
                 registerPassword.setBackground(getDrawable(R.color.edit_text_yellow_background));
@@ -173,8 +185,7 @@ public class RegisterActivity extends AppCompatActivity {
 
             @Override
             public void onTextChanged(CharSequence s, int start, int before, int count) {
-                if(registerRepeatPassword.length() > 8 || registerRepeatPassword != null)
-                {
+                if (registerRepeatPassword.length() > 8 || registerRepeatPassword != null) {
                     registerTextRepeatPassword.setEndIconVisible(true);
                 }
                 registerRepeatPassword.setBackground(getDrawable(R.color.edit_text_yellow_background));
@@ -185,6 +196,18 @@ public class RegisterActivity extends AppCompatActivity {
 
             }
         });
+    }
+
+    @Override
+    public boolean onOptionsItemSelected(@NonNull MenuItem item) {
+        switch (item.getItemId()) {
+            case android.R.id.home:
+                onBackPressed();
+                return true;
+
+            default:
+                return super.onOptionsItemSelected(item);
+        }
     }
 
     @Override

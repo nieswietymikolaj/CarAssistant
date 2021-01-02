@@ -1,8 +1,5 @@
 package pl.edu.pb.carassistant.History;
 
-import androidx.annotation.NonNull;
-import androidx.annotation.Nullable;
-import androidx.appcompat.app.AppCompatActivity;
 import androidx.fragment.app.Fragment;
 
 import android.app.Activity;
@@ -27,16 +24,16 @@ public class HistoryFragment extends Fragment {
         super.onCreate(savedInstanceState);
 
         activity = getActivity();
-        context = activity.getApplicationContext();
+        context = getContext();  /*activity.getApplicationContext();*/
     }
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.fragment_history, container, false);
 
-        FloatingActionButton add = view.findViewById(R.id.floatingActionButton);
-        add.setOnClickListener(v -> {
-            activity.startActivity(new Intent(context, NewExpenseActivity.class));
+        FloatingActionButton floatingActionButton = view.findViewById(R.id.floating_action_button);
+        floatingActionButton.setOnClickListener(v -> {
+            activity.startActivity(new Intent(context, NewRefuelingActivity.class));
         });
 
         return view;

@@ -2,12 +2,14 @@ package pl.edu.pb.carassistant.User;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.appcompat.widget.Toolbar;
 
 import android.annotation.SuppressLint;
 import android.content.Intent;
 import android.os.Bundle;
 import android.text.Editable;
 import android.text.TextWatcher;
+import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
@@ -31,7 +33,7 @@ import pl.edu.pb.carassistant.RegisterActivity;
 
 public class NewUserDataActivity extends AppCompatActivity implements TextWatcher {
 
-    EditText userName, carBrand, carModel, carRegistrationNumber, carYear;
+    EditText userName, carBrand, carModel, carYear, carMileage, carRegistrationNumber;
     Button confirmButton;
     ProgressBar progressBar;
 
@@ -42,6 +44,12 @@ public class NewUserDataActivity extends AppCompatActivity implements TextWatche
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_new_user_data);
+
+        Toolbar toolbar = findViewById(R.id.new_user_toolbar);
+        setSupportActionBar(toolbar);
+        getSupportActionBar().setDisplayShowTitleEnabled(false);
+        getSupportActionBar().setHomeAsUpIndicator(R.drawable.ic_arrow_back_24);
+        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
 
         firebaseAuth = FirebaseAuth.getInstance();
         firebaseFirestore = FirebaseFirestore.getInstance();
@@ -54,14 +62,16 @@ public class NewUserDataActivity extends AppCompatActivity implements TextWatche
         userName = findViewById(R.id.new_user_name_text);
         carBrand = findViewById(R.id.new_user_car_brand_text);
         carModel = findViewById(R.id.new_user_car_model_text);
-        carRegistrationNumber = findViewById(R.id.new_user_car_registration_number_text);
         carYear = findViewById(R.id.new_user_car_year_text);
+        carMileage = findViewById(R.id.new_user_car_mileage_text);
+        carRegistrationNumber = findViewById(R.id.new_user_car_registration_number_text);
 
         userName.addTextChangedListener(this);
         carBrand.addTextChangedListener(this);
         carModel.addTextChangedListener(this);
-        carRegistrationNumber.addTextChangedListener(this);
         carYear.addTextChangedListener(this);
+        carMileage.addTextChangedListener(this);
+        carRegistrationNumber.addTextChangedListener(this);
 
         confirmButton = findViewById(R.id.new_user_confirm_button);
 
@@ -80,10 +90,11 @@ public class NewUserDataActivity extends AppCompatActivity implements TextWatche
         String name = userName.getText().toString().trim();
         String brand = carBrand.getText().toString().trim();
         String model = carModel.getText().toString().trim();
-        String registration = carRegistrationNumber.getText().toString().trim();
         String year = carYear.getText().toString().trim();
+        String mileage = carMileage.getText().toString().trim();
+        String registration = carRegistrationNumber.getText().toString().trim();
 
-        if (!ValidateUserName(name) || !ValidateCarBrand(brand) || !ValidateCarModel(model) || !ValidateCarRegistration(registration) || !ValidateCarYear(year)) {
+        if (!ValidateUserName(name) || !ValidateCarBrand(brand) || !ValidateCarModel(model) || !ValidateCarYear(year) || !ValidateCarMileage(mileage) || !ValidateCarRegistration(registration)) {
             return;
         }
 
@@ -94,7 +105,7 @@ public class NewUserDataActivity extends AppCompatActivity implements TextWatche
             public void onComplete(@NonNull Task<AuthResult> task) {
                 if (task.isSuccessful()) {
                     Toast.makeText(NewUserDataActivity.this, getResources().getString(R.string.new_user_created), Toast.LENGTH_SHORT).show();
-                    SaveUserInDatabase(name, brand, model, registration, year);
+                    SaveUserInDatabase(name, brand, model, year, mileage, registration);
                 } else {
                     Toast.makeText(NewUserDataActivity.this, getResources().getString(R.string.new_user_error) + " " + task.getException(), Toast.LENGTH_SHORT).show();
                     progressBar.setVisibility(View.INVISIBLE);
@@ -109,18 +120,19 @@ public class NewUserDataActivity extends AppCompatActivity implements TextWatche
         });
     }
 
-    private void SaveUserInDatabase(String name, String brand, String model, String registration, String year) {
+    private void SaveUserInDatabase(String name, String brand, String model, String year, String mileage, String registration) {
         String userId = firebaseAuth.getUid();
         DocumentReference documentReference = firebaseFirestore.collection("users").document(userId);
 
-        Map<String, Object> user = new HashMap<>();
-        user.put("Name", name);
-        user.put("Brand", brand);
-        user.put("Model", model);
-        user.put("Registration", registration);
-        user.put("Year", year);
+        Map<String, Object> map = new HashMap<>();
+        map.put("Name", name);
+        map.put("Brand", brand);
+        map.put("Model", model);
+        map.put("Year", year);
+        map.put("Mileage", mileage);
+        map.put("Registration", registration);
 
-        documentReference.set(user).addOnSuccessListener(aVoid -> {
+        documentReference.set(map).addOnSuccessListener(aVoid -> {
             Toast.makeText(this, getResources().getString(R.string.new_user_data_added), Toast.LENGTH_SHORT).show();
             Intent intent = new Intent(this, MainActivity.class);
             startActivity(intent);
@@ -155,15 +167,6 @@ public class NewUserDataActivity extends AppCompatActivity implements TextWatche
         return true;
     }
 
-    private boolean ValidateCarRegistration(String registration) {
-        if (registration.isEmpty()) {
-            carRegistrationNumber.setError(getString(R.string.new_user_error_empty));
-            carRegistrationNumber.setBackgroundResource(R.drawable.edit_text_error);
-            return false;
-        }
-        return true;
-    }
-
     private boolean ValidateCarYear(String year) {
         if (year.isEmpty()) {
             carYear.setError(getString(R.string.new_user_error_empty));
@@ -179,14 +182,39 @@ public class NewUserDataActivity extends AppCompatActivity implements TextWatche
         return true;
     }
 
+    private boolean ValidateCarMileage(String mileage) {
+        if (mileage.isEmpty()) {
+            carMileage.setError(getString(R.string.new_user_error_empty));
+            carMileage.setBackgroundResource(R.drawable.edit_text_error);
+            return false;
+        }
+
+        if (mileage.length() > 7) {
+            carMileage.setError(getString(R.string.new_user_error_mileage));
+            carMileage.setBackgroundResource(R.drawable.edit_text_error);
+            return false;
+        }
+        return true;
+    }
+
+    private boolean ValidateCarRegistration(String registration) {
+        if (registration.isEmpty()) {
+            carRegistrationNumber.setError(getString(R.string.new_user_error_empty));
+            carRegistrationNumber.setBackgroundResource(R.drawable.edit_text_error);
+            return false;
+        }
+        return true;
+    }
+
     @SuppressLint("UseCompatLoadingForDrawables")
     @Override
     public void onTextChanged(CharSequence s, int start, int before, int count) {
         userName.setBackground(getDrawable(R.color.edit_text_yellow_background));
         carBrand.setBackground(getDrawable(R.color.edit_text_yellow_background));
         carModel.setBackground(getDrawable(R.color.edit_text_yellow_background));
-        carRegistrationNumber.setBackground(getDrawable(R.color.edit_text_yellow_background));
         carYear.setBackground(getDrawable(R.color.edit_text_yellow_background));
+        carMileage.setBackground(getDrawable(R.color.edit_text_yellow_background));
+        carRegistrationNumber.setBackground(getDrawable(R.color.edit_text_yellow_background));
     }
 
     @Override
@@ -197,6 +225,18 @@ public class NewUserDataActivity extends AppCompatActivity implements TextWatche
     @Override
     public void afterTextChanged(Editable s) {
 
+    }
+
+    @Override
+    public boolean onOptionsItemSelected(@NonNull MenuItem item) {
+        switch (item.getItemId()) {
+            case android.R.id.home:
+                onBackPressed();
+                return true;
+
+            default:
+                return super.onOptionsItemSelected(item);
+        }
     }
 
     @Override
