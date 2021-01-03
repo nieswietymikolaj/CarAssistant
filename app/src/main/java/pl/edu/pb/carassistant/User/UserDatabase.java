@@ -28,7 +28,6 @@ public class UserDatabase {
 
     static UserDatabase INSTANCE;
 
-    FirebaseAuth firebaseAuth;
     FirebaseFirestore firebaseFirestore;
     StorageReference storageReference;
 
@@ -44,7 +43,6 @@ public class UserDatabase {
         context = activity.getApplicationContext();
         this.userId = userId;
 
-        firebaseAuth = FirebaseAuth.getInstance();
         firebaseFirestore = FirebaseFirestore.getInstance();
         storageReference = FirebaseStorage.getInstance().getReference();
     }
