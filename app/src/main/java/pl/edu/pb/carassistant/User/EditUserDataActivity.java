@@ -5,6 +5,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
 
 import android.annotation.SuppressLint;
+import android.content.Intent;
 import android.os.Bundle;
 import android.text.Editable;
 import android.text.TextWatcher;
@@ -13,8 +14,17 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ProgressBar;
+import android.widget.Toast;
+
+import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.firestore.DocumentReference;
+import com.google.firebase.firestore.FirebaseFirestore;
+
+import java.util.HashMap;
+import java.util.Map;
 
 import pl.edu.pb.carassistant.Dialogs.ChangePasswordDialog;
+import pl.edu.pb.carassistant.MainActivity;
 import pl.edu.pb.carassistant.R;
 
 public class EditUserDataActivity extends AppCompatActivity implements TextWatcher {
@@ -23,10 +33,22 @@ public class EditUserDataActivity extends AppCompatActivity implements TextWatch
     Button saveButton, changePasswordButton;
     ProgressBar progressBar;
 
+    FirebaseAuth firebaseAuth;
+    FirebaseFirestore firebaseFirestore;
+
+    UserDatabase userDatabase;
+    UserModel userModel;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_edit_user_data);
+
+        firebaseAuth = FirebaseAuth.getInstance();
+        firebaseFirestore = FirebaseFirestore.getInstance();
+
+        userDatabase = UserDatabase.getDatabase(this, firebaseAuth.getUid());
+        userModel = userDatabase.getUser();
 
         Toolbar toolbar = findViewById(R.id.edit_user_toolbar);
         setSupportActionBar(toolbar);
@@ -40,6 +62,13 @@ public class EditUserDataActivity extends AppCompatActivity implements TextWatch
         carYear = findViewById(R.id.user_car_year_text);
         carMileage = findViewById(R.id.user_car_mileage_text);
         carRegistrationNumber = findViewById(R.id.user_car_registration_number_text);
+
+        userName.setText(userModel.getUserName());
+        carBrand.setText(userModel.getUserCarBrand());
+        carModel.setText(userModel.getUserCarModel());
+        carYear.setText(userModel.getUserCarYear());
+        carMileage.setText(userModel.getUserCarMileage());
+        carRegistrationNumber.setText(userModel.getUserCarRegistrationNumber());
 
         userName.addTextChangedListener(this);
         carBrand.addTextChangedListener(this);
@@ -79,8 +108,30 @@ public class EditUserDataActivity extends AppCompatActivity implements TextWatch
             return;
         }
 
+        userModel.setUserName(userName.getText().toString());
+        userModel.setUserCarBrand(carBrand.getText().toString());
+        userModel.setUserCarModel(carModel.getText().toString());
+        userModel.setUserCarYear(carYear.getText().toString());
+        userModel.setUserCarMileage(carMileage.getText().toString());
+        userModel.setUserCarRegistrationNumber(carRegistrationNumber.getText().toString());
+
         progressBar.setVisibility(View.VISIBLE);
 
+        String userId = firebaseAuth.getUid();
+        DocumentReference documentReference = firebaseFirestore.collection("users").document(userId);
+
+        Map<String, Object> map = new HashMap<>();
+        map.put("Name", userModel.getUserName());
+        map.put("Brand", userModel.getUserCarBrand());
+        map.put("Model", userModel.getUserCarModel());
+        map.put("Year", userModel.getUserCarYear());
+        map.put("Mileage", userModel.getUserCarMileage());
+        map.put("Registration", userModel.getUserCarRegistrationNumber());
+
+        documentReference.update(map).addOnCompleteListener(task -> {
+            Toast.makeText(this, getResources().getString(R.string.edit_user_updated), Toast.LENGTH_SHORT).show();
+            finish();
+        }).addOnFailureListener(e -> Toast.makeText(this, getResources().getString(R.string.new_user_error) + " " + e.getLocalizedMessage(), Toast.LENGTH_LONG).show());
 
         progressBar.setVisibility(View.INVISIBLE);
     }

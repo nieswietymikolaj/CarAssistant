@@ -2479,6 +2479,7 @@ string default_web_client_id
 string edit_change_password_button
 string edit_user_header
 string edit_user_save_button
+string edit_user_updated
 string error_icon_content_description
 string exposed_dropdown_menu_content_description
 string fab_transformation_scrim_behavior

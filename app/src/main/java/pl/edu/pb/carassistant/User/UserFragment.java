@@ -152,14 +152,16 @@ public class UserFragment extends Fragment {
 
         userDatabase = UserDatabase.getDatabase(activity, userId);
         userDatabase.getUserData(userId);
+        userModel = userDatabase.getUser();
         userDatabase.userDataLoaded = this::GetUserProfileData;
+        userDatabase.userPhotoLoaded = this::InsertUserProfilePhoto;
     }
 
     private void SaveUserPhotoInDatabase(Uri uri)
     {
-        Glide.with(activity).load(uri).placeholder(R.drawable.ic_launcher_foreground_red_car).error(R.drawable.ic_broken_image_24).into(userPhoto);
+        InsertUserProfilePhoto(uri);
 
-        userModel = userDatabase.getUser();
+        photoProgressBar.setVisibility(View.VISIBLE);
 
         userModel.setUserPhoto(uri);
 
@@ -169,6 +171,7 @@ public class UserFragment extends Fragment {
         }).addOnFailureListener(e -> {
             Toast.makeText(context, getResources().getString(R.string.new_user_error) + " " + e.getLocalizedMessage(), Toast.LENGTH_LONG).show();
         });
+        photoProgressBar.setVisibility(View.INVISIBLE);
     }
 
     private void GetUserProfileData() {
@@ -182,6 +185,11 @@ public class UserFragment extends Fragment {
         carMileage.setText(userModel.getUserCarMileage() + " km");
         carRegistrationNumber.setText(userModel.getUserCarRegistrationNumber());
 
+        progressBar.setVisibility(View.INVISIBLE);
+    }
+
+    private void InsertUserProfilePhoto(Uri uri) {
+        Glide.with(activity).load(uri).placeholder(R.drawable.ic_launcher_foreground_red_car).error(R.drawable.ic_broken_image_24).into(userPhoto);
         progressBar.setVisibility(View.INVISIBLE);
     }
 }
