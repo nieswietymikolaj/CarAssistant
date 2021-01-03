@@ -75,6 +75,7 @@
     <string name="user_car_mileage">Przebieg</string>
     <string name="user_car_avg_fuel_consumption_header">Średnie spalanie</string>
     <string name="user_car_avg_fuel_consumption">Spalanie</string>
+    <string name="user_photo_added">Zdjęcie użytkownika zostało dodane pomyślnie</string>
 
     <!--EDYCJA DANYCH UŻYTKOWNIKA-->
     <string name="edit_user_header">Edytuj dane</string>

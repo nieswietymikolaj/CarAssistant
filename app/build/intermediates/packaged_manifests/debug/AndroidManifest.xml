@@ -9,6 +9,10 @@
         android:targetSdkVersion="30" />
 
     <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.READ_INTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.WRITE_INTERAL_STORAGE" />
     <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
 
     <application
@@ -21,8 +25,8 @@
         android:supportsRtl="true"
         android:testOnly="true"
         android:theme="@style/Theme.CarAssistant" >
-        <activity android:name="pl.edu.pb.carassistant.User.EditUserDataActivity" />
         <activity android:name="pl.edu.pb.carassistant.History.NewRefuelingActivity" />
+        <activity android:name="pl.edu.pb.carassistant.User.EditUserDataActivity" />
         <activity android:name="pl.edu.pb.carassistant.MainActivity" />
         <activity android:name="pl.edu.pb.carassistant.User.NewUserDataActivity" />
         <activity android:name="pl.edu.pb.carassistant.RegisterActivity" />
@@ -33,6 +37,9 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+        <activity
+            android:name="com.theartofdev.edmodo.cropper.CropImageActivity"
+            android:theme="@style/Base.Theme.AppCompat" />
 
         <meta-data
             android:name="preloaded_fonts"

@@ -20,8 +20,8 @@ pl/edu/pb/carassistant/Parking/WeatherModel.java
  pl.edu.pb.carassistant.Parking.WeatherModel
 pl/edu/pb/carassistant/Parking/WeatherApi.java
  pl.edu.pb.carassistant.Parking.WeatherApi
-pl/edu/pb/carassistant/User/UserFragment.java
- pl.edu.pb.carassistant.User.UserFragment
+pl/edu/pb/carassistant/Parking/WeatherService.java
+ pl.edu.pb.carassistant.Parking.WeatherService
 pl/edu/pb/carassistant/Parking/WeatherContainer.java
  pl.edu.pb.carassistant.Parking.WeatherContainer
 pl/edu/pb/carassistant/BuildConfig.java
@@ -58,5 +58,5 @@ pl/edu/pb/carassistant/History/HistoryFragment.java
  pl.edu.pb.carassistant.History.HistoryFragment
 pl/edu/pb/carassistant/MainActivity.java
  pl.edu.pb.carassistant.MainActivity
-pl/edu/pb/carassistant/Parking/WeatherService.java
- pl.edu.pb.carassistant.Parking.WeatherService
+pl/edu/pb/carassistant/User/UserFragment.java
+ pl.edu.pb.carassistant.User.UserFragment
