@@ -7,6 +7,8 @@ public class UserModel {
     String userId, userName, carBrand, carModel, carYear, carMileage, carRegistrationNumber;
     Uri userPhoto;
 
+    public UserModel() {
+    }
 
     public UserModel(String userId) {
         this.userId = userId;

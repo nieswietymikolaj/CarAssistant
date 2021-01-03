@@ -8,11 +8,15 @@ public class RefuelingModel {
 
     }
 
-    public String getId() {
+    public RefuelingModel(String userId) {
+        this.refuelingId = refuelingId;
+    }
+
+    public String getRefuelingId() {
         return refuelingId;
     }
 
-    public void setId(String refuelingId) {
+    public void setRefuelingId(String refuelingId) {
         this.refuelingId = refuelingId;
     }
 
