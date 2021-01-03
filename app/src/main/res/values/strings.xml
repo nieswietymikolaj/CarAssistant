@@ -81,6 +81,7 @@
     <string name="edit_user_header">Edytuj dane</string>
     <string name="edit_user_save_button">Zapisz</string>
     <string name="edit_change_password_button">Zmiana hasła</string>
+    <string name="edit_user_updated">Dane użytkownika zostały zaktualizowane</string>
 
     <!--ZMIANA HASLA-->
     <string name="change_password_header">Zmiana hasła</string>
