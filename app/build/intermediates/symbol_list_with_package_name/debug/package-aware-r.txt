@@ -1686,6 +1686,7 @@ drawable googleg_disabled_color_18
 drawable googleg_standard_color_18
 drawable ic_add_24
 drawable ic_arrow_back_24
+drawable ic_broken_image_24
 drawable ic_car_24
 drawable ic_edit_24
 drawable ic_european_flag
@@ -1927,6 +1928,7 @@ id forever
 id fragment_container_view_tag
 id ghost_view
 id ghost_view_holder
+id glide_custom_view_target_tag
 id gone
 id graph
 id graph_wrap
@@ -2611,6 +2613,7 @@ string user_car_year
 string user_edit_profile
 string user_logout
 string user_name
+string user_photo_added
 string weather_clear
 string weather_humidity
 string weather_pressure

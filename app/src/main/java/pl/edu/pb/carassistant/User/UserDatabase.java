@@ -32,8 +32,6 @@ public class UserDatabase {
 
         firebaseAuth = FirebaseAuth.getInstance();
         firebaseFirestore = FirebaseFirestore.getInstance();
-
-        getUserData(userId);
     }
 
     public static UserDatabase getDatabase(Activity activity, String userId) {
