@@ -16,6 +16,7 @@ import android.view.MenuInflater;
 import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
+import android.view.WindowManager;
 import android.widget.ImageView;
 import android.widget.ProgressBar;
 import android.widget.TextView;
@@ -50,6 +51,7 @@ public class UserFragment extends Fragment {
     UserModel userModel;
 
     String userId;
+    Boolean dataLoadedFlag = false;
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
@@ -150,15 +152,18 @@ public class UserFragment extends Fragment {
     public void onResume() {
         super.onResume();
 
-        userDatabase = UserDatabase.getDatabase(activity, userId);
-        userDatabase.getUserData(userId);
-        userModel = userDatabase.getUser();
-        userDatabase.userDataLoaded = this::GetUserProfileData;
-        userDatabase.userPhotoLoaded = this::InsertUserProfilePhoto;
+        if (!dataLoadedFlag) {
+            userDatabase = UserDatabase.getDatabase(activity, userId);
+            userDatabase.getUserData(userId);
+            userModel = userDatabase.getUser();
+            userDatabase.userDataLoaded = this::GetUserProfileData;
+            userDatabase.userPhotoLoaded = this::InsertUserProfilePhoto;
+        }
+        dataLoadedFlag = false;
     }
 
-    private void SaveUserPhotoInDatabase(Uri uri)
-    {
+    private void SaveUserPhotoInDatabase(Uri uri) {
+        dataLoadedFlag = true;
         InsertUserProfilePhoto(uri);
 
         photoProgressBar.setVisibility(View.VISIBLE);
@@ -189,7 +194,7 @@ public class UserFragment extends Fragment {
     }
 
     private void InsertUserProfilePhoto(Uri uri) {
-        Glide.with(activity).load(uri).placeholder(R.drawable.ic_launcher_foreground_red_car).error(R.drawable.ic_broken_image_24).into(userPhoto);
+        Glide.with(activity).load(uri).placeholder(R.drawable.ic_launcher_foreground_red_car).error(R.drawable.ic_launcher_foreground_red_car).into(userPhoto);
         progressBar.setVisibility(View.INVISIBLE);
     }
 }
