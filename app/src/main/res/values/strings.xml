@@ -110,16 +110,22 @@
     <string name="refueling_mileage">Przebieg</string>
     <string name="refueling_liters">Litrów</string>
     <string name="refueling_cost">Koszt</string>
+    <string name="refueling_price_liter">Cena / litr</string>
     <string name="refueling_avg_fuel_consumption">Spalanie</string>
 
     <!--POGODA-->
     <string name="weather_search">Wyszukaj</string>
-    <string name="weather_clear">Wyczyść wyszukanie</string>
-    <string name="weather_temperature">Temperatura</string>
-    <string name="weather_humidity">Wilgotność</string>
+    <string name="weather_clear">Wyczyść wyszukiwanie</string>
+    <string name="weather_city">Miasto</string>
+    <string name="weather_temperature_placeholder">- °C</string>
     <string name="weather_pressure">Ciśnienie</string>
-
-    <!--HISTORIA-->
+    <string name="weather_pressure_placeholder">- hPa</string>
+    <string name="weather_humidity">Wilgotność</string>
+    <string name="weather_humidity_placeholder">- %</string>
+    <string name="weather_city_edit">Zmień miasto</string>
+    <string name="weather_loaded">Pobrano dane o pogodzie dla lokalizacji</string>
+    <string name="weather_error">Nie udało się pobrać danych o pogodzie</string>
+    <string name="weather_location_error">Włącz lokalizację zby pobrać dane o pogodzie</string>
 
 
 </resources>

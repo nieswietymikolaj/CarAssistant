@@ -86,7 +86,7 @@ public class HistoryFragment extends Fragment {
 
     private class HistoryHolder extends RecyclerView.ViewHolder implements View.OnLongClickListener, View.OnClickListener {
 
-        TextView refuelingDateTime, refuelingMileage, refuelingCost, refuelingLiters;
+        TextView refuelingDateTime, refuelingMileage, refuelingCost, refuelingLiters, refuelingPriceLiter;
         RefuelingModel refuelingModel;
 
         public HistoryHolder(LayoutInflater inflater, ViewGroup parent) {
@@ -99,15 +99,17 @@ public class HistoryFragment extends Fragment {
             refuelingMileage = itemView.findViewById(R.id.refueling_mileage);
             refuelingCost = itemView.findViewById(R.id.refueling_cost);
             refuelingLiters = itemView.findViewById(R.id.refueling_liters);
+            refuelingPriceLiter = itemView.findViewById(R.id.refueling_price_liter);
         }
 
         public void bind(RefuelingModel refuelingModel) {
             this.refuelingModel = refuelingModel;
 
-            refuelingDateTime.setText(refuelingModel.getRefuelingTime() + " , " + refuelingModel.getRefuelingDate());
+            refuelingDateTime.setText(refuelingModel.getRefuelingTime() + ", " + refuelingModel.getRefuelingDate());
             refuelingMileage.setText(refuelingModel.getRefuelingMileage() + " km");
             refuelingCost.setText(refuelingModel.getRefuelingCost() + " zł");
             refuelingLiters.setText(refuelingModel.getRefuelingLiters() + " L");
+            refuelingPriceLiter.setText(refuelingModel.getRefuelingPriceLiter() + " zł/L");
         }
 
         @Override

@@ -91,7 +91,6 @@ public class UserDatabase {
             if (userPhotoLoaded != null) {
                 userPhotoLoaded.UserPhotoLoaded(userModel.getUserPhoto());
             }
-            Toast.makeText(context, activity.getResources().getString(R.string.new_user_error) + " " + e.getLocalizedMessage(), Toast.LENGTH_LONG).show();
         });
     }
 

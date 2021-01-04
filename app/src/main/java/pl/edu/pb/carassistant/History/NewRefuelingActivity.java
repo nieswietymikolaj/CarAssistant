@@ -17,6 +17,7 @@ import android.widget.Toast;
 
 import com.google.android.gms.tasks.OnFailureListener;
 import com.google.android.gms.tasks.OnSuccessListener;
+import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.firestore.DocumentReference;
 import com.google.firebase.firestore.FirebaseFirestore;
 
@@ -29,14 +30,15 @@ import pl.edu.pb.carassistant.R;
 
 public class NewRefuelingActivity extends AppCompatActivity implements TextWatcher {
 
-    String DATE_PATTERN = "^(1[0-9]|0[1-9]|3[0-1]|2[1-9])/(0[1-9]|1[0-2])/[0-9]{4}$";
-    String TIME_PATTERN = "^(1[0-9]|0[0-9]|2[1-3]):([0-5][0-9])$";
+    String DATE_PATTERN = "^(0[1-9]|[1-2][0-9]|3[0-1])/(0[1-9]|1[0-2])/[0-9]{4}$";
+    String TIME_PATTERN = "^([0-1][0-9]|2[0-3]):([0-5][0-9])$";
     String PRICE_LITERS_PATTERN = "^(([0-9]|[0-9]{2}|[0-9]{3}|[0-9]{4}|[0-9]{5}|[0-9]{6}).([0-9]|[0-9]{2}|0[0-9]))|([0-9]|[0-9]{2}|[0-9]{3}|[0-9]{4}|[0-9]{5}|[0-9]{6}|[0-9]{7}|[0-9]{8})$";
 
     EditText refuelingDate, refuelingTime, refuelingMileage, refuelingPriceLiter, refuelingCost, refuelingLiters;
     Button saveButton;
     ProgressBar progressBar;
 
+    FirebaseAuth firebaseAuth;
     FirebaseFirestore firebaseFirestore;
 
     Calendar calendar;
@@ -48,6 +50,7 @@ public class NewRefuelingActivity extends AppCompatActivity implements TextWatch
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_new_refueling);
 
+        firebaseAuth = FirebaseAuth.getInstance();
         firebaseFirestore = FirebaseFirestore.getInstance();
 
         calendar = Calendar.getInstance();
@@ -113,8 +116,10 @@ public class NewRefuelingActivity extends AppCompatActivity implements TextWatch
 
         progressBar.setVisibility(View.VISIBLE);
 
-        String id = firebaseFirestore.collection("refueling").document().getId();
-        DocumentReference documentReference = firebaseFirestore.collection("refueling").document(id);
+        String userId = firebaseAuth.getUid();
+
+        String id = firebaseFirestore.collection("users/" + userId + "/refueling").document().getId();
+        DocumentReference documentReference = firebaseFirestore.collection("users/" + userId + "/refueling").document(id);
 
         documentReference.set(map).addOnSuccessListener(new OnSuccessListener<Void>() {
             @Override
