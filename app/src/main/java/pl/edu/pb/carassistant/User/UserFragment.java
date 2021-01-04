@@ -16,7 +16,6 @@ import android.view.MenuInflater;
 import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
-import android.view.WindowManager;
 import android.widget.ImageView;
 import android.widget.ProgressBar;
 import android.widget.TextView;
@@ -182,7 +181,6 @@ public class UserFragment extends Fragment {
     }
 
     private void GetUserProfileData() {
-
         //userModel = userDatabase.getUser();
 
         userName.setText(userModel.getUserName());

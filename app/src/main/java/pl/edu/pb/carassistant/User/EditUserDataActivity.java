@@ -5,7 +5,6 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
 
 import android.annotation.SuppressLint;
-import android.content.Intent;
 import android.os.Bundle;
 import android.text.Editable;
 import android.text.TextWatcher;
@@ -24,7 +23,6 @@ import java.util.HashMap;
 import java.util.Map;
 
 import pl.edu.pb.carassistant.Dialogs.ChangePasswordDialog;
-import pl.edu.pb.carassistant.MainActivity;
 import pl.edu.pb.carassistant.R;
 
 public class EditUserDataActivity extends AppCompatActivity implements TextWatcher {

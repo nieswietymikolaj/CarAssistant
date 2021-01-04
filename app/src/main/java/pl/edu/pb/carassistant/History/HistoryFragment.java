@@ -14,23 +14,14 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
-import android.widget.Toast;
 
-import com.google.android.gms.tasks.OnFailureListener;
-import com.google.android.gms.tasks.OnSuccessListener;
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
-import com.google.firebase.firestore.CollectionReference;
-import com.google.firebase.firestore.DocumentChange;
-import com.google.firebase.firestore.DocumentReference;
-import com.google.firebase.firestore.DocumentSnapshot;
 import com.google.firebase.firestore.FirebaseFirestore;
-import com.google.firebase.firestore.QueryDocumentSnapshot;
 
 import java.util.ArrayList;
 import java.util.List;
 
 import pl.edu.pb.carassistant.R;
-import pl.edu.pb.carassistant.User.UserDatabase;
 
 public class HistoryFragment extends Fragment {
 
@@ -70,30 +61,8 @@ public class HistoryFragment extends Fragment {
         recyclerView = view.findViewById(R.id.refueling_recycler_view);
         recyclerView.setLayoutManager(new LinearLayoutManager(context));
 
-/*        CollectionReference collectionReference = firebaseFirestore.collection("refueling");
-
-        collectionReference.get().addOnCompleteListener(task -> {
-            if (task.isSuccessful()) {
-                for (QueryDocumentSnapshot documentSnapshot : task.getResult()) {
-
-                    RefuelingModel refuelingModel = new RefuelingModel();
-
-                    refuelingModel.refuelingId = documentSnapshot.getId();
-                    refuelingModel.refuelingDate = documentSnapshot.getString("Date");
-                    refuelingModel.refuelingTime = documentSnapshot.getString("Time");
-                    refuelingModel.refuelingMileage = documentSnapshot.getString("Mileage");
-                    refuelingModel.refuelingPriceLiter = documentSnapshot.getString("PriceLiter");
-                    refuelingModel.refuelingCost = documentSnapshot.getString("Cost");
-                    refuelingModel.refuelingLiters = documentSnapshot.getString("Liters");
-
-                    refuelingList.add(refuelingModel);
-                }
-
-                historyAdapter.notifyDataSetChanged();
-            } else {
-                Toast.makeText(context, getString(R.string.new_user_error) + " " + task.getException(), Toast.LENGTH_LONG).show();
-            }
-        });*/
+        historyAdapter = new HistoryAdapter();
+        recyclerView.setAdapter(historyAdapter);
 
         return view;
     }
@@ -101,9 +70,6 @@ public class HistoryFragment extends Fragment {
     @Override
     public void onResume() {
         super.onResume();
-
-        historyAdapter = new HistoryAdapter();
-        recyclerView.setAdapter(historyAdapter);
 
         historyDatabase = HistoryDatabase.getDatabase(activity);
         historyDatabase.getHistoryData();
