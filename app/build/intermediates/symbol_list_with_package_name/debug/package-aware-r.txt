@@ -1692,6 +1692,7 @@ drawable ic_add_24
 drawable ic_arrow_back_24
 drawable ic_broken_image_24
 drawable ic_car_24
+drawable ic_city
 drawable ic_edit_24
 drawable ic_european_flag
 drawable ic_fuel_dispenser
@@ -1859,6 +1860,7 @@ id chip2
 id chip3
 id chip_group
 id chronometer
+id city_image
 id clear_text
 id clip_horizontal
 id clip_vertical
@@ -2254,12 +2256,11 @@ id view_offset_helper
 id visible
 id visible_removing_fragment_view_tag
 id weather_card_view
-id weather_clear
+id weather_city
 id weather_humidity
 id weather_humidity_text
 id weather_pressure
 id weather_pressure_text
-id weather_search
 id weather_temperature
 id wide
 id withText
@@ -2414,7 +2415,6 @@ layout text_view_without_line_height
 menu bottom_nav_menu
 menu crop_image_menu
 menu user_options_menu
-menu weather_search_menu
 mipmap ic_launcher
 mipmap ic_launcher_round
 navigation mobile_navigation
@@ -2459,6 +2459,8 @@ string character_counter_content_description
 string character_counter_overflowed_content_description
 string character_counter_pattern
 string chip_text
+string city_error
+string city_name
 string clear_text_end_icon_content_description
 string common_google_play_services_enable_button
 string common_google_play_services_enable_text
@@ -2627,11 +2629,18 @@ string user_edit_profile
 string user_logout
 string user_name
 string user_photo_added
+string weather_city
+string weather_city_edit
 string weather_clear
+string weather_error
 string weather_humidity
+string weather_humidity_placeholder
+string weather_loaded
+string weather_location_error
 string weather_pressure
+string weather_pressure_placeholder
 string weather_search
-string weather_temperature
+string weather_temperature_placeholder
 style AlertDialog_AppCompat
 style AlertDialog_AppCompat_Light
 style AndroidThemeColorAccentYellow
