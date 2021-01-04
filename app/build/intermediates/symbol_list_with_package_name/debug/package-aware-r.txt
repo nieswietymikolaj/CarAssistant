@@ -2459,8 +2459,6 @@ string character_counter_content_description
 string character_counter_overflowed_content_description
 string character_counter_pattern
 string chip_text
-string city_error
-string city_name
 string clear_text_end_icon_content_description
 string common_google_play_services_enable_button
 string common_google_play_services_enable_text
