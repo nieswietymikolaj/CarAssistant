@@ -19,6 +19,12 @@
     <color name="text_gray">#505050</color>
     <color name="hint_gray">#696969</color>
 
+    <color name="gray">#bdbdbd</color>
+    <color name="ligth_gray">#e9eaed</color>
+    <color name="dark_gray">#35373b</color>
+
+    <color name="orange">#ff7900</color>
+
     <color name="european_blue">#012AF8</color>
 
 </resources>

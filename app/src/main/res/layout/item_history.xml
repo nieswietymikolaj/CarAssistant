@@ -40,7 +40,6 @@
             android:layout_marginTop="12dp"
             android:layout_toEndOf="@id/refueling_image"
             android:text="@string/refueling_mileage"
-            android:textAllCaps="true"
             android:textColor="@color/text_gray"
             android:textSize="15sp"
             android:textStyle="bold" />
@@ -54,7 +53,6 @@
             android:layout_marginTop="5dp"
             android:layout_toEndOf="@id/refueling_image"
             android:text="@string/refueling_liters"
-            android:textAllCaps="true"
             android:textColor="@color/text_gray"
             android:textSize="17sp"
             android:textStyle="bold" />
@@ -68,7 +66,6 @@
             android:layout_marginTop="5dp"
             android:layout_toEndOf="@id/refueling_image"
             android:text="@string/refueling_cost"
-            android:textAllCaps="true"
             android:textColor="@color/text_gray"
             android:textSize="17sp"
             android:textStyle="bold" />

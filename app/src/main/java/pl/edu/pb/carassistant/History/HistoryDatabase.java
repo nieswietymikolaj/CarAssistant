@@ -4,23 +4,21 @@ import android.app.Activity;
 import android.content.Context;
 import android.widget.Toast;
 
-import androidx.annotation.NonNull;
-
-import com.google.android.gms.tasks.OnFailureListener;
-import com.google.android.gms.tasks.OnSuccessListener;
-import com.google.firebase.firestore.DocumentReference;
-import com.google.firebase.firestore.DocumentSnapshot;
+import com.google.firebase.firestore.CollectionReference;
 import com.google.firebase.firestore.FirebaseFirestore;
+import com.google.firebase.firestore.QueryDocumentSnapshot;
 import com.google.firebase.storage.FirebaseStorage;
 import com.google.firebase.storage.StorageReference;
 
-import pl.edu.pb.carassistant.User.UserDatabase;
-import pl.edu.pb.carassistant.User.UserModel;
+import java.util.ArrayList;
+import java.util.List;
+
+import pl.edu.pb.carassistant.R;
 
 public class HistoryDatabase {
 
     public interface HistoryDataLoaded {
-        void HistoryDataLoaded();
+        void HistoryDataLoaded(List<RefuelingModel> refuelingList);
     }
 
     public HistoryDataLoaded historyDataLoaded;
@@ -28,27 +26,24 @@ public class HistoryDatabase {
     static HistoryDatabase INSTANCE;
 
     FirebaseFirestore firebaseFirestore;
-    StorageReference storageReference;
 
     Activity activity;
     Context context;
 
+    List<RefuelingModel> refuelingList;
     RefuelingModel refuelingModel;
-    String userId;
 
-    private HistoryDatabase(Activity activity, String userId) {
+    private HistoryDatabase(Activity activity) {
 
         this.activity = activity;
         context = activity.getApplicationContext();
-        this.userId = userId;
 
         firebaseFirestore = FirebaseFirestore.getInstance();
-        storageReference = FirebaseStorage.getInstance().getReference();
     }
 
-    public static HistoryDatabase getDatabase(Activity activity, String userId) {
+    public static HistoryDatabase getDatabase(Activity activity) {
         if (INSTANCE == null) {
-            INSTANCE = new HistoryDatabase(activity, userId);
+            INSTANCE = new HistoryDatabase(activity);
         }
         return INSTANCE;
     }
@@ -57,15 +52,39 @@ public class HistoryDatabase {
         INSTANCE = null;
     }
 
-    public void getHistoryData(String userId)
+    public void getHistoryData()
     {
+        CollectionReference collectionReference = firebaseFirestore.collection("refueling");
 
-            if (historyDataLoaded != null) {
-                historyDataLoaded.HistoryDataLoaded();
+        collectionReference.get().addOnCompleteListener(task -> {
+            if (task.isSuccessful()) {
+
+                refuelingList = new ArrayList<>();
+
+                for (QueryDocumentSnapshot documentSnapshot : task.getResult()) {
+
+                    refuelingModel = new RefuelingModel();
+
+                    refuelingModel.refuelingId = documentSnapshot.getId();
+                    refuelingModel.refuelingDate = documentSnapshot.getString("Date");
+                    refuelingModel.refuelingTime = documentSnapshot.getString("Time");
+                    refuelingModel.refuelingMileage = documentSnapshot.getString("Mileage");
+                    refuelingModel.refuelingPriceLiter = documentSnapshot.getString("PriceLiter");
+                    refuelingModel.refuelingCost = documentSnapshot.getString("Cost");
+                    refuelingModel.refuelingLiters = documentSnapshot.getString("Liters");
+
+                    refuelingList.add(refuelingModel);
+                }
+                if (historyDataLoaded != null) {
+                    historyDataLoaded.HistoryDataLoaded(refuelingList);
+                }
+            } else {
+                Toast.makeText(context, activity.getResources().getString(R.string.new_user_error) + " " + task.getException(), Toast.LENGTH_LONG).show();
             }
+        });
     }
 
-    public RefuelingModel getRefueling() {
-        return refuelingModel;
+    public List<RefuelingModel> getRefuelingList() {
+        return refuelingList;
     }
 }
