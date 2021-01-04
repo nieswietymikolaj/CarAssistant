@@ -64,7 +64,7 @@
                 android:layout_marginEnd="24dp"
                 android:text="@string/weather_temperature_placeholder"
                 android:textAllCaps="true"
-                android:textColor="@color/text_gray"
+                android:textColor="@color/orange"
                 android:textSize="34sp"
                 android:textStyle="bold"
                 app:layout_constraintEnd_toEndOf="parent"
@@ -101,7 +101,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="@string/weather_pressure_placeholder"
-                    android:textColor="@color/text_gray"
+                    android:textColor="@color/orange"
                     android:textSize="20sp"
                     android:textStyle="bold" />
 
@@ -137,7 +137,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="@string/weather_humidity_placeholder"
-                    android:textColor="@color/text_gray"
+                    android:textColor="@color/orange"
                     android:textSize="20sp"
                     android:textStyle="bold" />
 
