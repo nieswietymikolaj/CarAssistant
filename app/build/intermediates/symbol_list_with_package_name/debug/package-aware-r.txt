@@ -1695,17 +1695,20 @@ drawable ic_car_24
 drawable ic_edit_24
 drawable ic_european_flag
 drawable ic_fuel_dispenser
+drawable ic_gas
 drawable ic_launcher_background
 drawable ic_launcher_foreground
 drawable ic_launcher_foreground_red_car
 drawable ic_list_24
 drawable ic_login_24
+drawable ic_money
 drawable ic_mtrl_checked_circle
 drawable ic_mtrl_chip_checked_black
 drawable ic_mtrl_chip_checked_circle
 drawable ic_mtrl_chip_close_circle
 drawable ic_parking_24
 drawable ic_password_eye_24
+drawable ic_speedometer
 drawable material_ic_calendar_black_24dp
 drawable material_ic_clear_black_24dp
 drawable material_ic_edit_black_24dp
@@ -1866,6 +1869,7 @@ id content
 id contentPanel
 id coordinator
 id cos
+id cost_image
 id cropImageView
 id crop_image_menu_crop
 id crop_image_menu_flip
@@ -1969,6 +1973,7 @@ id linearLayout
 id linearLayout2
 id listMode
 id list_item
+id liters_image
 id login_button
 id login_email
 id login_email_text
@@ -1984,6 +1989,7 @@ id masked
 id message
 id middle
 id mileage_card_view
+id mileage_image
 id mini
 id mobile_navigation
 id month_grid
@@ -2093,6 +2099,7 @@ id refueling_date_time
 id refueling_image
 id refueling_liters
 id refueling_mileage
+id refueling_price_liter
 id refueling_recycler_view
 id register_button
 id register_email
@@ -2588,6 +2595,7 @@ string refueling_cost
 string refueling_date_time
 string refueling_liters
 string refueling_mileage
+string refueling_price_liter
 string register_button
 string register_email
 string register_error_different_password
