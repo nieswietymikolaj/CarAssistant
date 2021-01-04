@@ -17,6 +17,7 @@ import android.widget.Toast;
 
 import com.google.android.gms.tasks.OnFailureListener;
 import com.google.android.gms.tasks.OnSuccessListener;
+import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.firestore.DocumentReference;
 import com.google.firebase.firestore.FirebaseFirestore;
 
@@ -37,6 +38,7 @@ public class NewRefuelingActivity extends AppCompatActivity implements TextWatch
     Button saveButton;
     ProgressBar progressBar;
 
+    FirebaseAuth firebaseAuth;
     FirebaseFirestore firebaseFirestore;
 
     Calendar calendar;
@@ -48,6 +50,7 @@ public class NewRefuelingActivity extends AppCompatActivity implements TextWatch
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_new_refueling);
 
+        firebaseAuth = FirebaseAuth.getInstance();
         firebaseFirestore = FirebaseFirestore.getInstance();
 
         calendar = Calendar.getInstance();
@@ -113,8 +116,10 @@ public class NewRefuelingActivity extends AppCompatActivity implements TextWatch
 
         progressBar.setVisibility(View.VISIBLE);
 
-        String id = firebaseFirestore.collection("refueling").document().getId();
-        DocumentReference documentReference = firebaseFirestore.collection("refueling").document(id);
+        String userId = firebaseAuth.getUid();
+
+        String id = firebaseFirestore.collection("users/" + userId + "/refueling").document().getId();
+        DocumentReference documentReference = firebaseFirestore.collection("users/" + userId + "/refueling").document(id);
 
         documentReference.set(map).addOnSuccessListener(new OnSuccessListener<Void>() {
             @Override

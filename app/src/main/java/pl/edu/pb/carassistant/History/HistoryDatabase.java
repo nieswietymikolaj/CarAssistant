@@ -4,6 +4,7 @@ import android.app.Activity;
 import android.content.Context;
 import android.widget.Toast;
 
+import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.firestore.CollectionReference;
 import com.google.firebase.firestore.FirebaseFirestore;
 import com.google.firebase.firestore.QueryDocumentSnapshot;
@@ -25,6 +26,7 @@ public class HistoryDatabase {
 
     static HistoryDatabase INSTANCE;
 
+    FirebaseAuth firebaseAuth;
     FirebaseFirestore firebaseFirestore;
 
     Activity activity;
@@ -38,6 +40,7 @@ public class HistoryDatabase {
         this.activity = activity;
         context = activity.getApplicationContext();
 
+        firebaseAuth = FirebaseAuth.getInstance();
         firebaseFirestore = FirebaseFirestore.getInstance();
     }
 
@@ -53,7 +56,10 @@ public class HistoryDatabase {
     }
 
     public void getHistoryData() {
-        CollectionReference collectionReference = firebaseFirestore.collection("refueling");
+
+        String userId = firebaseAuth.getUid();
+
+        CollectionReference collectionReference = firebaseFirestore.collection("users/" + userId + "/refueling");
 
         collectionReference.get().addOnCompleteListener(task -> {
             if (task.isSuccessful()) {

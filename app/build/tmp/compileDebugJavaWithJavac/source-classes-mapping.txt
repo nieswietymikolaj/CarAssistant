@@ -20,8 +20,11 @@ pl/edu/pb/carassistant/Parking/WeatherModel.java
  pl.edu.pb.carassistant.Parking.WeatherModel
 pl/edu/pb/carassistant/Parking/WeatherApi.java
  pl.edu.pb.carassistant.Parking.WeatherApi
-pl/edu/pb/carassistant/User/UserFragment.java
- pl.edu.pb.carassistant.User.UserFragment
+pl/edu/pb/carassistant/History/NewRefuelingActivity.java
+ pl.edu.pb.carassistant.History.NewRefuelingActivity
+ pl.edu.pb.carassistant.History.NewRefuelingActivity$1
+ pl.edu.pb.carassistant.History.NewRefuelingActivity$2
+ pl.edu.pb.carassistant.History.NewRefuelingActivity$3
 pl/edu/pb/carassistant/Parking/WeatherContainer.java
  pl.edu.pb.carassistant.Parking.WeatherContainer
 pl/edu/pb/carassistant/BuildConfig.java
@@ -30,6 +33,23 @@ pl/edu/pb/carassistant/User/UserModel.java
  pl.edu.pb.carassistant.User.UserModel
 pl/edu/pb/carassistant/Parking/ParkingFragment.java
  pl.edu.pb.carassistant.Parking.ParkingFragment
+pl/edu/pb/carassistant/Parking/WeatherService.java
+ pl.edu.pb.carassistant.Parking.WeatherService
+pl/edu/pb/carassistant/MainActivity.java
+ pl.edu.pb.carassistant.MainActivity
+pl/edu/pb/carassistant/RegisterActivity.java
+ pl.edu.pb.carassistant.RegisterActivity
+ pl.edu.pb.carassistant.RegisterActivity$1
+ pl.edu.pb.carassistant.RegisterActivity$2
+ pl.edu.pb.carassistant.RegisterActivity$3
+ pl.edu.pb.carassistant.RegisterActivity$4
+ pl.edu.pb.carassistant.RegisterActivity$5
+pl/edu/pb/carassistant/Dialogs/ForgotPasswordDialog.java
+ pl.edu.pb.carassistant.Dialogs.ForgotPasswordDialog
+ pl.edu.pb.carassistant.Dialogs.ForgotPasswordDialog$1
+ pl.edu.pb.carassistant.Dialogs.ForgotPasswordDialog$1$1
+ pl.edu.pb.carassistant.Dialogs.ForgotPasswordDialog$1$1$1
+ pl.edu.pb.carassistant.Dialogs.ForgotPasswordDialog$1$1$2
 pl/edu/pb/carassistant/User/EditUserDataActivity.java
  pl.edu.pb.carassistant.User.EditUserDataActivity
  pl.edu.pb.carassistant.User.EditUserDataActivity$1
@@ -41,28 +61,8 @@ pl/edu/pb/carassistant/History/HistoryDatabase.java
  pl.edu.pb.carassistant.History.HistoryDatabase
  pl.edu.pb.carassistant.History.HistoryDatabase$1
  pl.edu.pb.carassistant.History.HistoryDatabase$HistoryDataLoaded
-pl/edu/pb/carassistant/Dialogs/ForgotPasswordDialog.java
- pl.edu.pb.carassistant.Dialogs.ForgotPasswordDialog
- pl.edu.pb.carassistant.Dialogs.ForgotPasswordDialog$1
- pl.edu.pb.carassistant.Dialogs.ForgotPasswordDialog$1$1
- pl.edu.pb.carassistant.Dialogs.ForgotPasswordDialog$1$1$1
- pl.edu.pb.carassistant.Dialogs.ForgotPasswordDialog$1$1$2
-pl/edu/pb/carassistant/RegisterActivity.java
- pl.edu.pb.carassistant.RegisterActivity
- pl.edu.pb.carassistant.RegisterActivity$1
- pl.edu.pb.carassistant.RegisterActivity$2
- pl.edu.pb.carassistant.RegisterActivity$3
- pl.edu.pb.carassistant.RegisterActivity$4
- pl.edu.pb.carassistant.RegisterActivity$5
-pl/edu/pb/carassistant/History/NewRefuelingActivity.java
- pl.edu.pb.carassistant.History.NewRefuelingActivity
- pl.edu.pb.carassistant.History.NewRefuelingActivity$1
- pl.edu.pb.carassistant.History.NewRefuelingActivity$2
- pl.edu.pb.carassistant.History.NewRefuelingActivity$3
-pl/edu/pb/carassistant/Parking/WeatherService.java
- pl.edu.pb.carassistant.Parking.WeatherService
-pl/edu/pb/carassistant/MainActivity.java
- pl.edu.pb.carassistant.MainActivity
+pl/edu/pb/carassistant/User/UserFragment.java
+ pl.edu.pb.carassistant.User.UserFragment
 pl/edu/pb/carassistant/History/HistoryFragment.java
  pl.edu.pb.carassistant.History.HistoryFragment
  pl.edu.pb.carassistant.History.HistoryFragment$1
