@@ -12,9 +12,7 @@
         android:id="@+id/refueling_recycler_view"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:orientation="vertical">
-
-    </androidx.recyclerview.widget.RecyclerView>
+        android:orientation="vertical"/>
 
     <com.google.android.material.floatingactionbutton.FloatingActionButton
         android:id="@+id/floating_action_button"

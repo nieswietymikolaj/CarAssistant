@@ -110,6 +110,7 @@
     <string name="refueling_mileage">Przebieg</string>
     <string name="refueling_liters">Litrów</string>
     <string name="refueling_cost">Koszt</string>
+    <string name="refueling_price_liter">Cena / litr</string>
     <string name="refueling_avg_fuel_consumption">Spalanie</string>
 
     <!--POGODA-->

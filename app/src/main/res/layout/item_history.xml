@@ -17,7 +17,7 @@
             android:layout_width="50dp"
             android:layout_height="50dp"
             android:layout_marginVertical="25dp"
-            android:layout_marginLeft="8dp"
+            android:layout_marginLeft="10dp"
             android:src="@drawable/ic_fuel_dispenser" />
 
         <TextView
@@ -26,62 +26,103 @@
             android:layout_height="wrap_content"
             android:layout_alignParentRight="true"
             android:layout_marginTop="6dp"
-            android:layout_marginRight="13dp"
+            android:layout_marginRight="12dp"
             android:text="@string/refueling_date_time"
             android:textAllCaps="true"
             android:textColor="@color/text_gray"
             android:textSize="15sp" />
 
+        <ImageView
+            android:id="@+id/mileage_image"
+            android:layout_width="21dp"
+            android:layout_height="21dp"
+            android:layout_marginLeft="17dp"
+            android:layout_marginTop="12dp"
+            android:layout_toEndOf="@id/refueling_image"
+            android:src="@drawable/ic_speedometer" />
+
         <TextView
             android:id="@+id/refueling_mileage"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginLeft="12dp"
+            android:layout_marginLeft="6dp"
             android:layout_marginTop="12dp"
-            android:layout_toEndOf="@id/refueling_image"
+            android:layout_toEndOf="@id/mileage_image"
             android:text="@string/refueling_mileage"
-            android:textColor="@color/text_gray"
+            android:textColor="@color/black"
             android:textSize="15sp"
             android:textStyle="bold" />
+
+        <ImageView
+            android:id="@+id/liters_image"
+            android:layout_width="21dp"
+            android:layout_height="21dp"
+            android:layout_marginLeft="17dp"
+            android:layout_marginTop="6dp"
+            android:layout_below="@+id/refueling_mileage"
+            android:layout_toEndOf="@id/refueling_image"
+            android:src="@drawable/ic_gas" />
 
         <TextView
             android:id="@+id/refueling_liters"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_below="@+id/refueling_mileage"
-            android:layout_marginLeft="12dp"
+            android:layout_marginLeft="6dp"
             android:layout_marginTop="5dp"
-            android:layout_toEndOf="@id/refueling_image"
+            android:layout_toEndOf="@id/liters_image"
             android:text="@string/refueling_liters"
             android:textColor="@color/text_gray"
             android:textSize="17sp"
             android:textStyle="bold" />
+
+        <ImageView
+            android:id="@+id/cost_image"
+            android:layout_width="21dp"
+            android:layout_height="21dp"
+            android:layout_marginLeft="17dp"
+            android:layout_marginTop="6dp"
+            android:layout_below="@+id/refueling_liters"
+            android:layout_toEndOf="@id/refueling_image"
+            android:src="@drawable/ic_money" />
 
         <TextView
             android:id="@+id/refueling_cost"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_below="@+id/refueling_liters"
-            android:layout_marginLeft="12dp"
+            android:layout_marginLeft="6dp"
             android:layout_marginTop="5dp"
-            android:layout_toEndOf="@id/refueling_image"
+            android:layout_toEndOf="@id/cost_image"
             android:text="@string/refueling_cost"
             android:textColor="@color/text_gray"
             android:textSize="17sp"
             android:textStyle="bold" />
 
+        <TextView
+            android:id="@+id/refueling_price_liter"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/refueling_date_time"
+            android:layout_marginTop="12dp"
+            android:layout_marginRight="25dp"
+            android:layout_alignParentRight="true"
+            android:text="@string/refueling_price_liter"
+            android:textColor="@color/hint_gray"
+            android:textSize="17sp"
+            android:textStyle="bold" />
 
         <TextView
             android:id="@+id/refueling_avg_fuel_consumption"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_below="@+id/refueling_date_time"
+            android:layout_below="@+id/refueling_price_liter"
             android:layout_alignParentRight="true"
-            android:layout_marginTop="35dp"
-            android:layout_marginRight="15dp"
+            android:layout_marginTop="5dp"
+            android:layout_marginRight="25dp"
             android:text="@string/refueling_avg_fuel_consumption"
             android:textAllCaps="true"
-            android:textColor="@color/text_gray"
+            android:textColor="@color/orange"
             android:textSize="20sp"
             android:textStyle="bold" />
 
