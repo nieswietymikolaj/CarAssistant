@@ -5,13 +5,9 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
 
 import android.annotation.SuppressLint;
-import android.app.Activity;
-import android.content.Context;
-import android.content.Intent;
 import android.os.Bundle;
 import android.text.Editable;
 import android.text.TextWatcher;
-import android.util.Patterns;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
@@ -28,16 +24,14 @@ import java.text.SimpleDateFormat;
 import java.util.Calendar;
 import java.util.HashMap;
 import java.util.Map;
-import java.util.regex.Pattern;
 
-import pl.edu.pb.carassistant.MainActivity;
 import pl.edu.pb.carassistant.R;
 
 public class NewRefuelingActivity extends AppCompatActivity implements TextWatcher {
 
     String DATE_PATTERN = "^(1[0-9]|0[1-9]|3[0-1]|2[1-9])/(0[1-9]|1[0-2])/[0-9]{4}$";
-    String TIME_PATTERN = "^(1[0-9]|0[1-9]|2[1-3]):([0-5][0-9])$";
-    String PRICE_LITERS_PATTERN = "^(([0-9]|[0-9]{2}|[0-9]{3}|[0-9]{4}|[0-9]{5}|[0-9]{6}).([0-9]|[0-9]{2}|0[0-9]))|([0-9]|[0-9]{2}|[0-9]{3}|[0-9]{4}|[0-9]{5}|[0-9]{6}|[0-9]{7}||[0-9]{8})$";
+    String TIME_PATTERN = "^(1[0-9]|0[0-9]|2[1-3]):([0-5][0-9])$";
+    String PRICE_LITERS_PATTERN = "^(([0-9]|[0-9]{2}|[0-9]{3}|[0-9]{4}|[0-9]{5}|[0-9]{6}).([0-9]|[0-9]{2}|0[0-9]))|([0-9]|[0-9]{2}|[0-9]{3}|[0-9]{4}|[0-9]{5}|[0-9]{6}|[0-9]{7}|[0-9]{8})$";
 
     EditText refuelingDate, refuelingTime, refuelingMileage, refuelingPriceLiter, refuelingCost, refuelingLiters;
     Button saveButton;

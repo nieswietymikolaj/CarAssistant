@@ -2,18 +2,35 @@ package pl.edu.pb.carassistant.User;
 
 import android.app.Activity;
 import android.content.Context;
+import android.net.Uri;
+import android.widget.Toast;
 
-import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.firestore.DocumentReference;
 import com.google.firebase.firestore.FirebaseFirestore;
+import com.google.firebase.storage.FirebaseStorage;
+import com.google.firebase.storage.StorageReference;
+
+import pl.edu.pb.carassistant.R;
 
 public class UserDatabase {
 
+    public interface UserDataLoaded {
+        void UserDataLoaded();
+    }
+
+    public interface UserPhotoLoaded {
+        void UserPhotoLoaded(Uri uri);
+    }
+
+    public UserDataLoaded userDataLoaded;
+    public UserPhotoLoaded userPhotoLoaded;
+
     static UserDatabase INSTANCE;
 
-    FirebaseAuth firebaseAuth;
     FirebaseFirestore firebaseFirestore;
+    StorageReference storageReference;
 
+    Activity activity;
     Context context;
 
     UserModel userModel;
@@ -21,13 +38,12 @@ public class UserDatabase {
 
     private UserDatabase(Activity activity, String userId) {
 
+        this.activity = activity;
         context = activity.getApplicationContext();
         this.userId = userId;
 
-        firebaseAuth = FirebaseAuth.getInstance();
         firebaseFirestore = FirebaseFirestore.getInstance();
-
-        GetUserData(userId);
+        storageReference = FirebaseStorage.getInstance().getReference();
     }
 
     public static UserDatabase getDatabase(Activity activity, String userId) {
@@ -37,11 +53,11 @@ public class UserDatabase {
         return INSTANCE;
     }
 
-    public static void ClearInstance() {
+    public static void clearInstance() {
         INSTANCE = null;
     }
 
-    public void GetUserData(String userId)
+    public void getUserData(String userId)
     {
         userModel = new UserModel(userId);
 
@@ -54,6 +70,32 @@ public class UserDatabase {
             userModel.setUserCarYear(documentSnapshot.getString("Year"));
             userModel.setUserCarMileage(documentSnapshot.getString("Mileage"));
             userModel.setUserCarRegistrationNumber(documentSnapshot.getString("Registration"));
+
+            if (userDataLoaded != null) {
+                userDataLoaded.UserDataLoaded();
+            }
         });
+
+        getUserPhoto();
+    }
+
+    public void getUserPhoto() {
+        StorageReference photoReference = storageReference.child("users/" + userId + "/userProfilePhoto");
+        photoReference.getDownloadUrl().addOnSuccessListener(uri -> {
+            userModel.setUserPhoto(uri);
+            if (userPhotoLoaded != null) {
+                userPhotoLoaded.UserPhotoLoaded(uri);
+            }
+        }).addOnFailureListener(e -> {
+            userModel.setUserPhoto(Uri.parse("android.resource://" + context.getPackageName() + "/drawable/ic_launcher_foreground_red_car"));
+            if (userPhotoLoaded != null) {
+                userPhotoLoaded.UserPhotoLoaded(userModel.getUserPhoto());
+            }
+            Toast.makeText(context, activity.getResources().getString(R.string.new_user_error) + " " + e.getLocalizedMessage(), Toast.LENGTH_LONG).show();
+        });
+    }
+
+    public UserModel getUser() {
+        return userModel;
     }
 }

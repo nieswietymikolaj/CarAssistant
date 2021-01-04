@@ -7,16 +7,18 @@ public class UserModel {
     String userId, userName, carBrand, carModel, carYear, carMileage, carRegistrationNumber;
     Uri userPhoto;
 
+    public UserModel() {
+    }
 
     public UserModel(String userId) {
         this.userId = userId;
     }
 
-    public String getId() {
+    public String getUserId() {
         return userId;
     }
 
-    public void setId(String userId) {
+    public void setUserId(String userId) {
         this.userId = userId;
     }
 

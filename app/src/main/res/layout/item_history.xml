@@ -2,10 +2,90 @@
 <androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
+    android:layout_height="wrap_content"
     android:layout_marginTop="5dp"
     android:layout_marginBottom="5dp"
     app:cardCornerRadius="@dimen/data_card_radius"
     app:cardElevation="@dimen/data_card_radius">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <ImageView
+            android:id="@+id/refueling_image"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:layout_marginVertical="25dp"
+            android:layout_marginLeft="8dp"
+            android:src="@drawable/ic_fuel_dispenser" />
+
+        <TextView
+            android:id="@+id/refueling_date_time"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:layout_marginTop="6dp"
+            android:layout_marginRight="13dp"
+            android:text="@string/refueling_date_time"
+            android:textAllCaps="true"
+            android:textColor="@color/text_gray"
+            android:textSize="15sp" />
+
+        <TextView
+            android:id="@+id/refueling_mileage"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="12dp"
+            android:layout_marginTop="12dp"
+            android:layout_toEndOf="@id/refueling_image"
+            android:text="@string/refueling_mileage"
+            android:textColor="@color/text_gray"
+            android:textSize="15sp"
+            android:textStyle="bold" />
+
+        <TextView
+            android:id="@+id/refueling_liters"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/refueling_mileage"
+            android:layout_marginLeft="12dp"
+            android:layout_marginTop="5dp"
+            android:layout_toEndOf="@id/refueling_image"
+            android:text="@string/refueling_liters"
+            android:textColor="@color/text_gray"
+            android:textSize="17sp"
+            android:textStyle="bold" />
+
+        <TextView
+            android:id="@+id/refueling_cost"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/refueling_liters"
+            android:layout_marginLeft="12dp"
+            android:layout_marginTop="5dp"
+            android:layout_toEndOf="@id/refueling_image"
+            android:text="@string/refueling_cost"
+            android:textColor="@color/text_gray"
+            android:textSize="17sp"
+            android:textStyle="bold" />
+
+
+        <TextView
+            android:id="@+id/refueling_avg_fuel_consumption"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/refueling_date_time"
+            android:layout_alignParentRight="true"
+            android:layout_marginTop="35dp"
+            android:layout_marginRight="15dp"
+            android:text="@string/refueling_avg_fuel_consumption"
+            android:textAllCaps="true"
+            android:textColor="@color/text_gray"
+            android:textSize="20sp"
+            android:textStyle="bold" />
+
+
+    </RelativeLayout>
 
 </androidx.cardview.widget.CardView>
