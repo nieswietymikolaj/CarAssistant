@@ -1029,6 +1029,7 @@ color common_google_signin_btn_text_light_disabled
 color common_google_signin_btn_text_light_focused
 color common_google_signin_btn_text_light_pressed
 color common_google_signin_btn_tint
+color dark_gray
 color design_bottom_navigation_shadow_color
 color design_box_stroke_color
 color design_dark_default_color_background
@@ -1077,10 +1078,12 @@ color error_color_material_light
 color european_blue
 color foreground_material_dark
 color foreground_material_light
+color gray
 color highlighted_text_material_dark
 color highlighted_text_material_light
 color hint_gray
 color ic_launcher_background_red_car
+color ligth_gray
 color main_yellow
 color material_blue_grey_800
 color material_blue_grey_900
@@ -1163,6 +1166,7 @@ color mtrl_textinput_focused_box_stroke_color
 color mtrl_textinput_hovered_box_stroke_color
 color notification_action_color_filter
 color notification_icon_bg_color
+color orange
 color primary_500
 color primary_700
 color primary_dark_material_dark

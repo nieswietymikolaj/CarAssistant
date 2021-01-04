@@ -19,7 +19,8 @@
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:orientation="vertical">
+        android:orientation="vertical"
+        android:background="@color/ligth_gray">
 
         <androidx.constraintlayout.widget.ConstraintLayout
             android:layout_width="match_parent"
@@ -169,7 +170,8 @@
 
         <androidx.constraintlayout.widget.ConstraintLayout
             android:layout_width="match_parent"
-            android:layout_height="match_parent">
+            android:layout_height="match_parent"
+            android:background="@color/ligth_gray">
 
             <com.google.android.material.card.MaterialCardView
                 android:id="@+id/mileage_card_view"
@@ -213,7 +215,6 @@
                         android:layout_marginStart="24dp"
                         android:layout_marginEnd="24dp"
                         android:text="@string/user_car_mileage"
-                        android:textAllCaps="true"
                         android:textColor="@color/hint_gray"
                         android:textSize="22sp"
                         android:textStyle="bold"

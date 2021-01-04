@@ -30,6 +30,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 import pl.edu.pb.carassistant.R;
+import pl.edu.pb.carassistant.User.UserDatabase;
 
 public class HistoryFragment extends Fragment {
 
@@ -39,6 +40,10 @@ public class HistoryFragment extends Fragment {
 
     Activity activity;
     Context context;
+
+    HistoryAdapter historyAdapter;
+
+    HistoryDatabase historyDatabase;
 
     List<RefuelingModel> refuelingList;
 
@@ -65,12 +70,7 @@ public class HistoryFragment extends Fragment {
         recyclerView = view.findViewById(R.id.refueling_recycler_view);
         recyclerView.setLayoutManager(new LinearLayoutManager(context));
 
-        HistoryAdapter historyAdapter = new HistoryAdapter();
-        recyclerView.setAdapter(historyAdapter);
-
-        refuelingList = new ArrayList<>();
-
-        CollectionReference collectionReference = firebaseFirestore.collection("refueling");
+/*        CollectionReference collectionReference = firebaseFirestore.collection("refueling");
 
         collectionReference.get().addOnCompleteListener(task -> {
             if (task.isSuccessful()) {
@@ -93,9 +93,29 @@ public class HistoryFragment extends Fragment {
             } else {
                 Toast.makeText(context, getString(R.string.new_user_error) + " " + task.getException(), Toast.LENGTH_LONG).show();
             }
-        });
+        });*/
 
         return view;
+    }
+
+    @Override
+    public void onResume() {
+        super.onResume();
+
+        historyAdapter = new HistoryAdapter();
+        recyclerView.setAdapter(historyAdapter);
+
+        historyDatabase = HistoryDatabase.getDatabase(activity);
+        historyDatabase.getHistoryData();
+        historyDatabase.historyDataLoaded = this::NotifyDataLoaded;
+    }
+
+    private void NotifyDataLoaded(List<RefuelingModel> list)
+    {
+        refuelingList = new ArrayList<>();
+        refuelingList = list;
+
+        historyAdapter.notifyDataSetChanged();
     }
 
     private class HistoryHolder extends RecyclerView.ViewHolder implements View.OnLongClickListener, View.OnClickListener {

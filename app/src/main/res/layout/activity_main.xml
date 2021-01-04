@@ -11,6 +11,7 @@
         android:layout_height="wrap_content"
         android:background="?android:attr/windowBackground"
         android:layout_alignParentBottom="true"
+        app:elevation="5dp"
         app:menu="@menu/bottom_nav_menu" />
 
     <fragment

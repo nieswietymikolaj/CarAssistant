@@ -29,6 +29,7 @@ import com.google.firebase.storage.StorageReference;
 import com.theartofdev.edmodo.cropper.CropImage;
 import com.theartofdev.edmodo.cropper.CropImageView;
 
+import pl.edu.pb.carassistant.History.HistoryDatabase;
 import pl.edu.pb.carassistant.LoginActivity;
 import pl.edu.pb.carassistant.R;
 
@@ -139,6 +140,7 @@ public class UserFragment extends Fragment {
             case R.id.user_logout:
                 FirebaseAuth.getInstance().signOut();
                 UserDatabase.clearInstance();
+                HistoryDatabase.clearInstance();
                 startActivity(new Intent(context, LoginActivity.class));
                 activity.finish();
                 return true;
@@ -181,7 +183,7 @@ public class UserFragment extends Fragment {
 
     private void GetUserProfileData() {
 
-        userModel = userDatabase.getUser();
+        //userModel = userDatabase.getUser();
 
         userName.setText(userModel.getUserName());
         carBrand.setText(userModel.getUserCarBrand());
