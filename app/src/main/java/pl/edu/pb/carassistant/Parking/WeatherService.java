@@ -6,10 +6,6 @@ import retrofit2.http.Query;
 
 public interface WeatherService {
 
-    @GET("weather?units=metric&APPID=db405aa0337ff19e0fe02650f1300947")
-    Call<WeatherContainer> getWeather(@Query("lon") double longitude, @Query("lat") double latitude, @Query("lang") String language);
-
-    @GET("weather?units=metric&APPID=db405aa0337ff19e0fe02650f1300947")
-    Call<WeatherContainer> getWeatherByCityName(@Query("q") String cityName, @Query("lang") String language);
-
+    @GET("weather?units=metric&APPID=df85c77d05a4eb4dde5f05fc6697618d")
+    Call<WeatherApiModel> getWeather(@Query("lon") double longitude, @Query("lat") double latitude, @Query("lang") String language);
 }

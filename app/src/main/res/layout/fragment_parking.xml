@@ -2,14 +2,16 @@
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/parking_fragment"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@color/ligth_gray"
     tools:context=".Parking.ParkingFragment">
 
     <com.google.android.material.card.MaterialCardView
         android:id="@+id/weather_card_view"
         android:layout_width="match_parent"
-        android:layout_height="130dp"
+        android:layout_height="170dp"
         android:layout_marginStart="24dp"
         android:layout_marginTop="24dp"
         android:layout_marginEnd="24dp"
@@ -24,21 +26,51 @@
             android:layout_width="match_parent"
             android:layout_height="match_parent">
 
+            <ImageView
+                android:id="@+id/city_image"
+                android:layout_width="30dp"
+                android:layout_height="30dp"
+                android:layout_marginStart="32dp"
+                android:layout_marginTop="11dp"
+                android:layout_marginEnd="8dp"
+                android:src="@drawable/ic_city"
+                app:layout_constraintEnd_toStartOf="@+id/weather_city"
+                app:layout_constraintHorizontal_bias="1.0"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
             <TextView
-                android:id="@+id/weather_temperature"
+                android:id="@+id/weather_city"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="24dp"
                 android:layout_marginTop="12dp"
                 android:layout_marginEnd="24dp"
-                android:text="@string/weather_temperature"
+                android:text="@string/weather_city"
                 android:textAllCaps="true"
-                android:textColor="@color/text_gray"
-                android:textSize="25sp"
+                android:textColor="@color/hint_gray"
+                android:textSize="23sp"
                 android:textStyle="bold"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent" />
+
+            <TextView
+                android:id="@+id/weather_temperature"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="24dp"
+                android:layout_marginTop="2dp"
+                android:layout_marginEnd="24dp"
+                android:text="@string/weather_temperature_placeholder"
+                android:textAllCaps="true"
+                android:textColor="@color/text_gray"
+                android:textSize="34sp"
+                android:textStyle="bold"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.496"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/weather_city" />
 
             <LinearLayout
                 android:id="@+id/linearLayout2"
@@ -54,24 +86,25 @@
                 app:layout_constraintTop_toBottomOf="@+id/weather_temperature">
 
                 <TextView
-                    android:id="@+id/weather_humidity"
+                    android:id="@+id/weather_pressure_text"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginBottom="5dp"
-                    android:text="90%"
+                    android:text="@string/weather_pressure"
+                    android:textAllCaps="true"
+                    android:textColor="@color/hint_gray"
+                    android:textSize="14sp"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:id="@+id/weather_pressure"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/weather_pressure_placeholder"
                     android:textColor="@color/text_gray"
                     android:textSize="20sp"
                     android:textStyle="bold" />
 
-                <TextView
-                    android:id="@+id/weather_humidity_text"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="@string/weather_humidity"
-                    android:textAllCaps="true"
-                    android:textColor="@color/hint_gray"
-                    android:textSize="18sp"
-                    android:textStyle="bold" />
             </LinearLayout>
 
             <LinearLayout
@@ -89,24 +122,25 @@
                 app:layout_constraintTop_toBottomOf="@+id/weather_temperature">
 
                 <TextView
-                    android:id="@+id/weather_pressure"
+                    android:id="@+id/weather_humidity_text"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginBottom="5dp"
-                    android:text="1025 hPa"
+                    android:text="@string/weather_humidity"
+                    android:textAllCaps="true"
+                    android:textColor="@color/hint_gray"
+                    android:textSize="14sp"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:id="@+id/weather_humidity"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/weather_humidity_placeholder"
                     android:textColor="@color/text_gray"
                     android:textSize="20sp"
                     android:textStyle="bold" />
 
-                <TextView
-                    android:id="@+id/weather_pressure_text"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="@string/weather_pressure"
-                    android:textAllCaps="true"
-                    android:textColor="@color/hint_gray"
-                    android:textSize="18sp"
-                    android:textStyle="bold" />
             </LinearLayout>
 
         </androidx.constraintlayout.widget.ConstraintLayout>
