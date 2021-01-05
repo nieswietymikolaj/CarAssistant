@@ -1830,6 +1830,8 @@ id autoComplete
 id autoCompleteToEnd
 id autoCompleteToStart
 id avg_fuel_consumption_card_view
+id avg_image_left
+id avg_image_right
 id barrier
 id baseline
 id beginOnFirstDraw
@@ -1992,6 +1994,8 @@ id message
 id middle
 id mileage_card_view
 id mileage_image
+id mileage_image_left
+id mileage_image_right
 id mini
 id mobile_navigation
 id month_grid
@@ -2554,6 +2558,7 @@ string nav_app_bar_open_drawer_description
 string nav_bar_history
 string nav_bar_parking
 string nav_bar_user
+string new_refueling_avg_error
 string new_refueling_compare_error
 string new_refueling_cost
 string new_refueling_created

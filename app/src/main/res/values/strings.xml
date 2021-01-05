@@ -105,6 +105,7 @@
     <string name="new_refueling_time_error">Błędna godzina lub błędny format godziny (HH:MM)</string>
     <string name="new_refueling_price_liters_error">Błędny format (NNNN.NN)</string>
     <string name="new_refueling_compare_error">Przebieg nie może być mniejszy od aktualnego</string>
+    <string name="new_refueling_avg_error">Nie udało się zaktualizować średniego spalania samochodu</string>
 
     <!--TANKOWANIE ITEM-->
     <string name="refueling_date_time">Data i godzina</string>

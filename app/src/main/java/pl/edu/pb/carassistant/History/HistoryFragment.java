@@ -14,19 +14,27 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
+import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.firestore.DocumentReference;
 import com.google.firebase.firestore.FirebaseFirestore;
 
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 import pl.edu.pb.carassistant.R;
+import pl.edu.pb.carassistant.User.UserDatabase;
+import pl.edu.pb.carassistant.User.UserModel;
 
 public class HistoryFragment extends Fragment {
 
     RecyclerView recyclerView;
 
+    FirebaseAuth firebaseAuth;
     FirebaseFirestore firebaseFirestore;
 
     Activity activity;
@@ -35,8 +43,16 @@ public class HistoryFragment extends Fragment {
     HistoryAdapter historyAdapter;
 
     HistoryDatabase historyDatabase;
+    UserDatabase userDatabase;
+
+    String userId;
 
     List<RefuelingModel> refuelingList;
+
+    String lastMileage;
+
+    float consumption;
+    String consumptionText;
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
@@ -56,7 +72,13 @@ public class HistoryFragment extends Fragment {
             activity.startActivity(new Intent(context, NewRefuelingActivity.class));
         });
 
+        firebaseAuth = FirebaseAuth.getInstance();
         firebaseFirestore = FirebaseFirestore.getInstance();
+
+        userId = firebaseAuth.getUid();
+
+        userDatabase = UserDatabase.getDatabase(activity, userId);
+        userDatabase.getUserData(userId);
 
         recyclerView = view.findViewById(R.id.refueling_recycler_view);
         recyclerView.setLayoutManager(new LinearLayoutManager(context));
@@ -76,18 +98,49 @@ public class HistoryFragment extends Fragment {
         historyDatabase.historyDataLoaded = this::NotifyDataLoaded;
     }
 
-    private void NotifyDataLoaded(List<RefuelingModel> list)
-    {
+    private void NotifyDataLoaded(List<RefuelingModel> list) {
         refuelingList = new ArrayList<>();
         refuelingList = list;
+
+        lastMileage = null;
+
+        int counter = 0;
+        float sumAvg = 0;
+
+        for (RefuelingModel refuelingModel : refuelingList) {
+
+            if (lastMileage != null) {
+                consumption = (100 * Float.parseFloat(refuelingModel.getRefuelingLiters())) / (Float.parseFloat(refuelingModel.getRefuelingMileage()) - Float.parseFloat(lastMileage));
+                sumAvg += consumption;
+                counter++;
+            }
+
+            lastMileage = refuelingModel.getRefuelingMileage();
+        }
+
+        sumAvg = sumAvg/counter;
+
+        UserModel userModel = userDatabase.getUser();
+
+        String avgConsumption = String.format("%.2f", sumAvg);
+
+        if(!userModel.getUserCarAvgConsumption().equals(avgConsumption))
+        {
+            UpdateAverageConsumption(avgConsumption);
+        }
+
+        lastMileage = null;
 
         historyAdapter.notifyDataSetChanged();
     }
 
     private class HistoryHolder extends RecyclerView.ViewHolder implements View.OnLongClickListener, View.OnClickListener {
 
-        TextView refuelingDateTime, refuelingMileage, refuelingCost, refuelingLiters, refuelingPriceLiter;
+        TextView refuelingDateTime, refuelingMileage, refuelingCost, refuelingLiters, refuelingPriceLiter, refuelingConsumption;
         RefuelingModel refuelingModel;
+
+        float consumption;
+        String consumptionText;
 
         public HistoryHolder(LayoutInflater inflater, ViewGroup parent) {
             super(inflater.inflate(R.layout.item_history, parent, false));
@@ -100,6 +153,7 @@ public class HistoryFragment extends Fragment {
             refuelingCost = itemView.findViewById(R.id.refueling_cost);
             refuelingLiters = itemView.findViewById(R.id.refueling_liters);
             refuelingPriceLiter = itemView.findViewById(R.id.refueling_price_liter);
+            refuelingConsumption = itemView.findViewById(R.id.refueling_avg_fuel_consumption);
         }
 
         public void bind(RefuelingModel refuelingModel) {
@@ -110,6 +164,17 @@ public class HistoryFragment extends Fragment {
             refuelingCost.setText(refuelingModel.getRefuelingCost() + " zł");
             refuelingLiters.setText(refuelingModel.getRefuelingLiters() + " L");
             refuelingPriceLiter.setText(refuelingModel.getRefuelingPriceLiter() + " zł/L");
+
+            if (lastMileage != null) {
+                consumption = (100 * Float.parseFloat(refuelingModel.getRefuelingLiters())) / (Float.parseFloat(refuelingModel.getRefuelingMileage()) - Float.parseFloat(lastMileage));
+                consumptionText = String.format("%.2f", consumption);
+            } else {
+                consumptionText = "-";
+            }
+
+            refuelingConsumption.setText(consumptionText + " L/100 km");
+
+            lastMileage = refuelingModel.getRefuelingMileage();
         }
 
         @Override
@@ -133,7 +198,7 @@ public class HistoryFragment extends Fragment {
 
         @Override
         public void onBindViewHolder(@NonNull HistoryHolder holder, int position) {
-            if(refuelingList != null) {
+            if (refuelingList != null) {
                 RefuelingModel refuelingModel = refuelingList.get(position);
                 holder.bind(refuelingModel);
             } else {
@@ -143,11 +208,23 @@ public class HistoryFragment extends Fragment {
 
         @Override
         public int getItemCount() {
-            if(refuelingList != null) {
+            if (refuelingList != null) {
                 return refuelingList.size();
             } else {
                 return 0;
             }
         }
+    }
+
+    private void UpdateAverageConsumption(String avgConsumption)
+    {
+        DocumentReference userDocumentReference = firebaseFirestore.collection("users").document(userId);
+
+        Map<String, Object> userMap = new HashMap<>();
+        userMap.put("AvgConsumption", avgConsumption);
+
+        userDocumentReference.update(userMap).addOnCompleteListener(task -> {
+            Toast.makeText(context, getResources().getString(R.string.edit_user_updated), Toast.LENGTH_SHORT).show();
+        }).addOnFailureListener(e -> Toast.makeText(context, getResources().getString(R.string.new_refueling_avg_error) + " " + e.getLocalizedMessage(), Toast.LENGTH_LONG).show());
     }
 }

@@ -70,6 +70,7 @@ public class UserDatabase {
             userModel.setUserCarYear(documentSnapshot.getString("Year"));
             userModel.setUserCarMileage(documentSnapshot.getString("Mileage"));
             userModel.setUserCarRegistrationNumber(documentSnapshot.getString("Registration"));
+            userModel.setUserCarAvgConsumption(documentSnapshot.getString("AvgConsumption"));
 
             if (userDataLoaded != null) {
                 userDataLoaded.UserDataLoaded();

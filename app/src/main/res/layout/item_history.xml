@@ -121,9 +121,8 @@
             android:layout_marginTop="5dp"
             android:layout_marginRight="25dp"
             android:text="@string/refueling_avg_fuel_consumption"
-            android:textAllCaps="true"
             android:textColor="@color/orange"
-            android:textSize="20sp"
+            android:textSize="18sp"
             android:textStyle="bold" />
 
     </RelativeLayout>

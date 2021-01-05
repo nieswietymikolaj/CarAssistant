@@ -36,7 +36,7 @@ import static android.app.Activity.RESULT_OK;
 
 public class UserFragment extends Fragment {
 
-    TextView userName, carBrand, carModel, carYear, carMileage, carRegistrationNumber;
+    TextView userName, carBrand, carModel, carYear, carMileage, carRegistrationNumber, carAvgConsumption;
     ImageView userPhoto;
 
     FirebaseAuth firebaseAuth;
@@ -78,6 +78,7 @@ public class UserFragment extends Fragment {
         carYear = view.findViewById(R.id.user_car_year);
         carMileage = view.findViewById(R.id.user_car_mileage);
         carRegistrationNumber = view.findViewById(R.id.user_car_registration_number);
+        carAvgConsumption = view.findViewById(R.id.user_car_avg_fuel_consumption);
 
         userPhoto = view.findViewById(R.id.user_photo);
 
@@ -189,6 +190,7 @@ public class UserFragment extends Fragment {
         carYear.setText(userModel.getUserCarYear());
         carMileage.setText(userModel.getUserCarMileage() + " km");
         carRegistrationNumber.setText(userModel.getUserCarRegistrationNumber());
+        carAvgConsumption.setText(userModel.getUserCarAvgConsumption() + " L/100 km");
 
         progressBar.setVisibility(View.INVISIBLE);
     }
