@@ -114,12 +114,12 @@ public class NewRefuelingActivity extends AppCompatActivity implements TextWatch
         String cost = refuelingCost.getText().toString().trim();
         String liters = refuelingLiters.getText().toString().trim();
 
-        float roundPriceLiter = Math.round((Float.parseFloat(cost) / Float.parseFloat(liters) * 100));
-        String priceLiter = String.valueOf(roundPriceLiter / 100);
-
         if (!ValidateDate(date) || !ValidateTime(time) || !ValidateMileage(mileage) /*|| !ValidatePriceLiter(priceLiter) */ || !ValidateCost(cost) || !ValidateLiters(liters)) {
             return;
         }
+
+        float roundPriceLiter = Math.round((Float.parseFloat(cost) / Float.parseFloat(liters) * 100));
+        String priceLiter = String.valueOf(roundPriceLiter / 100);
 
         Map<String, Object> map = new HashMap<>();
         map.put("Date", date);
