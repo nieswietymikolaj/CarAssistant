@@ -2067,8 +2067,6 @@ id new_refueling_liters
 id new_refueling_liters_text
 id new_refueling_mileage
 id new_refueling_mileage_text
-id new_refueling_price_liter
-id new_refueling_price_liter_text
 id new_refueling_progress_bar
 id new_refueling_save_button
 id new_refueling_time

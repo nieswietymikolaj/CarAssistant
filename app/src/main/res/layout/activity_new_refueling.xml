@@ -109,7 +109,7 @@
 
     </com.google.android.material.textfield.TextInputLayout>
 
-    <com.google.android.material.textfield.TextInputLayout
+<!--    <com.google.android.material.textfield.TextInputLayout
         android:id="@+id/new_refueling_price_liter"
         style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
         android:layout_width="105dp"
@@ -133,21 +133,21 @@
             android:inputType="numberDecimal"
             android:maxLength="7"/>
 
-    </com.google.android.material.textfield.TextInputLayout>
+    </com.google.android.material.textfield.TextInputLayout>-->
 
     <com.google.android.material.textfield.TextInputLayout
         android:id="@+id/new_refueling_cost"
         style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
-        android:layout_width="105dp"
+        android:layout_width="165dp"
         android:layout_height="wrap_content"
-        android:layout_marginStart="16dp"
+        android:layout_marginStart="24dp"
         android:layout_marginTop="12dp"
-        android:layout_marginEnd="16dp"
         android:hint="@string/new_refueling_cost"
         android:textColorHint="@color/text_gray"
         app:hintTextColor="@color/text_gray"
-        app:layout_constraintEnd_toStartOf="@+id/new_refueling_liters"
-        app:layout_constraintStart_toEndOf="@+id/new_refueling_price_liter"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/new_refueling_mileage">
 
         <com.google.android.material.textfield.TextInputEditText
@@ -156,14 +156,14 @@
             android:layout_height="wrap_content"
             android:background="@color/edit_text_yellow_background"
             android:inputType="numberDecimal"
-            android:maxLength="8"/>
+            android:maxLength="8" />
 
     </com.google.android.material.textfield.TextInputLayout>
 
     <com.google.android.material.textfield.TextInputLayout
         android:id="@+id/new_refueling_liters"
         style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
-        android:layout_width="105dp"
+        android:layout_width="165dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="16dp"
         android:layout_marginTop="12dp"
@@ -173,7 +173,7 @@
         app:hintTextColor="@color/text_gray"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="1.0"
-        app:layout_constraintStart_toEndOf="@+id/new_refueling_price_liter"
+        app:layout_constraintStart_toEndOf="@+id/new_refueling_cost"
         app:layout_constraintTop_toBottomOf="@+id/new_refueling_mileage">
 
         <com.google.android.material.textfield.TextInputEditText
@@ -182,7 +182,7 @@
             android:layout_height="wrap_content"
             android:background="@color/edit_text_yellow_background"
             android:inputType="numberDecimal"
-            android:maxLength="8"/>
+            android:maxLength="8" />
 
     </com.google.android.material.textfield.TextInputLayout>
 
@@ -195,7 +195,7 @@
         android:text="@string/new_refueling_save_button"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/new_refueling_price_liter" />
+        app:layout_constraintTop_toBottomOf="@+id/new_refueling_cost" />
 
     <ProgressBar
         android:id="@+id/new_refueling_progress_bar"

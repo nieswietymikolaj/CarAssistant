@@ -36,7 +36,7 @@ public class NewRefuelingActivity extends AppCompatActivity implements TextWatch
     String TIME_PATTERN = "^([0-1][0-9]|2[0-3]):([0-5][0-9])$";
     String PRICE_LITERS_PATTERN = "^(([0-9]|[0-9]{2}|[0-9]{3}|[0-9]{4}|[0-9]{5}|[0-9]{6}).([0-9]|[0-9]{2}|0[0-9]))|([0-9]|[0-9]{2}|[0-9]{3}|[0-9]{4}|[0-9]{5}|[0-9]{6}|[0-9]{7}|[0-9]{8})$";
 
-    EditText refuelingDate, refuelingTime, refuelingMileage, refuelingPriceLiter, refuelingCost, refuelingLiters;
+    EditText refuelingDate, refuelingTime, refuelingMileage /*, refuelingPriceLiter*/, refuelingCost, refuelingLiters;
     Button saveButton;
     ProgressBar progressBar;
 
@@ -78,7 +78,7 @@ public class NewRefuelingActivity extends AppCompatActivity implements TextWatch
         refuelingDate = findViewById(R.id.new_refueling_date_text);
         refuelingTime = findViewById(R.id.new_refueling_time_text);
         refuelingMileage = findViewById(R.id.new_refueling_mileage_text);
-        refuelingPriceLiter = findViewById(R.id.new_refueling_price_liter_text);
+        //refuelingPriceLiter = findViewById(R.id.new_refueling_price_liter_text);
         refuelingCost = findViewById(R.id.new_refueling_cost_text);
         refuelingLiters = findViewById(R.id.new_refueling_liters_text);
 
@@ -91,7 +91,7 @@ public class NewRefuelingActivity extends AppCompatActivity implements TextWatch
         refuelingDate.addTextChangedListener(this);
         refuelingTime.addTextChangedListener(this);
         refuelingMileage.addTextChangedListener(this);
-        refuelingPriceLiter.addTextChangedListener(this);
+        //refuelingPriceLiter.addTextChangedListener(this);
         refuelingCost.addTextChangedListener(this);
         refuelingLiters.addTextChangedListener(this);
 
@@ -111,11 +111,13 @@ public class NewRefuelingActivity extends AppCompatActivity implements TextWatch
         String date = refuelingDate.getText().toString().trim();
         String time = refuelingTime.getText().toString().trim();
         String mileage = refuelingMileage.getText().toString().trim();
-        String priceLiter = refuelingPriceLiter.getText().toString().trim();
         String cost = refuelingCost.getText().toString().trim();
         String liters = refuelingLiters.getText().toString().trim();
 
-        if (!ValidateDate(date) || !ValidateTime(time) || !ValidateMileage(mileage) || !ValidatePriceLiter(priceLiter) || !ValidateCost(cost) || !ValidateLiters(liters)) {
+        float roundPriceLiter = Math.round((Float.parseFloat(cost) / Float.parseFloat(liters) * 100));
+        String priceLiter = String.valueOf(roundPriceLiter / 100);
+
+        if (!ValidateDate(date) || !ValidateTime(time) || !ValidateMileage(mileage) /*|| !ValidatePriceLiter(priceLiter) */ || !ValidateCost(cost) || !ValidateLiters(liters)) {
             return;
         }
 
@@ -152,8 +154,7 @@ public class NewRefuelingActivity extends AppCompatActivity implements TextWatch
         });
     }
 
-    private void UpdateUserMileage(String userId, String mileage)
-    {
+    private void UpdateUserMileage(String userId, String mileage) {
         DocumentReference userDocumentReference = firebaseFirestore.collection("users").document(userId);
 
         Map<String, Object> userMap = new HashMap<>();
@@ -210,7 +211,7 @@ public class NewRefuelingActivity extends AppCompatActivity implements TextWatch
         return true;
     }
 
-    private boolean ValidatePriceLiter(String priceLiter) {
+/*    private boolean ValidatePriceLiter(String priceLiter) {
         if (priceLiter.isEmpty()) {
             refuelingPriceLiter.setError(getString(R.string.new_user_error_empty));
             refuelingPriceLiter.setBackgroundResource(R.drawable.edit_text_error);
@@ -223,7 +224,7 @@ public class NewRefuelingActivity extends AppCompatActivity implements TextWatch
             return false;
         }
         return true;
-    }
+    }*/
 
     private boolean ValidateCost(String cost) {
         if (cost.isEmpty()) {
@@ -261,7 +262,7 @@ public class NewRefuelingActivity extends AppCompatActivity implements TextWatch
         refuelingDate.setBackground(getDrawable(R.color.edit_text_yellow_background));
         refuelingTime.setBackground(getDrawable(R.color.edit_text_yellow_background));
         refuelingMileage.setBackground(getDrawable(R.color.edit_text_yellow_background));
-        refuelingPriceLiter.setBackground(getDrawable(R.color.edit_text_yellow_background));
+        //refuelingPriceLiter.setBackground(getDrawable(R.color.edit_text_yellow_background));
         refuelingCost.setBackground(getDrawable(R.color.edit_text_yellow_background));
         refuelingLiters.setBackground(getDrawable(R.color.edit_text_yellow_background));
     }
@@ -273,13 +274,7 @@ public class NewRefuelingActivity extends AppCompatActivity implements TextWatch
 
     @Override
     public void afterTextChanged(Editable s) {
-        /*float priceLiterNumber = Float.parseFloat(refuelingPriceLiter.getText().toString().trim());
-        float costNumber = Float.parseFloat(refuelingCost.getText().toString().trim());
-        float litersNumber = Float.parseFloat(refuelingLiters.getText().toString().trim());
 
-        double calculatedValue  = ( (double ) costNumber/priceLiterNumber);
-
-        refuelingLiters.setText(Double.toString(calculatedValue));*/
     }
 
     @Override
