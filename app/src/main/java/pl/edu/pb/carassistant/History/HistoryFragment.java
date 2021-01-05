@@ -92,7 +92,6 @@ public class HistoryFragment extends Fragment {
     public void onResume() {
         super.onResume();
 
-        int pom = 69;
         historyDatabase = HistoryDatabase.getDatabase(activity);
         historyDatabase.getHistoryData();
         historyDatabase.historyDataLoaded = this::NotifyDataLoaded;
