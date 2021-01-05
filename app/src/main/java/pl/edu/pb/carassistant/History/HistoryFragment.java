@@ -103,35 +103,43 @@ public class HistoryFragment extends Fragment {
 
         lastMileage = null;
 
-        int counter = 0;
-        float sumAvg = 0;
+        if (refuelingList.size() > 1) {
+            int counter = 0;
+            float sumAvg = 0;
 
-        for (RefuelingModel refuelingModel : refuelingList) {
+            for (RefuelingModel refuelingModel : refuelingList) {
 
-            if (lastMileage != null) {
-                if ((Float.parseFloat(refuelingModel.getRefuelingMileage()) - Float.parseFloat(lastMileage)) != 0) {
-                    consumption = (100 * Float.parseFloat(refuelingModel.getRefuelingLiters())) / (Float.parseFloat(refuelingModel.getRefuelingMileage()) - Float.parseFloat(lastMileage));
-                } else {
-                    consumption = 0;
+                if (lastMileage != null) {
+                    if ((Float.parseFloat(refuelingModel.getRefuelingMileage()) - Float.parseFloat(lastMileage)) != 0) {
+                        consumption = (100 * Float.parseFloat(refuelingModel.getRefuelingLiters())) / (Float.parseFloat(refuelingModel.getRefuelingMileage()) - Float.parseFloat(lastMileage));
+                    } else {
+                        consumption = 0;
+                    }
+                    sumAvg += consumption;
+                    counter++;
                 }
-                sumAvg += consumption;
-                counter++;
+
+                lastMileage = refuelingModel.getRefuelingMileage();
             }
 
-            lastMileage = refuelingModel.getRefuelingMileage();
+            sumAvg = sumAvg / counter;
+
+            UserModel userModel = userDatabase.getUser();
+
+            String avgConsumption = String.format("%.2f", sumAvg);
+
+            if (!userModel.getUserCarAvgConsumption().equals(avgConsumption)) {
+                UpdateAverageConsumption(avgConsumption);
+            }
+
+            lastMileage = null;
+
+        } else if (refuelingList.size() <= 1) {
+            UserModel userModel = userDatabase.getUser();
+            if (!userModel.getUserCarAvgConsumption().equals("-")) {
+                UpdateAverageConsumption("-");
+            }
         }
-
-        sumAvg = sumAvg / counter;
-
-        UserModel userModel = userDatabase.getUser();
-
-        String avgConsumption = String.format("%.2f", sumAvg);
-
-        if (!userModel.getUserCarAvgConsumption().equals(avgConsumption)) {
-            UpdateAverageConsumption(avgConsumption);
-        }
-
-        lastMileage = null;
 
         historyAdapter.notifyDataSetChanged();
     }
