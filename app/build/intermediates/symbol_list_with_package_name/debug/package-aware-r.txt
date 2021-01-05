@@ -1843,6 +1843,7 @@ id bounce
 id buttonPanel
 id cache_measures
 id cancel_button
+id cardView
 id center
 id centerCrop
 id centerInside
@@ -1892,6 +1893,7 @@ id decelerate
 id decelerateAndComplete
 id decor_content_parent
 id default_activity_button
+id delete_refueling_toolbar
 id deltaRelative
 id dependency_ordering
 id design_bottom_sheet
@@ -2357,6 +2359,7 @@ layout abc_search_dropdown_item_icons_2line
 layout abc_search_view
 layout abc_select_dialog_material
 layout abc_tooltip
+layout activity_delete_refueling
 layout activity_edit_refueling
 layout activity_edit_user_data
 layout activity_login
@@ -2383,7 +2386,6 @@ layout design_navigation_menu_item
 layout design_text_input_end_icon
 layout design_text_input_start_icon
 layout dialog_change_password
-layout dialog_delete_all_history_dialog
 layout dialog_forgot_password
 layout fragment_history
 layout fragment_parking

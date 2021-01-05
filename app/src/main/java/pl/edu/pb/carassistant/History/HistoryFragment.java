@@ -26,7 +26,6 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
-import pl.edu.pb.carassistant.Dialogs.DeleteAllHistoryDialog;
 import pl.edu.pb.carassistant.R;
 import pl.edu.pb.carassistant.User.UserDatabase;
 import pl.edu.pb.carassistant.User.UserModel;
@@ -93,6 +92,7 @@ public class HistoryFragment extends Fragment {
     public void onResume() {
         super.onResume();
 
+        int pom = 69;
         historyDatabase = HistoryDatabase.getDatabase(activity);
         historyDatabase.getHistoryData();
         historyDatabase.historyDataLoaded = this::NotifyDataLoaded;
@@ -110,7 +110,11 @@ public class HistoryFragment extends Fragment {
         for (RefuelingModel refuelingModel : refuelingList) {
 
             if (lastMileage != null) {
-                consumption = (100 * Float.parseFloat(refuelingModel.getRefuelingLiters())) / (Float.parseFloat(refuelingModel.getRefuelingMileage()) - Float.parseFloat(lastMileage));
+                if ((Float.parseFloat(refuelingModel.getRefuelingMileage()) - Float.parseFloat(lastMileage)) != 0) {
+                    consumption = (100 * Float.parseFloat(refuelingModel.getRefuelingLiters())) / (Float.parseFloat(refuelingModel.getRefuelingMileage()) - Float.parseFloat(lastMileage));
+                } else {
+                    consumption = 0;
+                }
                 sumAvg += consumption;
                 counter++;
             }
@@ -118,14 +122,13 @@ public class HistoryFragment extends Fragment {
             lastMileage = refuelingModel.getRefuelingMileage();
         }
 
-        sumAvg = sumAvg/counter;
+        sumAvg = sumAvg / counter;
 
         UserModel userModel = userDatabase.getUser();
 
         String avgConsumption = String.format("%.2f", sumAvg);
 
-        if(!userModel.getUserCarAvgConsumption().equals(avgConsumption))
-        {
+        if (!userModel.getUserCarAvgConsumption().equals(avgConsumption)) {
             UpdateAverageConsumption(avgConsumption);
         }
 
@@ -166,7 +169,11 @@ public class HistoryFragment extends Fragment {
             refuelingPriceLiter.setText(refuelingModel.getRefuelingPriceLiter() + " zł/L");
 
             if (lastMileage != null) {
-                consumption = (100 * Float.parseFloat(refuelingModel.getRefuelingLiters())) / (Float.parseFloat(refuelingModel.getRefuelingMileage()) - Float.parseFloat(lastMileage));
+                if ((Float.parseFloat(refuelingModel.getRefuelingMileage()) - Float.parseFloat(lastMileage)) != 0) {
+                    consumption = (100 * Float.parseFloat(refuelingModel.getRefuelingLiters())) / (Float.parseFloat(refuelingModel.getRefuelingMileage()) - Float.parseFloat(lastMileage));
+                } else {
+                    consumption = 0;
+                }
                 consumptionText = String.format("%.2f", consumption);
             } else {
                 consumptionText = "-";
@@ -186,9 +193,9 @@ public class HistoryFragment extends Fragment {
 
         @Override
         public boolean onLongClick(View v) {
-            DeleteAllHistoryDialog deleteAllHistoryDialog = new DeleteAllHistoryDialog();
-            deleteAllHistoryDialog.showDialog(activity);
-
+            Intent intent = new Intent(context, DeleteRefuelingActivity.class);
+            intent.putExtra(DeleteRefuelingActivity.EXTRA_DELETE_REFUELING_ID, refuelingModel.getRefuelingId());
+            activity.startActivity(intent);
             return false;
         }
     }
@@ -221,15 +228,14 @@ public class HistoryFragment extends Fragment {
         }
     }
 
-    private void UpdateAverageConsumption(String avgConsumption)
-    {
+    private void UpdateAverageConsumption(String avgConsumption) {
         DocumentReference userDocumentReference = firebaseFirestore.collection("users").document(userId);
 
         Map<String, Object> userMap = new HashMap<>();
         userMap.put("AvgConsumption", avgConsumption);
 
         userDocumentReference.update(userMap).addOnCompleteListener(task -> {
-            Toast.makeText(context, getResources().getString(R.string.edit_user_updated), Toast.LENGTH_SHORT).show();
+            //Toast.makeText(context, getResources().getString(R.string.edit_user_updated), Toast.LENGTH_SHORT).show();
         }).addOnFailureListener(e -> Toast.makeText(context, getResources().getString(R.string.new_refueling_avg_error) + " " + e.getLocalizedMessage(), Toast.LENGTH_LONG).show());
     }
 }

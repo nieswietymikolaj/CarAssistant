@@ -138,7 +138,9 @@ public class NewRefuelingActivity extends AppCompatActivity implements TextWatch
             @Override
             public void onSuccess(Void aVoid) {
                 Toast.makeText(NewRefuelingActivity.this, getResources().getString(R.string.new_refueling_created), Toast.LENGTH_SHORT).show();
-                UpdateUserMileage(userId, mileage);
+                if (Integer.parseInt(mileage) > Integer.parseInt(compareMileage)) {
+                    UpdateUserMileage(userId, mileage);
+                }
                 finish();
             }
         }).addOnFailureListener(new OnFailureListener() {

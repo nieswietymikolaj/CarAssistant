@@ -75,7 +75,7 @@
     <string name="user_car_mileage">Przebieg</string>
     <string name="user_car_avg_fuel_consumption_header">Średnie spalanie</string>
     <string name="user_car_avg_fuel_consumption">Spalanie</string>
-    <string name="user_photo_added">Zdjęcie użytkownika zostało dodane pomyślnie</string>
+    <string name="user_photo_added">Dodano zdjęcie użytkownika</string>
 
     <!--EDYCJA DANYCH UŻYTKOWNIKA-->
     <string name="edit_user_header">Edytuj dane</string>
@@ -121,12 +121,12 @@
     <string name="edit_refueling">Edycja</string>
     <string name="edit_refueling_updated">Dane tankowania zostały zaktualizowane</string>
 
-    <!--HISTORIA-->
-    <string name="history_delete_header">Usuwanie historii</string>
-    <string name="history_delete_message">Czy chcesz usunąć dane historii?</string>
+    <!--USUWANIE TANKOWANIA-->
+    <string name="history_delete_header">Usuwanie tankowania</string>
+    <string name="history_delete_message">Czy chcesz usunąć dane tego tankowania?</string>
     <string name="history_delete_button">Usuń</string>
     <string name="history_cancel_button">Anuluj</string>
-    <string name="history_deleted">Dane historii zostały usunięte</string>
+    <string name="history_deleted">Dane tankowania zostały usunięte</string>
 
     <!--POGODA-->
     <string name="weather_search">Wyszukaj</string>
