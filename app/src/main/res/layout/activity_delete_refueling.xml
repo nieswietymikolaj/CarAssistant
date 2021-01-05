@@ -1,0 +1,205 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/main_yellow"
+    tools:context=".History.DeleteRefuelingActivity">
+
+    <androidx.appcompat.widget.Toolbar
+        android:id="@+id/delete_refueling_toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="?attr/actionBarSize"
+        android:elevation="4dp"
+        android:theme="@style/ThemeOverlay.AppCompat.ActionBar"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:popupTheme="@style/ThemeOverlay.AppCompat.Light" />
+
+    <TextView
+        android:id="@+id/history_delete_header"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:fontFamily="@font/bungee"
+        android:gravity="center"
+        android:paddingHorizontal="10sp"
+        android:text="@string/history_delete_header"
+        android:textColor="@color/text_gray"
+        android:textSize="35sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/history_delete_message"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:layout_weight="1"
+        android:ellipsize="none"
+        android:gravity="center"
+        android:maxLines="2"
+        android:paddingHorizontal="10dp"
+        android:scrollHorizontally="false"
+        android:text="@string/history_delete_message"
+        android:textAllCaps="true"
+        android:textColor="@color/text_gray"
+        android:textSize="20sp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/history_delete_header" />
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/cardView"
+        android:layout_width="380dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="32dp"
+        app:cardCornerRadius="@dimen/data_card_radius"
+        app:cardElevation="@dimen/data_card_radius"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/history_delete_message">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <ImageView
+                android:id="@+id/refueling_image"
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:layout_marginVertical="25dp"
+                android:layout_marginLeft="10dp"
+                android:src="@drawable/ic_fuel_dispenser" />
+
+            <TextView
+                android:id="@+id/refueling_date_time"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentRight="true"
+                android:layout_marginTop="6dp"
+                android:layout_marginRight="12dp"
+                android:text="@string/refueling_date_time"
+                android:textAllCaps="true"
+                android:textColor="@color/text_gray"
+                android:textSize="15sp" />
+
+            <ImageView
+                android:id="@+id/mileage_image"
+                android:layout_width="21dp"
+                android:layout_height="21dp"
+                android:layout_marginLeft="17dp"
+                android:layout_marginTop="12dp"
+                android:layout_toEndOf="@id/refueling_image"
+                android:src="@drawable/ic_speedometer" />
+
+            <TextView
+                android:id="@+id/refueling_mileage"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="6dp"
+                android:layout_marginTop="12dp"
+                android:layout_toEndOf="@id/mileage_image"
+                android:text="@string/refueling_mileage"
+                android:textColor="@color/black"
+                android:textSize="15sp"
+                android:textStyle="bold" />
+
+            <ImageView
+                android:id="@+id/liters_image"
+                android:layout_width="21dp"
+                android:layout_height="21dp"
+                android:layout_below="@+id/refueling_mileage"
+                android:layout_marginLeft="17dp"
+                android:layout_marginTop="6dp"
+                android:layout_toEndOf="@id/refueling_image"
+                android:src="@drawable/ic_gas" />
+
+            <TextView
+                android:id="@+id/refueling_liters"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/refueling_mileage"
+                android:layout_marginLeft="6dp"
+                android:layout_marginTop="5dp"
+                android:layout_toEndOf="@id/liters_image"
+                android:text="@string/refueling_liters"
+                android:textColor="@color/text_gray"
+                android:textSize="17sp"
+                android:textStyle="bold" />
+
+            <ImageView
+                android:id="@+id/cost_image"
+                android:layout_width="21dp"
+                android:layout_height="21dp"
+                android:layout_below="@+id/refueling_liters"
+                android:layout_marginLeft="17dp"
+                android:layout_marginTop="6dp"
+                android:layout_toEndOf="@id/refueling_image"
+                android:src="@drawable/ic_money" />
+
+            <TextView
+                android:id="@+id/refueling_cost"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/refueling_liters"
+                android:layout_marginLeft="6dp"
+                android:layout_marginTop="5dp"
+                android:layout_toEndOf="@id/cost_image"
+                android:text="@string/refueling_cost"
+                android:textColor="@color/text_gray"
+                android:textSize="17sp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/refueling_price_liter"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/refueling_date_time"
+                android:layout_alignParentRight="true"
+                android:layout_marginTop="12dp"
+                android:layout_marginRight="25dp"
+                android:text="@string/refueling_price_liter"
+                android:textColor="@color/hint_gray"
+                android:textSize="17sp"
+                android:textStyle="bold" />
+
+        </RelativeLayout>
+
+    </androidx.cardview.widget.CardView>
+
+    <LinearLayout
+        android:id="@+id/linearLayout"
+        android:layout_width="410dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="32dp"
+        android:gravity="center"
+        android:orientation="horizontal"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/cardView">
+
+        <Button
+            android:id="@+id/history_delete_button"
+            style="@style/GrayButtonStyle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginRight="20dp"
+            android:layout_marginBottom="10dp"
+            android:text="@string/history_delete_button" />
+
+        <Button
+            android:id="@+id/history_cancel_button"
+            style="@style/GrayButtonStyle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="10dp"
+            android:text="@string/history_cancel_button" />
+
+    </LinearLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

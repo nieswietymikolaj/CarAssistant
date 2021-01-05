@@ -26,6 +26,8 @@ import java.util.List;
 import java.util.Map;
 
 import pl.edu.pb.carassistant.R;
+import pl.edu.pb.carassistant.User.UserDatabase;
+import pl.edu.pb.carassistant.User.UserModel;
 
 public class EditRefuelingActivity extends AppCompatActivity implements TextWatcher {
 
@@ -53,6 +55,11 @@ public class EditRefuelingActivity extends AppCompatActivity implements TextWatc
 
     String refuelingId;
 
+    UserDatabase userDatabase;
+    UserModel userModel;
+
+    String compareMileage;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -60,6 +67,11 @@ public class EditRefuelingActivity extends AppCompatActivity implements TextWatc
 
         firebaseAuth = FirebaseAuth.getInstance();
         firebaseFirestore = FirebaseFirestore.getInstance();
+
+        userDatabase = UserDatabase.getDatabase(this, firebaseAuth.getUid());
+        userModel = userDatabase.getUser();
+
+        compareMileage = userModel.getUserCarMileage();
 
         Toolbar toolbar = findViewById(R.id.edit_refueling_toolbar);
         setSupportActionBar(toolbar);
@@ -71,7 +83,6 @@ public class EditRefuelingActivity extends AppCompatActivity implements TextWatc
 
         historyDatabase = HistoryDatabase.getDatabase(this);
         refuelingList = historyDatabase.getRefuelingList();
-
 
         for (RefuelingModel refuelingModel : refuelingList) {
 
@@ -93,7 +104,7 @@ public class EditRefuelingActivity extends AppCompatActivity implements TextWatc
         refuelingCost = findViewById(R.id.edit_refueling_cost_text);
         refuelingLiters = findViewById(R.id.edit_refueling_liters_text);
 
-        refuelingMileage.setEnabled(false);
+        //refuelingMileage.setEnabled(false);
 
         refuelingDate.setText(currentDate);
         refuelingTime.setText(currentTime);
@@ -148,6 +159,9 @@ public class EditRefuelingActivity extends AppCompatActivity implements TextWatc
 
         documentReference.update(map).addOnCompleteListener(task -> {
             Toast.makeText(this, getResources().getString(R.string.edit_refueling_updated), Toast.LENGTH_SHORT).show();
+            if (Integer.parseInt(mileage) > Integer.parseInt(compareMileage)) {
+                UpdateUserMileage(userId, mileage);
+            }
             finish();
         }).addOnFailureListener(e -> Toast.makeText(this, getResources().getString(R.string.new_user_error) + " " + e.getLocalizedMessage(), Toast.LENGTH_LONG).show());
 
@@ -236,6 +250,18 @@ public class EditRefuelingActivity extends AppCompatActivity implements TextWatc
             return false;
         }
         return true;
+    }
+
+    private void UpdateUserMileage(String userId, String mileage) {
+        DocumentReference userDocumentReference = firebaseFirestore.collection("users").document(userId);
+
+        Map<String, Object> userMap = new HashMap<>();
+        userMap.put("Mileage", mileage);
+
+        userDocumentReference.update(userMap).addOnCompleteListener(task -> {
+            //Toast.makeText(this, getResources().getString(R.string.edit_user_updated), Toast.LENGTH_SHORT).show();
+            finish();
+        }).addOnFailureListener(e -> Toast.makeText(this, getResources().getString(R.string.new_user_error) + " " + e.getLocalizedMessage(), Toast.LENGTH_LONG).show());
     }
 
     @SuppressLint("UseCompatLoadingForDrawables")

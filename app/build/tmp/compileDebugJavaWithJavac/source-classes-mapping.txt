@@ -22,8 +22,6 @@ pl/edu/pb/carassistant/User/UserFragment.java
  pl.edu.pb.carassistant.User.UserFragment
 pl/edu/pb/carassistant/BuildConfig.java
  pl.edu.pb.carassistant.BuildConfig
-pl/edu/pb/carassistant/Parking/WeatherService.java
- pl.edu.pb.carassistant.Parking.WeatherService
 pl/edu/pb/carassistant/Parking/WeatherProvider.java
  pl.edu.pb.carassistant.Parking.WeatherProvider
  pl.edu.pb.carassistant.Parking.WeatherProvider$1
@@ -39,6 +37,10 @@ pl/edu/pb/carassistant/Parking/WeatherApiModel.java
 pl/edu/pb/carassistant/User/EditUserDataActivity.java
  pl.edu.pb.carassistant.User.EditUserDataActivity
  pl.edu.pb.carassistant.User.EditUserDataActivity$1
+pl/edu/pb/carassistant/History/DeleteRefuelingActivity.java
+ pl.edu.pb.carassistant.History.DeleteRefuelingActivity
+ pl.edu.pb.carassistant.History.DeleteRefuelingActivity$1
+ pl.edu.pb.carassistant.History.DeleteRefuelingActivity$1$1
 pl/edu/pb/carassistant/History/EditRefuelingActivity.java
  pl.edu.pb.carassistant.History.EditRefuelingActivity
  pl.edu.pb.carassistant.History.EditRefuelingActivity$1
@@ -70,14 +72,12 @@ pl/edu/pb/carassistant/History/NewRefuelingActivity.java
  pl.edu.pb.carassistant.History.NewRefuelingActivity$1
  pl.edu.pb.carassistant.History.NewRefuelingActivity$2
  pl.edu.pb.carassistant.History.NewRefuelingActivity$3
-pl/edu/pb/carassistant/MainActivity.java
- pl.edu.pb.carassistant.MainActivity
-pl/edu/pb/carassistant/Dialogs/DeleteAllHistoryDialog.java
- pl.edu.pb.carassistant.Dialogs.DeleteAllHistoryDialog
- pl.edu.pb.carassistant.Dialogs.DeleteAllHistoryDialog$1
- pl.edu.pb.carassistant.Dialogs.DeleteAllHistoryDialog$1$1
 pl/edu/pb/carassistant/History/HistoryFragment.java
  pl.edu.pb.carassistant.History.HistoryFragment
  pl.edu.pb.carassistant.History.HistoryFragment$1
  pl.edu.pb.carassistant.History.HistoryFragment$HistoryAdapter
  pl.edu.pb.carassistant.History.HistoryFragment$HistoryHolder
+pl/edu/pb/carassistant/MainActivity.java
+ pl.edu.pb.carassistant.MainActivity
+pl/edu/pb/carassistant/Parking/WeatherService.java
+ pl.edu.pb.carassistant.Parking.WeatherService
