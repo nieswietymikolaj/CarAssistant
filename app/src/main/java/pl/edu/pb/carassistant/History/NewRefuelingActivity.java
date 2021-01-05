@@ -138,6 +138,7 @@ public class NewRefuelingActivity extends AppCompatActivity implements TextWatch
             @Override
             public void onSuccess(Void aVoid) {
                 Toast.makeText(NewRefuelingActivity.this, getResources().getString(R.string.new_refueling_created), Toast.LENGTH_SHORT).show();
+                UpdateUserMileage(userId, mileage);
                 finish();
             }
         }).addOnFailureListener(new OnFailureListener() {
@@ -147,15 +148,17 @@ public class NewRefuelingActivity extends AppCompatActivity implements TextWatch
                 progressBar.setVisibility(View.INVISIBLE);
             }
         });
+    }
 
-
+    private void UpdateUserMileage(String userId, String mileage)
+    {
         DocumentReference userDocumentReference = firebaseFirestore.collection("users").document(userId);
 
         Map<String, Object> userMap = new HashMap<>();
         userMap.put("Mileage", mileage);
 
         userDocumentReference.update(userMap).addOnCompleteListener(task -> {
-            Toast.makeText(this, getResources().getString(R.string.edit_user_updated), Toast.LENGTH_SHORT).show();
+            //Toast.makeText(this, getResources().getString(R.string.edit_user_updated), Toast.LENGTH_SHORT).show();
             finish();
         }).addOnFailureListener(e -> Toast.makeText(this, getResources().getString(R.string.new_user_error) + " " + e.getLocalizedMessage(), Toast.LENGTH_LONG).show());
     }
