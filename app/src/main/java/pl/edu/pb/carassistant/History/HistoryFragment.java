@@ -26,6 +26,7 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
+import pl.edu.pb.carassistant.Dialogs.DeleteAllHistoryDialog;
 import pl.edu.pb.carassistant.R;
 import pl.edu.pb.carassistant.User.UserDatabase;
 import pl.edu.pb.carassistant.User.UserModel;
@@ -52,7 +53,6 @@ public class HistoryFragment extends Fragment {
     String lastMileage;
 
     float consumption;
-    String consumptionText;
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
@@ -179,11 +179,16 @@ public class HistoryFragment extends Fragment {
 
         @Override
         public void onClick(View v) {
-
+            Intent intent = new Intent(context, EditRefuelingActivity.class);
+            intent.putExtra(EditRefuelingActivity.EXTRA_EDIT_REFUELING_ID, refuelingModel.getRefuelingId());
+            activity.startActivity(intent);
         }
 
         @Override
         public boolean onLongClick(View v) {
+            DeleteAllHistoryDialog deleteAllHistoryDialog = new DeleteAllHistoryDialog();
+            deleteAllHistoryDialog.showDialog(activity);
+
             return false;
         }
     }

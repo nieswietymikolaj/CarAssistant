@@ -36,6 +36,10 @@
         "source": "C:\\Users\\Mateusz\\Documents\\GitHub\\CarAssistant\\app\\src\\main\\res\\drawable\\ic_car_24.xml"
     },
     {
+        "merged": "C:\\Users\\Mateusz\\Documents\\GitHub\\CarAssistant\\app\\build\\intermediates\\res\\merged\\debug\\drawable_ic_cleaning_24.xml.flat",
+        "source": "C:\\Users\\Mateusz\\Documents\\GitHub\\CarAssistant\\app\\src\\main\\res\\drawable\\ic_cleaning_24.xml"
+    },
+    {
         "merged": "C:\\Users\\Mateusz\\Documents\\GitHub\\CarAssistant\\app\\build\\intermediates\\res\\merged\\debug\\mipmap-anydpi-v26_ic_launcher_round.xml.flat",
         "source": "C:\\Users\\Mateusz\\Documents\\GitHub\\CarAssistant\\app\\src\\main\\res\\mipmap-anydpi-v26\\ic_launcher_round.xml"
     },
@@ -128,6 +132,10 @@
         "source": "C:\\Users\\Mateusz\\Documents\\GitHub\\CarAssistant\\app\\src\\main\\res\\font\\jockey_one.xml"
     },
     {
+        "merged": "C:\\Users\\Mateusz\\Documents\\GitHub\\CarAssistant\\app\\build\\intermediates\\res\\merged\\debug\\layout_activity_edit_refueling.xml.flat",
+        "source": "C:\\Users\\Mateusz\\Documents\\GitHub\\CarAssistant\\app\\src\\main\\res\\layout\\activity_edit_refueling.xml"
+    },
+    {
         "merged": "C:\\Users\\Mateusz\\Documents\\GitHub\\CarAssistant\\app\\build\\intermediates\\res\\merged\\debug\\layout_item_history.xml.flat",
         "source": "C:\\Users\\Mateusz\\Documents\\GitHub\\CarAssistant\\app\\src\\main\\res\\layout\\item_history.xml"
     },
@@ -166,6 +174,10 @@
     {
         "merged": "C:\\Users\\Mateusz\\Documents\\GitHub\\CarAssistant\\app\\build\\intermediates\\res\\merged\\debug\\layout_activity_new_user_data.xml.flat",
         "source": "C:\\Users\\Mateusz\\Documents\\GitHub\\CarAssistant\\app\\src\\main\\res\\layout\\activity_new_user_data.xml"
+    },
+    {
+        "merged": "C:\\Users\\Mateusz\\Documents\\GitHub\\CarAssistant\\app\\build\\intermediates\\res\\merged\\debug\\layout_dialog_delete_all_history_dialog.xml.flat",
+        "source": "C:\\Users\\Mateusz\\Documents\\GitHub\\CarAssistant\\app\\src\\main\\res\\layout\\dialog_delete_all_history_dialog.xml"
     },
     {
         "merged": "C:\\Users\\Mateusz\\Documents\\GitHub\\CarAssistant\\app\\build\\intermediates\\res\\merged\\debug\\layout_fragment_history.xml.flat",
