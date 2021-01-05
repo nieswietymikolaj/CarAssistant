@@ -115,9 +115,6 @@ public class EditUserDataActivity extends AppCompatActivity implements TextWatch
 
         progressBar.setVisibility(View.VISIBLE);
 
-        String userId = firebaseAuth.getUid();
-        DocumentReference documentReference = firebaseFirestore.collection("users").document(userId);
-
         Map<String, Object> map = new HashMap<>();
         map.put("Name", userModel.getUserName());
         map.put("Brand", userModel.getUserCarBrand());
@@ -125,6 +122,9 @@ public class EditUserDataActivity extends AppCompatActivity implements TextWatch
         map.put("Year", userModel.getUserCarYear());
         map.put("Mileage", userModel.getUserCarMileage());
         map.put("Registration", userModel.getUserCarRegistrationNumber());
+
+        String userId = firebaseAuth.getUid();
+        DocumentReference documentReference = firebaseFirestore.collection("users").document(userId);
 
         documentReference.update(map).addOnCompleteListener(task -> {
             Toast.makeText(this, getResources().getString(R.string.edit_user_updated), Toast.LENGTH_SHORT).show();

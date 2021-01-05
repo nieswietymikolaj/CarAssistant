@@ -114,6 +114,19 @@
     <string name="refueling_cost">Koszt</string>
     <string name="refueling_price_liter">Cena / litr</string>
     <string name="refueling_avg_fuel_consumption">Spalanie</string>
+    <string name="refueling_clear_all">Wyczyść historię tankowań</string>
+
+    <!--EDYCJA ITEMU TANKOWANIA-->
+    <string name="edit_refueling_save_button">Zapisz</string>
+    <string name="edit_refueling">Edycja</string>
+    <string name="edit_refueling_updated">Dane tankowania zostały zaktualizowane</string>
+
+    <!--HISTORIA-->
+    <string name="history_delete_header">Usuwanie historii</string>
+    <string name="history_delete_message">Czy chcesz usunąć dane historii?</string>
+    <string name="history_delete_button">Usuń</string>
+    <string name="history_cancel_button">Anuluj</string>
+    <string name="history_deleted">Dane historii zostały usunięte</string>
 
     <!--POGODA-->
     <string name="weather_search">Wyszukaj</string>

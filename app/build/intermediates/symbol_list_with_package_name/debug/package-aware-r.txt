@@ -1693,6 +1693,7 @@ drawable ic_arrow_back_24
 drawable ic_broken_image_24
 drawable ic_car_24
 drawable ic_city
+drawable ic_cleaning_24
 drawable ic_edit_24
 drawable ic_european_flag
 drawable ic_fuel_dispenser
@@ -1863,6 +1864,7 @@ id chip3
 id chip_group
 id chronometer
 id city_image
+id cleaning_action_button
 id clear_text
 id clip_horizontal
 id clip_vertical
@@ -1915,6 +1917,23 @@ id easeInOut
 id easeOut
 id edit_change_password_button
 id edit_query
+id edit_refueling
+id edit_refueling_cost
+id edit_refueling_cost_text
+id edit_refueling_date
+id edit_refueling_date_text
+id edit_refueling_header
+id edit_refueling_liters
+id edit_refueling_liters_text
+id edit_refueling_mileage
+id edit_refueling_mileage_text
+id edit_refueling_price_liter
+id edit_refueling_price_liter_text
+id edit_refueling_progress_bar
+id edit_refueling_save_button
+id edit_refueling_time
+id edit_refueling_time_text
+id edit_refueling_toolbar
 id edit_user_header
 id edit_user_progress_bar
 id edit_user_save_button
@@ -1948,6 +1967,10 @@ id group_divider
 id grouping
 id groups
 id hideable
+id history_cancel_button
+id history_delete_button
+id history_delete_header
+id history_delete_message
 id history_fragment
 id home
 id homeAsUp
@@ -2334,6 +2357,7 @@ layout abc_search_dropdown_item_icons_2line
 layout abc_search_view
 layout abc_select_dialog_material
 layout abc_tooltip
+layout activity_edit_refueling
 layout activity_edit_user_data
 layout activity_login
 layout activity_main
@@ -2359,6 +2383,7 @@ layout design_navigation_menu_item
 layout design_text_input_end_icon
 layout design_text_input_start_icon
 layout dialog_change_password
+layout dialog_delete_all_history_dialog
 layout dialog_forgot_password
 layout fragment_history
 layout fragment_parking
@@ -2492,6 +2517,9 @@ string crop_image_menu_rotate_left
 string crop_image_menu_rotate_right
 string default_web_client_id
 string edit_change_password_button
+string edit_refueling
+string edit_refueling_save_button
+string edit_refueling_updated
 string edit_user_header
 string edit_user_save_button
 string edit_user_updated
@@ -2505,6 +2533,11 @@ string google_app_id
 string google_crash_reporting_api_key
 string google_storage_bucket
 string hide_bottom_view_on_scroll_behavior
+string history_cancel_button
+string history_delete_button
+string history_delete_header
+string history_delete_message
+string history_deleted
 string icon_content_description
 string item_view_role_description
 string login_button
@@ -2597,6 +2630,7 @@ string path_password_strike_through
 string pick_image_intent_chooser_title
 string project_id
 string refueling_avg_fuel_consumption
+string refueling_clear_all
 string refueling_cost
 string refueling_date_time
 string refueling_liters
