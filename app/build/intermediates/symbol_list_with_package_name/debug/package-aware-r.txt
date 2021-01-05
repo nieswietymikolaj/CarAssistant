@@ -2554,6 +2554,7 @@ string nav_app_bar_open_drawer_description
 string nav_bar_history
 string nav_bar_parking
 string nav_bar_user
+string new_refueling_compare_error
 string new_refueling_cost
 string new_refueling_created
 string new_refueling_date

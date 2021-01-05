@@ -65,12 +65,12 @@ pl/edu/pb/carassistant/History/NewRefuelingActivity.java
  pl.edu.pb.carassistant.History.NewRefuelingActivity$1
  pl.edu.pb.carassistant.History.NewRefuelingActivity$2
  pl.edu.pb.carassistant.History.NewRefuelingActivity$3
+pl/edu/pb/carassistant/Parking/WeatherService.java
+ pl.edu.pb.carassistant.Parking.WeatherService
+pl/edu/pb/carassistant/MainActivity.java
+ pl.edu.pb.carassistant.MainActivity
 pl/edu/pb/carassistant/History/HistoryFragment.java
  pl.edu.pb.carassistant.History.HistoryFragment
  pl.edu.pb.carassistant.History.HistoryFragment$1
  pl.edu.pb.carassistant.History.HistoryFragment$HistoryAdapter
  pl.edu.pb.carassistant.History.HistoryFragment$HistoryHolder
-pl/edu/pb/carassistant/MainActivity.java
- pl.edu.pb.carassistant.MainActivity
-pl/edu/pb/carassistant/Parking/WeatherService.java
- pl.edu.pb.carassistant.Parking.WeatherService

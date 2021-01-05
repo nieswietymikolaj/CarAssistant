@@ -27,6 +27,8 @@ import java.util.HashMap;
 import java.util.Map;
 
 import pl.edu.pb.carassistant.R;
+import pl.edu.pb.carassistant.User.UserDatabase;
+import pl.edu.pb.carassistant.User.UserModel;
 
 public class NewRefuelingActivity extends AppCompatActivity implements TextWatcher {
 
@@ -45,6 +47,11 @@ public class NewRefuelingActivity extends AppCompatActivity implements TextWatch
     SimpleDateFormat dateFormat, timeFormat;
     String currentDate, currentTime;
 
+    UserDatabase userDatabase;
+    UserModel userModel;
+
+    String compareMileage;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -52,6 +59,9 @@ public class NewRefuelingActivity extends AppCompatActivity implements TextWatch
 
         firebaseAuth = FirebaseAuth.getInstance();
         firebaseFirestore = FirebaseFirestore.getInstance();
+
+        userDatabase = UserDatabase.getDatabase(this, firebaseAuth.getUid());
+        userModel = userDatabase.getUser();
 
         calendar = Calendar.getInstance();
         dateFormat = new SimpleDateFormat("dd/MM/yyyy");
@@ -74,6 +84,9 @@ public class NewRefuelingActivity extends AppCompatActivity implements TextWatch
 
         refuelingDate.setText(currentDate);
         refuelingTime.setText(currentTime);
+        refuelingMileage.setText(userModel.getUserCarMileage());
+
+        compareMileage = userModel.getUserCarMileage();
 
         refuelingDate.addTextChangedListener(this);
         refuelingTime.addTextChangedListener(this);
@@ -134,6 +147,17 @@ public class NewRefuelingActivity extends AppCompatActivity implements TextWatch
                 progressBar.setVisibility(View.INVISIBLE);
             }
         });
+
+
+        DocumentReference userDocumentReference = firebaseFirestore.collection("users").document(userId);
+
+        Map<String, Object> userMap = new HashMap<>();
+        userMap.put("Mileage", mileage);
+
+        userDocumentReference.update(userMap).addOnCompleteListener(task -> {
+            Toast.makeText(this, getResources().getString(R.string.edit_user_updated), Toast.LENGTH_SHORT).show();
+            finish();
+        }).addOnFailureListener(e -> Toast.makeText(this, getResources().getString(R.string.new_user_error) + " " + e.getLocalizedMessage(), Toast.LENGTH_LONG).show());
     }
 
     private boolean ValidateDate(String date) {
@@ -169,6 +193,12 @@ public class NewRefuelingActivity extends AppCompatActivity implements TextWatch
     private boolean ValidateMileage(String mileage) {
         if (mileage.isEmpty()) {
             refuelingMileage.setError(getString(R.string.new_user_error_empty));
+            refuelingMileage.setBackgroundResource(R.drawable.edit_text_error);
+            return false;
+        }
+
+        if (Integer.parseInt(mileage) < Integer.parseInt(compareMileage)) {
+            refuelingMileage.setError(getString(R.string.new_refueling_compare_error) + " (" + compareMileage + " km)");
             refuelingMileage.setBackgroundResource(R.drawable.edit_text_error);
             return false;
         }
