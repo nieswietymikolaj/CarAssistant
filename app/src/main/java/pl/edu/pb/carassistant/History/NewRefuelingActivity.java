@@ -111,6 +111,7 @@ public class NewRefuelingActivity extends AppCompatActivity implements TextWatch
         String date = refuelingDate.getText().toString().trim();
         String time = refuelingTime.getText().toString().trim();
         String mileage = refuelingMileage.getText().toString().trim();
+        //String priceLiter = refuelingPriceLiter.getText().toString().trim();
         String cost = refuelingCost.getText().toString().trim();
         String liters = refuelingLiters.getText().toString().trim();
 

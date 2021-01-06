@@ -28,7 +28,6 @@
         android:testOnly="true"
         android:theme="@style/Theme.CarAssistant" >
         <activity android:name="pl.edu.pb.carassistant.History.DeleteRefuelingActivity" />
-        <activity android:name="pl.edu.pb.carassistant.Dialogs.DeleteAllHistoryDialog" />
         <activity android:name="pl.edu.pb.carassistant.History.EditRefuelingActivity" />
         <activity android:name="pl.edu.pb.carassistant.History.NewRefuelingActivity" />
         <activity android:name="pl.edu.pb.carassistant.User.EditUserDataActivity" />
