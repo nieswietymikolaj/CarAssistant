@@ -1929,8 +1929,6 @@ id edit_refueling_liters
 id edit_refueling_liters_text
 id edit_refueling_mileage
 id edit_refueling_mileage_text
-id edit_refueling_price_liter
-id edit_refueling_price_liter_text
 id edit_refueling_progress_bar
 id edit_refueling_save_button
 id edit_refueling_time

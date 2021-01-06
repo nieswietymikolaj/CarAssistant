@@ -18,7 +18,6 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.CarAssistant">
         <activity android:name=".History.DeleteRefuelingActivity"></activity>
-        <activity android:name=".Dialogs.DeleteAllHistoryDialog" />
         <activity android:name=".History.EditRefuelingActivity" />
         <activity android:name=".History.NewRefuelingActivity" />
         <activity android:name=".User.EditUserDataActivity" />
