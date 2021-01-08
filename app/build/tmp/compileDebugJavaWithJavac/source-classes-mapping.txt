@@ -28,10 +28,8 @@ pl/edu/pb/carassistant/Parking/WeatherProvider.java
  pl.edu.pb.carassistant.Parking.WeatherProvider$WeatherDataLoaded
 pl/edu/pb/carassistant/User/UserModel.java
  pl.edu.pb.carassistant.User.UserModel
-pl/edu/pb/carassistant/Parking/ParkingFragment.java
- pl.edu.pb.carassistant.Parking.ParkingFragment
- pl.edu.pb.carassistant.Parking.ParkingFragment$1
- pl.edu.pb.carassistant.Parking.ParkingFragment$2
+pl/edu/pb/carassistant/Parking/WeatherService.java
+ pl.edu.pb.carassistant.Parking.WeatherService
 pl/edu/pb/carassistant/Parking/WeatherApiModel.java
  pl.edu.pb.carassistant.Parking.WeatherApiModel
 pl/edu/pb/carassistant/Parking/YouTubeActivity.java
@@ -85,5 +83,7 @@ pl/edu/pb/carassistant/History/HistoryFragment.java
  pl.edu.pb.carassistant.History.HistoryFragment$HistoryHolder
 pl/edu/pb/carassistant/MainActivity.java
  pl.edu.pb.carassistant.MainActivity
-pl/edu/pb/carassistant/Parking/WeatherService.java
- pl.edu.pb.carassistant.Parking.WeatherService
+pl/edu/pb/carassistant/Parking/ParkingFragment.java
+ pl.edu.pb.carassistant.Parking.ParkingFragment
+ pl.edu.pb.carassistant.Parking.ParkingFragment$1
+ pl.edu.pb.carassistant.Parking.ParkingFragment$2

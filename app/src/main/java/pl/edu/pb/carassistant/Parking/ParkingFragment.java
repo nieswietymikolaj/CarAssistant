@@ -1,6 +1,7 @@
 package pl.edu.pb.carassistant.Parking;
 
 import androidx.annotation.NonNull;
+import androidx.cardview.widget.CardView;
 import androidx.core.app.ActivityCompat;
 import androidx.fragment.app.Fragment;
 
@@ -12,6 +13,7 @@ import android.content.Intent;
 import android.content.pm.PackageManager;
 import android.location.Location;
 import android.location.LocationManager;
+import android.net.Uri;
 import android.os.Bundle;
 import android.os.Looper;
 import android.provider.Settings;
@@ -29,6 +31,7 @@ import com.google.android.gms.location.LocationResult;
 import com.google.android.gms.location.LocationServices;
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
+import com.google.android.material.card.MaterialCardView;
 
 import pl.edu.pb.carassistant.R;
 
@@ -47,7 +50,7 @@ public class ParkingFragment extends Fragment {
 
     int PERMISSION_ID = 44;
 
-    Button youtubeButton;
+    MaterialCardView youtubeButton, newsButton;
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
@@ -68,10 +71,16 @@ public class ParkingFragment extends Fragment {
         weatherHumidity = view.findViewById(R.id.weather_humidity);
         weatherPressure = view.findViewById(R.id.weather_pressure);
 
-        youtubeButton = view.findViewById(R.id.youtube_button);
+        youtubeButton = view.findViewById(R.id.youtube_card_view);
+        newsButton = view.findViewById(R.id.news_card_view);
 
         youtubeButton.setOnClickListener(v -> {
             activity.startActivity(new Intent(context, YouTubeActivity.class));
+        });
+
+        newsButton.setOnClickListener(v -> {
+            Intent intent = new Intent(Intent.ACTION_VIEW).setData(Uri.parse("https://www.motofakty.pl/artykul/kodeks-drogowy-zmiany-dla-kierowcow-w-2021-roku.html"));
+            startActivity(intent);
         });
 
         fusedLocationProviderClient = LocationServices.getFusedLocationProviderClient(activity);

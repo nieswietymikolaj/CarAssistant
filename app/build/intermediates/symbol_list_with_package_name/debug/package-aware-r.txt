@@ -2097,6 +2097,13 @@ id new_user_name_text
 id new_user_progress_bar
 id new_user_toolbar
 id new_user_welcome_header
+id news_card_view
+id news_click
+id news_header
+id news_text1
+id news_text2
+id news_text3
+id news_title
 id noScroll
 id none
 id normal
@@ -2301,7 +2308,9 @@ id withText
 id withinBounds
 id wrap
 id wrap_content
-id youtube_button
+id youtube_button_click
+id youtube_button_header
+id youtube_button_title
 id youtube_card_view
 id youtube_player
 id youtube_video_title
@@ -2636,6 +2645,12 @@ string new_user_error_year
 string new_user_name
 string new_user_success
 string new_user_welcome_header
+string news_click
+string news_header
+string news_text1
+string news_text2
+string news_text3
+string news_title
 string password_toggle_content_description
 string path_password_eye
 string path_password_eye_mask_strike_through
@@ -2694,6 +2709,9 @@ string weather_pressure_placeholder
 string weather_search
 string weather_temperature_placeholder
 string youtube_app_error
+string youtube_button_click
+string youtube_button_header
+string youtube_button_title
 string youtube_player_button
 string youtube_recommended_channels
 string youtube_video_title

@@ -150,4 +150,16 @@
     <string name="channel_motodoradca">Moto Doradca</string>
     <string name="channel_kickster">KicksterTV</string>
 
+    <!--GŁÓWNA-->
+    <string name="youtube_button_header">Film</string>
+    <string name="youtube_button_title">Co składa się na cenę paliwa?</string>
+    <string name="youtube_button_click">Kliknij aby obejrzeć materiał</string>
+    <string name="news_header">Wiadomości</string>
+    <string name="news_title">Nowe przepisy 2021!</string>
+    <string name="news_click">Kliknij aby poznać szczegóły</string>
+    <string name="news_text1">- pierwszeństwo pieszych na przejściach,</string>
+    <string name="news_text2">- zakaz korzystania z telefonów podczas przechodzenia przez jezdnię,</string>
+    <string name="news_text3">- koniec z „jazdą na zderzaku”.</string>
+
+
 </resources>
