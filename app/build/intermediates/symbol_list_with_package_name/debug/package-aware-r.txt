@@ -1711,6 +1711,7 @@ drawable ic_mtrl_chip_close_circle
 drawable ic_parking_24
 drawable ic_password_eye_24
 drawable ic_speedometer
+drawable kickster
 drawable material_ic_calendar_black_24dp
 drawable material_ic_clear_black_24dp
 drawable material_ic_edit_black_24dp
@@ -1718,6 +1719,7 @@ drawable material_ic_keyboard_arrow_left_black_24dp
 drawable material_ic_keyboard_arrow_right_black_24dp
 drawable material_ic_menu_arrow_down_black_24dp
 drawable material_ic_menu_arrow_up_black_24dp
+drawable motodoradca
 drawable mtrl_dialog_background
 drawable mtrl_dropdown_arrow
 drawable mtrl_ic_arrow_drop_down
@@ -1856,6 +1858,11 @@ id change_password_header
 id change_password_message
 id change_password_old_password
 id change_password_old_password_text
+id channel_kickster
+id channel_kickster_image
+id channel_motodoradca
+id channel_motodoradca_image
+id channel_recommended
 id checkbox
 id checked
 id chip
@@ -1991,6 +1998,8 @@ id jumpToStart
 id labeled
 id largeLabel
 id layout
+id layout_kickster
+id layout_motodoradca
 id left
 id light
 id line1
@@ -2292,6 +2301,10 @@ id withText
 id withinBounds
 id wrap
 id wrap_content
+id youtube_button
+id youtube_card_view
+id youtube_player
+id youtube_video_title
 id zero_corner_chip
 integer abc_config_activityDefaultDur
 integer abc_config_activityShortDur
@@ -2363,6 +2376,7 @@ layout activity_main
 layout activity_new_refueling
 layout activity_new_user_data
 layout activity_register
+layout activity_you_tube
 layout crop_image_activity
 layout crop_image_view
 layout custom_dialog
@@ -2482,6 +2496,8 @@ string change_password_header
 string change_password_message
 string change_password_old_password
 string change_password_sent
+string channel_kickster
+string channel_motodoradca
 string character_counter_content_description
 string character_counter_overflowed_content_description
 string character_counter_pattern
@@ -2677,6 +2693,10 @@ string weather_pressure
 string weather_pressure_placeholder
 string weather_search
 string weather_temperature_placeholder
+string youtube_app_error
+string youtube_player_button
+string youtube_recommended_channels
+string youtube_video_title
 style AlertDialog_AppCompat
 style AlertDialog_AppCompat_Light
 style AndroidThemeColorAccentYellow

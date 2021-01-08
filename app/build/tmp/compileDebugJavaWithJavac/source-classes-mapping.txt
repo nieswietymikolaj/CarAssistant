@@ -34,6 +34,12 @@ pl/edu/pb/carassistant/Parking/ParkingFragment.java
  pl.edu.pb.carassistant.Parking.ParkingFragment$2
 pl/edu/pb/carassistant/Parking/WeatherApiModel.java
  pl.edu.pb.carassistant.Parking.WeatherApiModel
+pl/edu/pb/carassistant/Parking/YouTubeActivity.java
+ pl.edu.pb.carassistant.Parking.YouTubeActivity
+ pl.edu.pb.carassistant.Parking.YouTubeActivity$1
+ pl.edu.pb.carassistant.Parking.YouTubeActivity$2
+ pl.edu.pb.carassistant.Parking.YouTubeActivity$3
+ pl.edu.pb.carassistant.Parking.YouTubeActivity$Config
 pl/edu/pb/carassistant/User/EditUserDataActivity.java
  pl.edu.pb.carassistant.User.EditUserDataActivity
  pl.edu.pb.carassistant.User.EditUserDataActivity$1

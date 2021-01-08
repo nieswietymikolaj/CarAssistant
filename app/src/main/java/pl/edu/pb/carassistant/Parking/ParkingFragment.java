@@ -18,6 +18,7 @@ import android.provider.Settings;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Button;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -46,6 +47,8 @@ public class ParkingFragment extends Fragment {
 
     int PERMISSION_ID = 44;
 
+    Button youtubeButton;
+
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -64,6 +67,12 @@ public class ParkingFragment extends Fragment {
         weatherTemperature = view.findViewById(R.id.weather_temperature);
         weatherHumidity = view.findViewById(R.id.weather_humidity);
         weatherPressure = view.findViewById(R.id.weather_pressure);
+
+        youtubeButton = view.findViewById(R.id.youtube_button);
+
+        youtubeButton.setOnClickListener(v -> {
+            activity.startActivity(new Intent(context, YouTubeActivity.class));
+        });
 
         fusedLocationProviderClient = LocationServices.getFusedLocationProviderClient(activity);
         GetLastLocation();
