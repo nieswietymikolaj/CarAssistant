@@ -3,14 +3,11 @@ package pl.edu.pb.carassistant.User;
 import android.app.Activity;
 import android.content.Context;
 import android.net.Uri;
-import android.widget.Toast;
 
 import com.google.firebase.firestore.DocumentReference;
 import com.google.firebase.firestore.FirebaseFirestore;
 import com.google.firebase.storage.FirebaseStorage;
 import com.google.firebase.storage.StorageReference;
-
-import pl.edu.pb.carassistant.R;
 
 public class UserDatabase {
 
@@ -70,6 +67,7 @@ public class UserDatabase {
             userModel.setUserCarYear(documentSnapshot.getString("Year"));
             userModel.setUserCarMileage(documentSnapshot.getString("Mileage"));
             userModel.setUserCarRegistrationNumber(documentSnapshot.getString("Registration"));
+            userModel.setUserCarAvgConsumption(documentSnapshot.getString("AvgConsumption"));
 
             if (userDataLoaded != null) {
                 userDataLoaded.UserDataLoaded();

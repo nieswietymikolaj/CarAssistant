@@ -5,10 +5,10 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@color/main_yellow"
-    tools:context=".History.NewRefuelingActivity">
+    tools:context=".History.EditRefuelingActivity">
 
     <androidx.appcompat.widget.Toolbar
-        android:id="@+id/new_refueling_toolbar"
+        android:id="@+id/edit_refueling_toolbar"
         android:layout_width="match_parent"
         android:layout_height="?attr/actionBarSize"
         android:elevation="4dp"
@@ -19,7 +19,21 @@
         app:popupTheme="@style/ThemeOverlay.AppCompat.Light" />
 
     <TextView
-        android:id="@+id/new_refueling_header"
+        android:id="@+id/edit_refueling"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:text="@string/edit_refueling"
+        android:textAllCaps="true"
+        android:textColor="@color/text_gray"
+        android:textSize="20sp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/edit_refueling_header" />
+
+    <TextView
+        android:id="@+id/edit_refueling_header"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="20dp"
@@ -33,12 +47,12 @@
         app:layout_constraintTop_toTopOf="parent" />
 
     <com.google.android.material.textfield.TextInputLayout
-        android:id="@+id/new_refueling_date"
+        android:id="@+id/edit_refueling_date"
         style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
         android:layout_width="165dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="24dp"
-        android:layout_marginTop="16dp"
+        android:layout_marginTop="20dp"
         android:layout_marginEnd="24dp"
         android:hint="@string/new_refueling_date"
         android:textColorHint="@color/text_gray"
@@ -46,10 +60,10 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/new_refueling_header">
+        app:layout_constraintTop_toBottomOf="@+id/edit_refueling">
 
         <com.google.android.material.textfield.TextInputEditText
-            android:id="@+id/new_refueling_date_text"
+            android:id="@+id/edit_refueling_date_text"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:background="@color/edit_text_yellow_background"
@@ -59,23 +73,23 @@
     </com.google.android.material.textfield.TextInputLayout>
 
     <com.google.android.material.textfield.TextInputLayout
-        android:id="@+id/new_refueling_time"
+        android:id="@+id/edit_refueling_time"
         style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
         android:layout_width="165dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="16dp"
-        android:layout_marginTop="16dp"
+        android:layout_marginTop="20dp"
         android:layout_marginEnd="24dp"
         android:hint="@string/new_refueling_time"
         android:textColorHint="@color/text_gray"
         app:hintTextColor="@color/text_gray"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="1.0"
-        app:layout_constraintStart_toEndOf="@+id/new_refueling_date"
-        app:layout_constraintTop_toBottomOf="@+id/new_refueling_header">
+        app:layout_constraintStart_toEndOf="@+id/edit_refueling_date"
+        app:layout_constraintTop_toBottomOf="@+id/edit_refueling">
 
         <com.google.android.material.textfield.TextInputEditText
-            android:id="@+id/new_refueling_time_text"
+            android:id="@+id/edit_refueling_time_text"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:background="@color/edit_text_yellow_background"
@@ -85,7 +99,7 @@
     </com.google.android.material.textfield.TextInputLayout>
 
     <com.google.android.material.textfield.TextInputLayout
-        android:id="@+id/new_refueling_mileage"
+        android:id="@+id/edit_refueling_mileage"
         style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -97,10 +111,10 @@
         app:hintTextColor="@color/text_gray"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/new_refueling_date">
+        app:layout_constraintTop_toBottomOf="@+id/edit_refueling_date">
 
         <com.google.android.material.textfield.TextInputEditText
-            android:id="@+id/new_refueling_mileage_text"
+            android:id="@+id/edit_refueling_mileage_text"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:background="@color/edit_text_yellow_background"
@@ -110,7 +124,7 @@
     </com.google.android.material.textfield.TextInputLayout>
 
     <!--    <com.google.android.material.textfield.TextInputLayout
-            android:id="@+id/new_refueling_price_liter"
+            android:id="@+id/edit_refueling_price_liter"
             style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
             android:layout_width="105dp"
             android:layout_height="wrap_content"
@@ -123,10 +137,10 @@
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.0"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/new_refueling_mileage">
+            app:layout_constraintTop_toBottomOf="@+id/edit_refueling_mileage">
 
             <com.google.android.material.textfield.TextInputEditText
-                android:id="@+id/new_refueling_price_liter_text"
+                android:id="@+id/edit_refueling_price_liter_text"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:background="@color/edit_text_yellow_background"
@@ -136,7 +150,7 @@
         </com.google.android.material.textfield.TextInputLayout>-->
 
     <com.google.android.material.textfield.TextInputLayout
-        android:id="@+id/new_refueling_cost"
+        android:id="@+id/edit_refueling_cost"
         style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
         android:layout_width="165dp"
         android:layout_height="wrap_content"
@@ -148,10 +162,10 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/new_refueling_mileage">
+        app:layout_constraintTop_toBottomOf="@+id/edit_refueling_mileage">
 
         <com.google.android.material.textfield.TextInputEditText
-            android:id="@+id/new_refueling_cost_text"
+            android:id="@+id/edit_refueling_cost_text"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:background="@color/edit_text_yellow_background"
@@ -161,7 +175,7 @@
     </com.google.android.material.textfield.TextInputLayout>
 
     <com.google.android.material.textfield.TextInputLayout
-        android:id="@+id/new_refueling_liters"
+        android:id="@+id/edit_refueling_liters"
         style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
         android:layout_width="165dp"
         android:layout_height="wrap_content"
@@ -173,11 +187,11 @@
         app:hintTextColor="@color/text_gray"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="1.0"
-        app:layout_constraintStart_toEndOf="@+id/new_refueling_cost"
-        app:layout_constraintTop_toBottomOf="@+id/new_refueling_mileage">
+        app:layout_constraintStart_toEndOf="@+id/edit_refueling_cost"
+        app:layout_constraintTop_toBottomOf="@+id/edit_refueling_mileage">
 
         <com.google.android.material.textfield.TextInputEditText
-            android:id="@+id/new_refueling_liters_text"
+            android:id="@+id/edit_refueling_liters_text"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:background="@color/edit_text_yellow_background"
@@ -187,18 +201,18 @@
     </com.google.android.material.textfield.TextInputLayout>
 
     <Button
-        android:id="@+id/new_refueling_save_button"
+        android:id="@+id/edit_refueling_save_button"
         style="@style/GrayButtonStyle"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="32dp"
-        android:text="@string/new_refueling_save_button"
+        android:text="@string/edit_refueling_save_button"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/new_refueling_cost" />
+        app:layout_constraintTop_toBottomOf="@+id/edit_refueling_cost" />
 
     <ProgressBar
-        android:id="@+id/new_refueling_progress_bar"
+        android:id="@+id/edit_refueling_progress_bar"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="8dp"
@@ -206,7 +220,6 @@
         android:visibility="invisible"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/new_refueling_save_button" />
-
+        app:layout_constraintTop_toBottomOf="@+id/edit_refueling_save_button" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

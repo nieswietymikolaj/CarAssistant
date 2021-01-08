@@ -14,8 +14,8 @@
 
         <ImageView
             android:id="@+id/refueling_image"
-            android:layout_width="50dp"
-            android:layout_height="50dp"
+            android:layout_width="@dimen/refueling_image_size"
+            android:layout_height="@dimen/refueling_image_size"
             android:layout_marginVertical="25dp"
             android:layout_marginLeft="10dp"
             android:src="@drawable/ic_fuel_dispenser" />
@@ -30,12 +30,12 @@
             android:text="@string/refueling_date_time"
             android:textAllCaps="true"
             android:textColor="@color/text_gray"
-            android:textSize="15sp" />
+            android:textSize="@dimen/refueling_mileage_date_size" />
 
         <ImageView
             android:id="@+id/mileage_image"
-            android:layout_width="21dp"
-            android:layout_height="21dp"
+            android:layout_width="@dimen/refueling_picture_size"
+            android:layout_height="@dimen/refueling_picture_size"
             android:layout_marginLeft="17dp"
             android:layout_marginTop="12dp"
             android:layout_toEndOf="@id/refueling_image"
@@ -50,16 +50,16 @@
             android:layout_toEndOf="@id/mileage_image"
             android:text="@string/refueling_mileage"
             android:textColor="@color/black"
-            android:textSize="15sp"
+            android:textSize="@dimen/refueling_mileage_date_size"
             android:textStyle="bold" />
 
         <ImageView
             android:id="@+id/liters_image"
-            android:layout_width="21dp"
-            android:layout_height="21dp"
+            android:layout_width="@dimen/refueling_picture_size"
+            android:layout_height="@dimen/refueling_picture_size"
+            android:layout_below="@+id/refueling_mileage"
             android:layout_marginLeft="17dp"
             android:layout_marginTop="6dp"
-            android:layout_below="@+id/refueling_mileage"
             android:layout_toEndOf="@id/refueling_image"
             android:src="@drawable/ic_gas" />
 
@@ -73,16 +73,16 @@
             android:layout_toEndOf="@id/liters_image"
             android:text="@string/refueling_liters"
             android:textColor="@color/text_gray"
-            android:textSize="17sp"
+            android:textSize="@dimen/refueling_liters_cost_size"
             android:textStyle="bold" />
 
         <ImageView
             android:id="@+id/cost_image"
-            android:layout_width="21dp"
-            android:layout_height="21dp"
+            android:layout_width="@dimen/refueling_picture_size"
+            android:layout_height="@dimen/refueling_picture_size"
+            android:layout_below="@+id/refueling_liters"
             android:layout_marginLeft="17dp"
             android:layout_marginTop="6dp"
-            android:layout_below="@+id/refueling_liters"
             android:layout_toEndOf="@id/refueling_image"
             android:src="@drawable/ic_money" />
 
@@ -96,7 +96,7 @@
             android:layout_toEndOf="@id/cost_image"
             android:text="@string/refueling_cost"
             android:textColor="@color/text_gray"
-            android:textSize="17sp"
+            android:textSize="@dimen/refueling_liters_cost_size"
             android:textStyle="bold" />
 
         <TextView
@@ -104,12 +104,12 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_below="@+id/refueling_date_time"
+            android:layout_alignParentRight="true"
             android:layout_marginTop="12dp"
             android:layout_marginRight="25dp"
-            android:layout_alignParentRight="true"
             android:text="@string/refueling_price_liter"
             android:textColor="@color/hint_gray"
-            android:textSize="17sp"
+            android:textSize="@dimen/refueling_liters_cost_size"
             android:textStyle="bold" />
 
         <TextView
@@ -121,9 +121,8 @@
             android:layout_marginTop="5dp"
             android:layout_marginRight="25dp"
             android:text="@string/refueling_avg_fuel_consumption"
-            android:textAllCaps="true"
             android:textColor="@color/orange"
-            android:textSize="20sp"
+            android:textSize="18sp"
             android:textStyle="bold" />
 
     </RelativeLayout>

@@ -22,14 +22,4 @@
         <item name="android:textColorHint">@color/hint_gray</item>
     </style>
 
-    <style name="EditTextAppearance" parent="TextAppearance.AppCompat">
-        <item name="android:textColor">@android:color/holo_orange_dark</item>
-        <item name="android:textSize">16sp</item>
-        <item name="android:textStyle">bold|italic</item>
-    </style>
-
-    <style name="EditTextThemeOverlay" parent="ThemeOverlay.AppCompat">
-        <item name="colorAccent">@android:color/holo_blue_light</item>
-    </style>
-
 </resources>

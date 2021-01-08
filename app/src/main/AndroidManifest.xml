@@ -17,6 +17,9 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.CarAssistant">
+        <activity android:name=".Home.YouTubeActivity"></activity>
+        <activity android:name=".History.DeleteRefuelingActivity" />
+        <activity android:name=".History.EditRefuelingActivity" />
         <activity android:name=".History.NewRefuelingActivity" />
         <activity android:name=".User.EditUserDataActivity" />
         <activity android:name=".MainActivity" />

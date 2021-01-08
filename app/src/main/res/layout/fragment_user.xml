@@ -24,7 +24,7 @@
 
         <androidx.constraintlayout.widget.ConstraintLayout
             android:layout_width="match_parent"
-            android:layout_height="230dp"
+            android:layout_height="235dp"
             android:background="@color/main_yellow">
 
             <de.hdodenhof.circleimageview.CircleImageView
@@ -59,7 +59,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="6dp"
-                android:layout_marginTop="75dp"
+                android:layout_marginTop="70dp"
                 android:layout_marginEnd="8dp"
                 android:layout_weight="1"
                 android:ellipsize="none"
@@ -84,7 +84,7 @@
                 android:layout_marginEnd="8dp"
                 android:text="@string/user_car_brand"
                 android:textColor="@color/text_gray"
-                android:textSize="18sp"
+                android:textSize="20sp"
                 android:textStyle="bold"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintHorizontal_bias="0.0"
@@ -100,7 +100,7 @@
                 android:layout_marginEnd="8dp"
                 android:text="@string/user_car_model"
                 android:textColor="@color/text_gray"
-                android:textSize="16sp"
+                android:textSize="18sp"
                 android:textStyle="bold"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintHorizontal_bias="0.0"
@@ -117,7 +117,7 @@
                 android:text="@string/user_car_year"
                 android:textAllCaps="true"
                 android:textColor="@color/text_gray"
-                android:textSize="15sp"
+                android:textSize="17sp"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintHorizontal_bias="0.0"
                 app:layout_constraintStart_toEndOf="@+id/user_photo"
@@ -176,8 +176,8 @@
 
             <com.google.android.material.card.MaterialCardView
                 android:id="@+id/mileage_card_view"
-                android:layout_width="160dp"
-                android:layout_height="130dp"
+                android:layout_width="match_parent"
+                android:layout_height="100dp"
                 android:layout_gravity="center"
                 android:layout_marginStart="24dp"
                 android:layout_marginTop="30dp"
@@ -185,21 +185,31 @@
                 app:cardCornerRadius="@dimen/data_card_radius"
                 app:cardElevation="@dimen/data_card_elevation"
                 app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintHorizontal_bias="0.0"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent">
 
                 <androidx.constraintlayout.widget.ConstraintLayout
                     android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:background="@color/main_yellow">
+                    android:layout_height="match_parent">
+
+                    <ImageView
+                        android:id="@+id/mileage_image_left"
+                        android:layout_width="30dp"
+                        android:layout_height="30dp"
+                        android:layout_marginStart="32dp"
+                        android:layout_marginTop="8dp"
+                        android:layout_marginEnd="10dp"
+                        android:src="@drawable/ic_speedometer"
+                        app:layout_constraintEnd_toStartOf="@+id/user_car_mileage_header"
+                        app:layout_constraintHorizontal_bias="1.0"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent" />
 
                     <TextView
                         android:id="@+id/user_car_mileage_header"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_marginStart="16dp"
-                        android:layout_marginTop="8dp"
                         android:layout_marginEnd="16dp"
                         android:fontFamily="@font/bungee"
                         android:text="@string/user_car_mileage"
@@ -216,7 +226,7 @@
                         android:layout_marginStart="24dp"
                         android:layout_marginEnd="24dp"
                         android:text="@string/user_car_mileage"
-                        android:textColor="@color/hint_gray"
+                        android:textColor="@color/orange"
                         android:textSize="22sp"
                         android:textStyle="bold"
                         app:layout_constraintBottom_toBottomOf="parent"
@@ -225,6 +235,18 @@
                         app:layout_constraintTop_toTopOf="parent"
                         app:layout_constraintVertical_bias="0.74" />
 
+                    <ImageView
+                        android:id="@+id/mileage_image_right"
+                        android:layout_width="30dp"
+                        android:layout_height="30dp"
+                        android:layout_marginStart="10dp"
+                        android:layout_marginTop="8dp"
+                        android:layout_marginEnd="32dp"
+                        android:src="@drawable/ic_speedometer"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintHorizontal_bias="0.0"
+                        app:layout_constraintStart_toEndOf="@+id/user_car_mileage_header"
+                        app:layout_constraintTop_toTopOf="parent" />
 
                 </androidx.constraintlayout.widget.ConstraintLayout>
 
@@ -232,28 +254,41 @@
 
             <com.google.android.material.card.MaterialCardView
                 android:id="@+id/avg_fuel_consumption_card_view"
-                android:layout_width="160dp"
-                android:layout_height="130dp"
+                android:layout_width="match_parent"
+                android:layout_height="100dp"
                 android:layout_gravity="center"
-                android:layout_marginStart="16dp"
-                android:layout_marginTop="30dp"
+                android:layout_marginStart="24dp"
+                android:layout_marginTop="16dp"
                 android:layout_marginEnd="24dp"
                 app:cardCornerRadius="@dimen/data_card_radius"
                 app:cardElevation="@dimen/data_card_elevation"
                 app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintHorizontal_bias="1.0"
-                app:layout_constraintStart_toEndOf="@+id/mileage_card_view"
-                app:layout_constraintTop_toTopOf="parent">
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/mileage_card_view">
 
                 <androidx.constraintlayout.widget.ConstraintLayout
                     android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:background="@color/main_yellow">
+                    android:layout_height="match_parent">
+
+                    <ImageView
+                        android:id="@+id/avg_image_left"
+                        android:layout_width="30dp"
+                        android:layout_height="30dp"
+                        android:layout_marginStart="32dp"
+                        android:layout_marginTop="8dp"
+                        android:layout_marginEnd="10dp"
+                        android:src="@drawable/ic_gas"
+                        app:layout_constraintEnd_toStartOf="@+id/user_car_avg_fuel_consumption_header"
+                        app:layout_constraintHorizontal_bias="1.0"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent" />
 
                     <TextView
                         android:id="@+id/user_car_avg_fuel_consumption_header"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
+                        android:layout_marginStart="16dp"
+                        android:layout_marginEnd="16dp"
                         android:fontFamily="@font/bungee"
                         android:text="@string/user_car_avg_fuel_consumption_header"
                         android:textAlignment="center"
@@ -268,8 +303,7 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:text="@string/user_car_avg_fuel_consumption"
-                        android:textAllCaps="true"
-                        android:textColor="@color/hint_gray"
+                        android:textColor="@color/orange"
                         android:textSize="22sp"
                         android:textStyle="bold"
                         app:layout_constraintBottom_toBottomOf="parent"
@@ -278,6 +312,18 @@
                         app:layout_constraintTop_toTopOf="parent"
                         app:layout_constraintVertical_bias="0.74" />
 
+                    <ImageView
+                        android:id="@+id/avg_image_right"
+                        android:layout_width="30dp"
+                        android:layout_height="30dp"
+                        android:layout_marginStart="10dp"
+                        android:layout_marginTop="8dp"
+                        android:layout_marginEnd="32dp"
+                        android:src="@drawable/ic_gas"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintHorizontal_bias="0.0"
+                        app:layout_constraintStart_toEndOf="@+id/user_car_avg_fuel_consumption_header"
+                        app:layout_constraintTop_toTopOf="parent" />
 
                 </androidx.constraintlayout.widget.ConstraintLayout>
 
@@ -287,12 +333,12 @@
                 android:id="@+id/user_progress_bar"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="200dp"
+                android:layout_marginTop="50dp"
                 android:indeterminate="true"
                 android:visibility="invisible"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/mileage_card_view" />
+                app:layout_constraintTop_toBottomOf="@+id/avg_fuel_consumption_card_view" />
 
         </androidx.constraintlayout.widget.ConstraintLayout>
 

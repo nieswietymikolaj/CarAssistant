@@ -4,7 +4,7 @@ import android.net.Uri;
 
 public class UserModel {
 
-    String userId, userName, carBrand, carModel, carYear, carMileage, carRegistrationNumber;
+    String userId, userName, carBrand, carModel, carYear, carMileage, carRegistrationNumber, carAvgConsumption;
     Uri userPhoto;
 
     public UserModel() {
@@ -68,6 +68,14 @@ public class UserModel {
 
     public void setUserCarRegistrationNumber(String carRegistrationNumber) {
         this.carRegistrationNumber = carRegistrationNumber;
+    }
+
+    public String getUserCarAvgConsumption() {
+        return carAvgConsumption;
+    }
+
+    public void setUserCarAvgConsumption(String carAvgConsumption) {
+        this.carAvgConsumption = carAvgConsumption;
     }
 
     public Uri getUserPhoto() {

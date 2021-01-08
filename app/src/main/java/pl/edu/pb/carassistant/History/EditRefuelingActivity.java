@@ -15,8 +15,6 @@ import android.widget.EditText;
 import android.widget.ProgressBar;
 import android.widget.Toast;
 
-import com.google.android.gms.tasks.OnFailureListener;
-import com.google.android.gms.tasks.OnSuccessListener;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.firestore.DocumentReference;
 import com.google.firebase.firestore.FirebaseFirestore;
@@ -24,13 +22,16 @@ import com.google.firebase.firestore.FirebaseFirestore;
 import java.text.SimpleDateFormat;
 import java.util.Calendar;
 import java.util.HashMap;
+import java.util.List;
 import java.util.Map;
 
 import pl.edu.pb.carassistant.R;
 import pl.edu.pb.carassistant.User.UserDatabase;
 import pl.edu.pb.carassistant.User.UserModel;
 
-public class NewRefuelingActivity extends AppCompatActivity implements TextWatcher {
+public class EditRefuelingActivity extends AppCompatActivity implements TextWatcher {
+
+    static final String EXTRA_EDIT_REFUELING_ID = "EDIT_REFUELING_ID";
 
     String DATE_PATTERN = "^(0[1-9]|[1-2][0-9]|3[0-1])/(0[1-9]|1[0-2])/[0-9]{4}$";
     String TIME_PATTERN = "^([0-1][0-9]|2[0-3]):([0-5][0-9])$";
@@ -47,6 +48,13 @@ public class NewRefuelingActivity extends AppCompatActivity implements TextWatch
     SimpleDateFormat dateFormat, timeFormat;
     String currentDate, currentTime;
 
+    HistoryDatabase historyDatabase;
+
+    List<RefuelingModel> refuelingList;
+    RefuelingModel refuelingModel;
+
+    String refuelingId;
+
     UserDatabase userDatabase;
     UserModel userModel;
 
@@ -55,7 +63,7 @@ public class NewRefuelingActivity extends AppCompatActivity implements TextWatch
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_new_refueling);
+        setContentView(R.layout.activity_edit_refueling);
 
         firebaseAuth = FirebaseAuth.getInstance();
         firebaseFirestore = FirebaseFirestore.getInstance();
@@ -63,30 +71,47 @@ public class NewRefuelingActivity extends AppCompatActivity implements TextWatch
         userDatabase = UserDatabase.getDatabase(this, firebaseAuth.getUid());
         userModel = userDatabase.getUser();
 
+        compareMileage = userModel.getUserCarMileage();
+
+        Toolbar toolbar = findViewById(R.id.edit_refueling_toolbar);
+        setSupportActionBar(toolbar);
+        getSupportActionBar().setDisplayShowTitleEnabled(false);
+        getSupportActionBar().setHomeAsUpIndicator(R.drawable.ic_arrow_back_24);
+        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+
+        refuelingId = getIntent().getExtras().getString(EXTRA_EDIT_REFUELING_ID);
+
+        historyDatabase = HistoryDatabase.getDatabase(this);
+        refuelingList = historyDatabase.getRefuelingList();
+
+        for (RefuelingModel refuelingModel : refuelingList) {
+
+            if (refuelingModel.getRefuelingId().equals(refuelingId)) {
+                this.refuelingModel = refuelingModel;
+            }
+        }
+
         calendar = Calendar.getInstance();
         dateFormat = new SimpleDateFormat("dd/MM/yyyy");
         currentDate = dateFormat.format(calendar.getTime());
         timeFormat = new SimpleDateFormat("HH:mm");
         currentTime = timeFormat.format(calendar.getTime());
 
-        Toolbar toolbar = findViewById(R.id.new_refueling_toolbar);
-        setSupportActionBar(toolbar);
-        getSupportActionBar().setDisplayShowTitleEnabled(false);
-        getSupportActionBar().setHomeAsUpIndicator(R.drawable.ic_arrow_back_24);
-        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+        refuelingDate = findViewById(R.id.edit_refueling_date_text);
+        refuelingTime = findViewById(R.id.edit_refueling_time_text);
+        refuelingMileage = findViewById(R.id.edit_refueling_mileage_text);
+        //refuelingPriceLiter = findViewById(R.id.edit_refueling_price_liter_text);
+        refuelingCost = findViewById(R.id.edit_refueling_cost_text);
+        refuelingLiters = findViewById(R.id.edit_refueling_liters_text);
 
-        refuelingDate = findViewById(R.id.new_refueling_date_text);
-        refuelingTime = findViewById(R.id.new_refueling_time_text);
-        refuelingMileage = findViewById(R.id.new_refueling_mileage_text);
-        //refuelingPriceLiter = findViewById(R.id.new_refueling_price_liter_text);
-        refuelingCost = findViewById(R.id.new_refueling_cost_text);
-        refuelingLiters = findViewById(R.id.new_refueling_liters_text);
+        //refuelingMileage.setEnabled(false);
 
         refuelingDate.setText(currentDate);
         refuelingTime.setText(currentTime);
-        refuelingMileage.setText(userModel.getUserCarMileage());
-
-        compareMileage = userModel.getUserCarMileage();
+        refuelingMileage.setText(refuelingModel.getRefuelingMileage());
+        //refuelingPriceLiter.setText(refuelingModel.getRefuelingPriceLiter());
+        refuelingCost.setText(refuelingModel.getRefuelingCost());
+        refuelingLiters.setText(refuelingModel.getRefuelingLiters());
 
         refuelingDate.addTextChangedListener(this);
         refuelingTime.addTextChangedListener(this);
@@ -95,19 +120,19 @@ public class NewRefuelingActivity extends AppCompatActivity implements TextWatch
         refuelingCost.addTextChangedListener(this);
         refuelingLiters.addTextChangedListener(this);
 
-        saveButton = findViewById(R.id.new_refueling_save_button);
+        saveButton = findViewById(R.id.edit_refueling_save_button);
 
-        progressBar = findViewById(R.id.new_refueling_progress_bar);
+        progressBar = findViewById(R.id.edit_refueling_progress_bar);
 
         saveButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                AddNewRefueling();
+                EditRefueling();
             }
         });
     }
 
-    private void AddNewRefueling() {
+    private void EditRefueling() {
         String date = refuelingDate.getText().toString().trim();
         String time = refuelingTime.getText().toString().trim();
         String mileage = refuelingMileage.getText().toString().trim();
@@ -115,7 +140,7 @@ public class NewRefuelingActivity extends AppCompatActivity implements TextWatch
         String cost = refuelingCost.getText().toString().trim();
         String liters = refuelingLiters.getText().toString().trim();
 
-        if (!ValidateDate(date) || !ValidateTime(time) || !ValidateMileage(mileage) /*|| !ValidatePriceLiter(priceLiter) */ || !ValidateCost(cost) || !ValidateLiters(liters)) {
+        if (!ValidateDate(date) || !ValidateTime(time) || !ValidateMileage(mileage) /*|| !ValidatePriceLiter(priceLiter)*/ || !ValidateCost(cost) || !ValidateLiters(liters)) {
             return;
         }
 
@@ -133,38 +158,17 @@ public class NewRefuelingActivity extends AppCompatActivity implements TextWatch
         progressBar.setVisibility(View.VISIBLE);
 
         String userId = firebaseAuth.getUid();
+        DocumentReference documentReference = firebaseFirestore.collection("users/" + userId + "/refueling").document(refuelingId);
 
-        String id = firebaseFirestore.collection("users/" + userId + "/refueling").document().getId();
-        DocumentReference documentReference = firebaseFirestore.collection("users/" + userId + "/refueling").document(id);
-
-        documentReference.set(map).addOnSuccessListener(new OnSuccessListener<Void>() {
-            @Override
-            public void onSuccess(Void aVoid) {
-                Toast.makeText(NewRefuelingActivity.this, getResources().getString(R.string.new_refueling_created), Toast.LENGTH_SHORT).show();
-                if (Integer.parseInt(mileage) > Integer.parseInt(compareMileage)) {
-                    UpdateUserMileage(userId, mileage);
-                }
-                finish();
+        documentReference.update(map).addOnCompleteListener(task -> {
+            Toast.makeText(this, getResources().getString(R.string.edit_refueling_updated), Toast.LENGTH_SHORT).show();
+            if (Integer.parseInt(mileage) > Integer.parseInt(compareMileage)) {
+                UpdateUserMileage(userId, mileage);
             }
-        }).addOnFailureListener(new OnFailureListener() {
-            @Override
-            public void onFailure(@NonNull Exception e) {
-                Toast.makeText(NewRefuelingActivity.this, getResources().getString(R.string.new_user_error) + " " + e.getLocalizedMessage(), Toast.LENGTH_LONG).show();
-                progressBar.setVisibility(View.INVISIBLE);
-            }
-        });
-    }
-
-    private void UpdateUserMileage(String userId, String mileage) {
-        DocumentReference userDocumentReference = firebaseFirestore.collection("users").document(userId);
-
-        Map<String, Object> userMap = new HashMap<>();
-        userMap.put("Mileage", mileage);
-
-        userDocumentReference.update(userMap).addOnCompleteListener(task -> {
-            //Toast.makeText(this, getResources().getString(R.string.edit_user_updated), Toast.LENGTH_SHORT).show();
             finish();
         }).addOnFailureListener(e -> Toast.makeText(this, getResources().getString(R.string.new_user_error) + " " + e.getLocalizedMessage(), Toast.LENGTH_LONG).show());
+
+        progressBar.setVisibility(View.INVISIBLE);
     }
 
     private boolean ValidateDate(String date) {
@@ -200,12 +204,6 @@ public class NewRefuelingActivity extends AppCompatActivity implements TextWatch
     private boolean ValidateMileage(String mileage) {
         if (mileage.isEmpty()) {
             refuelingMileage.setError(getString(R.string.new_user_error_empty));
-            refuelingMileage.setBackgroundResource(R.drawable.edit_text_error);
-            return false;
-        }
-
-        if (Integer.parseInt(mileage) < Integer.parseInt(compareMileage)) {
-            refuelingMileage.setError(getString(R.string.new_refueling_compare_error) + " (" + compareMileage + " km)");
             refuelingMileage.setBackgroundResource(R.drawable.edit_text_error);
             return false;
         }
@@ -255,6 +253,18 @@ public class NewRefuelingActivity extends AppCompatActivity implements TextWatch
             return false;
         }
         return true;
+    }
+
+    private void UpdateUserMileage(String userId, String mileage) {
+        DocumentReference userDocumentReference = firebaseFirestore.collection("users").document(userId);
+
+        Map<String, Object> userMap = new HashMap<>();
+        userMap.put("Mileage", mileage);
+
+        userDocumentReference.update(userMap).addOnCompleteListener(task -> {
+            //Toast.makeText(this, getResources().getString(R.string.edit_user_updated), Toast.LENGTH_SHORT).show();
+            finish();
+        }).addOnFailureListener(e -> Toast.makeText(this, getResources().getString(R.string.new_user_error) + " " + e.getLocalizedMessage(), Toast.LENGTH_LONG).show());
     }
 
     @SuppressLint("UseCompatLoadingForDrawables")

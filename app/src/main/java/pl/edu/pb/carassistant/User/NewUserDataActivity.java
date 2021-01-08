@@ -131,6 +131,7 @@ public class NewUserDataActivity extends AppCompatActivity implements TextWatche
         map.put("Year", year);
         map.put("Mileage", mileage);
         map.put("Registration", registration);
+        map.put("AvgConsumption", "-");
 
         documentReference.set(map).addOnSuccessListener(aVoid -> {
             Toast.makeText(this, getResources().getString(R.string.new_user_data_added), Toast.LENGTH_SHORT).show();
