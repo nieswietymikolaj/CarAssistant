@@ -34,7 +34,6 @@ public class UserDatabase {
     String userId;
 
     private UserDatabase(Activity activity, String userId) {
-
         this.activity = activity;
         context = activity.getApplicationContext();
         this.userId = userId;
