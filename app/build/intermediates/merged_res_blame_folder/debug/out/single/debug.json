@@ -68,6 +68,10 @@
         "source": "C:\\Users\\Mateusz\\Documents\\GitHub\\CarAssistant\\app\\src\\main\\res\\mipmap-xxxhdpi\\ic_launcher.png"
     },
     {
+        "merged": "C:\\Users\\Mateusz\\Documents\\GitHub\\CarAssistant\\app\\build\\intermediates\\res\\merged\\debug\\drawable_kickster.png.flat",
+        "source": "C:\\Users\\Mateusz\\Documents\\GitHub\\CarAssistant\\app\\src\\main\\res\\drawable\\kickster.png"
+    },
+    {
         "merged": "C:\\Users\\Mateusz\\Documents\\GitHub\\CarAssistant\\app\\build\\intermediates\\res\\merged\\debug\\mipmap-xhdpi_ic_launcher_round.png.flat",
         "source": "C:\\Users\\Mateusz\\Documents\\GitHub\\CarAssistant\\app\\src\\main\\res\\mipmap-xhdpi\\ic_launcher_round.png"
     },
@@ -102,6 +106,10 @@
     {
         "merged": "C:\\Users\\Mateusz\\Documents\\GitHub\\CarAssistant\\app\\build\\intermediates\\res\\merged\\debug\\drawable_ic_money.xml.flat",
         "source": "C:\\Users\\Mateusz\\Documents\\GitHub\\CarAssistant\\app\\src\\main\\res\\drawable\\ic_money.xml"
+    },
+    {
+        "merged": "C:\\Users\\Mateusz\\Documents\\GitHub\\CarAssistant\\app\\build\\intermediates\\res\\merged\\debug\\drawable_motodoradca.png.flat",
+        "source": "C:\\Users\\Mateusz\\Documents\\GitHub\\CarAssistant\\app\\src\\main\\res\\drawable\\motodoradca.png"
     },
     {
         "merged": "C:\\Users\\Mateusz\\Documents\\GitHub\\CarAssistant\\app\\build\\intermediates\\res\\merged\\debug\\drawable_ic_edit_24.xml.flat",
@@ -154,6 +162,10 @@
     {
         "merged": "C:\\Users\\Mateusz\\Documents\\GitHub\\CarAssistant\\app\\build\\intermediates\\res\\merged\\debug\\drawable_ic_gas.xml.flat",
         "source": "C:\\Users\\Mateusz\\Documents\\GitHub\\CarAssistant\\app\\src\\main\\res\\drawable\\ic_gas.xml"
+    },
+    {
+        "merged": "C:\\Users\\Mateusz\\Documents\\GitHub\\CarAssistant\\app\\build\\intermediates\\res\\merged\\debug\\layout_activity_you_tube.xml.flat",
+        "source": "C:\\Users\\Mateusz\\Documents\\GitHub\\CarAssistant\\app\\src\\main\\res\\layout\\activity_you_tube.xml"
     },
     {
         "merged": "C:\\Users\\Mateusz\\Documents\\GitHub\\CarAssistant\\app\\build\\intermediates\\res\\merged\\debug\\drawable_ic_login_24.xml.flat",

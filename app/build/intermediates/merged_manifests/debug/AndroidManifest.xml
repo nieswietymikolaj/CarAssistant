@@ -27,6 +27,7 @@
         android:supportsRtl="true"
         android:testOnly="true"
         android:theme="@style/Theme.CarAssistant" >
+        <activity android:name="pl.edu.pb.carassistant.Parking.YouTubeActivity" />
         <activity android:name="pl.edu.pb.carassistant.History.DeleteRefuelingActivity" />
         <activity android:name="pl.edu.pb.carassistant.History.EditRefuelingActivity" />
         <activity android:name="pl.edu.pb.carassistant.History.NewRefuelingActivity" />

@@ -142,5 +142,12 @@
     <string name="weather_error">Nie udało się pobrać danych o pogodzie</string>
     <string name="weather_location_error">Włącz lokalizację zby pobrać dane o pogodzie</string>
 
+    <!--YOUTUBE-->
+    <string name="youtube_player_button">Wideo</string>
+    <string name="youtube_video_title">Zobacz ile NAPRAWDĘ kosztuje litr paliwa <br /> (i ile zarabia stacja)</string>
+    <string name="youtube_app_error">Brak zainstalowanej aplikacji YouTube</string>
+    <string name="youtube_recommended_channels">Inne polecane kanały motoryzacyjne:</string>
+    <string name="channel_motodoradca">Moto Doradca</string>
+    <string name="channel_kickster">KicksterTV</string>
 
 </resources>
