@@ -162,10 +162,10 @@ MERGED from [androidx.versionedparcelable:versionedparcelable:1.1.0] C:\Users\Ma
 		ADDED from C:\Users\Mateusz\Documents\GitHub\CarAssistant\app\src\main\AndroidManifest.xml:14:9-35
 	android:theme
 		ADDED from C:\Users\Mateusz\Documents\GitHub\CarAssistant\app\src\main\AndroidManifest.xml:19:9-50
-activity#pl.edu.pb.carassistant.Parking.YouTubeActivity
-ADDED from C:\Users\Mateusz\Documents\GitHub\CarAssistant\app\src\main\AndroidManifest.xml:20:9-70
+activity#pl.edu.pb.carassistant.Home.YouTubeActivity
+ADDED from C:\Users\Mateusz\Documents\GitHub\CarAssistant\app\src\main\AndroidManifest.xml:20:9-67
 	android:name
-		ADDED from C:\Users\Mateusz\Documents\GitHub\CarAssistant\app\src\main\AndroidManifest.xml:20:19-58
+		ADDED from C:\Users\Mateusz\Documents\GitHub\CarAssistant\app\src\main\AndroidManifest.xml:20:19-55
 activity#pl.edu.pb.carassistant.History.DeleteRefuelingActivity
 ADDED from C:\Users\Mateusz\Documents\GitHub\CarAssistant\app\src\main\AndroidManifest.xml:21:9-69
 	android:name

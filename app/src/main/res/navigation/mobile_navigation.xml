@@ -12,10 +12,10 @@
         tools:layout="@layout/fragment_history" />
 
     <fragment
-        android:id="@+id/parking_fragment"
-        android:name="pl.edu.pb.carassistant.Parking.ParkingFragment"
-        android:label="fragment_parking"
-        tools:layout="@layout/fragment_parking" />
+        android:id="@+id/home_fragment"
+        android:name="pl.edu.pb.carassistant.Home.HomeFragment"
+        android:label="fragment_home"
+        tools:layout="@layout/fragment_home" />
 
     <fragment
         android:id="@+id/user_fragment"

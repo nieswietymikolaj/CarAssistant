@@ -1698,6 +1698,7 @@ drawable ic_edit_24
 drawable ic_european_flag
 drawable ic_fuel_dispenser
 drawable ic_gas
+drawable ic_home_24
 drawable ic_launcher_background
 drawable ic_launcher_foreground
 drawable ic_launcher_foreground_red_car
@@ -1708,7 +1709,6 @@ drawable ic_mtrl_checked_circle
 drawable ic_mtrl_chip_checked_black
 drawable ic_mtrl_chip_checked_circle
 drawable ic_mtrl_chip_close_circle
-drawable ic_parking_24
 drawable ic_password_eye_24
 drawable ic_speedometer
 drawable kickster
@@ -1981,6 +1981,7 @@ id history_delete_message
 id history_fragment
 id home
 id homeAsUp
+id home_fragment
 id honorRequest
 id icon
 id icon_group
@@ -2407,7 +2408,7 @@ layout design_text_input_start_icon
 layout dialog_change_password
 layout dialog_forgot_password
 layout fragment_history
-layout fragment_parking
+layout fragment_home
 layout fragment_user
 layout item_history
 layout mtrl_alert_dialog
@@ -2571,7 +2572,6 @@ string login_password
 string login_register_button
 string login_success
 string login_welcome_header
-string logout_button
 string material_slider_range_end
 string material_slider_range_start
 string mtrl_badge_numberless_content_description
@@ -2612,7 +2612,7 @@ string mtrl_picker_toggle_to_year_selection
 string nav_app_bar_navigate_up_description
 string nav_app_bar_open_drawer_description
 string nav_bar_history
-string nav_bar_parking
+string nav_bar_home
 string nav_bar_user
 string new_refueling_avg_error
 string new_refueling_compare_error
@@ -2643,7 +2643,6 @@ string new_user_error_empty
 string new_user_error_mileage
 string new_user_error_year
 string new_user_name
-string new_user_success
 string new_user_welcome_header
 string news_click
 string news_header
@@ -2698,7 +2697,6 @@ string user_name
 string user_photo_added
 string weather_city
 string weather_city_edit
-string weather_clear
 string weather_error
 string weather_humidity
 string weather_humidity_placeholder
@@ -2706,13 +2704,11 @@ string weather_loaded
 string weather_location_error
 string weather_pressure
 string weather_pressure_placeholder
-string weather_search
 string weather_temperature_placeholder
 string youtube_app_error
 string youtube_button_click
 string youtube_button_header
 string youtube_button_title
-string youtube_player_button
 string youtube_recommended_channels
 string youtube_video_title
 style AlertDialog_AppCompat

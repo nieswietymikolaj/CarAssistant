@@ -2,8 +2,8 @@
     <string name="app_name">CarAssistant</string>
 
     <!--PASEK NAWIGACJI-->
-    <string name="nav_bar_parking">Parking</string>
     <string name="nav_bar_history">Historia</string>
+    <string name="nav_bar_home">Główna</string>
     <string name="nav_bar_user">Profil</string>
 
     <!--REJESTRACJA-->
@@ -41,7 +41,6 @@
     <string name="new_user_created">Pomyślnie utworzono konto</string>
     <string name="new_user_data_added">Dodano dane użytkownika</string>
     <string name="new_user_error">Błąd:</string>
-    <string name="new_user_success">Sukces!</string>
 
     <!--LOGOWANIE-->
     <string name="login_welcome_header">Witaj ponownie</string>
@@ -60,9 +59,6 @@
     <string name="reset_password_button">Reset</string>
     <string name="reset_password_sent">Link resetujący hasło został wysłany na podany adres e-mail</string>
     <string name="reset_password_error_email">Podany e-mail nie istnieje w bazie</string>
-
-    <!--WYLOGOWANIE-->
-    <string name="logout_button">Wyloguj</string>
 
     <!--UŻYTKOWNIK-->
     <string name="user_edit_profile">Edytuj</string>
@@ -129,8 +125,6 @@
     <string name="history_deleted">Dane tankowania zostały usunięte</string>
 
     <!--POGODA-->
-    <string name="weather_search">Wyszukaj</string>
-    <string name="weather_clear">Wyczyść wyszukiwanie</string>
     <string name="weather_city">Miasto</string>
     <string name="weather_temperature_placeholder">- °C</string>
     <string name="weather_pressure">Ciśnienie</string>
@@ -140,10 +134,9 @@
     <string name="weather_city_edit">Zmień miasto</string>
     <string name="weather_loaded">Pobrano dane o pogodzie dla lokalizacji</string>
     <string name="weather_error">Nie udało się pobrać danych o pogodzie</string>
-    <string name="weather_location_error">Włącz lokalizację zby pobrać dane o pogodzie</string>
+    <string name="weather_location_error">Włącz lokalizację aby pobrać dane o pogodzie</string>
 
     <!--YOUTUBE-->
-    <string name="youtube_player_button">Wideo</string>
     <string name="youtube_video_title">Zobacz ile NAPRAWDĘ kosztuje litr paliwa <br /> (i ile zarabia stacja)</string>
     <string name="youtube_app_error">Brak zainstalowanej aplikacji YouTube</string>
     <string name="youtube_recommended_channels">Inne polecane kanały motoryzacyjne:</string>
@@ -160,6 +153,5 @@
     <string name="news_text1">- pierwszeństwo pieszych na przejściach,</string>
     <string name="news_text2">- zakaz korzystania z telefonów podczas przechodzenia przez jezdnię,</string>
     <string name="news_text3">- koniec z „jazdą na zderzaku”.</string>
-
 
 </resources>

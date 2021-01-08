@@ -1,0 +1,172 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources xmlns:ns1="urn:oasis:names:tc:xliff:document:1.2">
+    <string msgid="5976598919945601918" name="abc_action_bar_home_description">"Перейти на главный экран"</string>
+    <string msgid="8388173803310557296" name="abc_action_bar_up_description">"Перейти вверх"</string>
+    <string msgid="3937310113216875497" name="abc_action_menu_overflow_description">"Ещё"</string>
+    <string msgid="4692188335987374352" name="abc_action_mode_done">"Готово"</string>
+    <string msgid="1189761859438369441" name="abc_activity_chooser_view_see_all">"Показать все"</string>
+    <string msgid="2165779757652331008" name="abc_activitychooserview_choose_application">"Выберите приложение"</string>
+    <string msgid="4215997306490295099" name="abc_capital_off">"ВЫКЛ"</string>
+    <string msgid="884982626291842264" name="abc_capital_on">"ВКЛ"</string>
+    <string msgid="8833365367933412986" name="abc_menu_alt_shortcut_label">"Alt +"</string>
+    <string msgid="2223301931652355242" name="abc_menu_ctrl_shortcut_label">"Ctrl +"</string>
+    <string msgid="838001238306846836" name="abc_menu_delete_shortcut_label">"Delete"</string>
+    <string msgid="7986526966204849475" name="abc_menu_enter_shortcut_label">"Ввод"</string>
+    <string msgid="375214403600139847" name="abc_menu_function_shortcut_label">"Fn +"</string>
+    <string msgid="4192209724446364286" name="abc_menu_meta_shortcut_label">"Meta +"</string>
+    <string msgid="4741552369836443843" name="abc_menu_shift_shortcut_label">"Shift +"</string>
+    <string msgid="5473865519181928982" name="abc_menu_space_shortcut_label">"Пробел"</string>
+    <string msgid="6180552449598693998" name="abc_menu_sym_shortcut_label">"Sym +"</string>
+    <string msgid="5520303668377388990" name="abc_prepend_shortcut_label">"Меню +"</string>
+    <string msgid="7208076849092622260" name="abc_search_hint">"Введите запрос"</string>
+    <string msgid="3741173234950517107" name="abc_searchview_description_clear">"Удалить запрос"</string>
+    <string msgid="693312494995508443" name="abc_searchview_description_query">"Поисковый запрос"</string>
+    <string msgid="3417662926640357176" name="abc_searchview_description_search">"Поиск"</string>
+    <string msgid="1486535517437947103" name="abc_searchview_description_submit">"Отправить запрос"</string>
+    <string msgid="2293578557972875415" name="abc_searchview_description_voice">"Голосовой поиск"</string>
+    <string msgid="8875138169939072951" name="abc_shareactionprovider_share_with">"Поделиться с помощью"</string>
+    <string msgid="9055268688411532828" name="abc_shareactionprovider_share_with_application">"Поделиться с помощью <ns1:g id="APPLICATION_NAME">%s</ns1:g>"</string>
+    <string msgid="1656852541809559762" name="abc_toolbar_collapse_description">"Свернуть"</string>
+    <string name="app_name">CarAssistant</string>
+    <string name="change_password_button">Измени</string>
+    <string name="change_password_error_password">Данный пароль неверен:</string>
+    <string name="change_password_header">Смена пароля</string>
+    <string name="change_password_message">Введите старый пароль</string>
+    <string name="change_password_old_password">Старый пароль</string>
+    <string name="change_password_sent">Ссылка для сброса пароля была отправлена ​​на адрес электронной почты</string>
+    <string name="channel_kickster">KicksterTV</string>
+    <string name="channel_motodoradca">Moto Doradca</string>
+    <string msgid="8585111718777012708" name="common_google_play_services_enable_button">"Включить"</string>
+    <string msgid="7045129128108380659" name="common_google_play_services_enable_text">"Для работы приложения \"<ns1:g id="APP_NAME">%1$s</ns1:g>\" требуется включить сервисы Google Play."</string>
+    <string msgid="3147157405986503375" name="common_google_play_services_enable_title">"Включите сервисы Google Play"</string>
+    <string msgid="9115728400623041681" name="common_google_play_services_install_button">"Установить"</string>
+    <string msgid="8179894293032530091" name="common_google_play_services_install_text">"Для работы приложения \"<ns1:g id="APP_NAME">%1$s</ns1:g>\" требуется установить сервисы Google Play."</string>
+    <string msgid="7442193194585196676" name="common_google_play_services_install_title">"Установите сервисы Google Play"</string>
+    <string msgid="4293541511340436975" name="common_google_play_services_notification_channel_name">"Доступность сервисов Google Play"</string>
+    <string msgid="180394615667698242" name="common_google_play_services_notification_ticker">"Ошибка сервисов Google Play"</string>
+    <string msgid="2518680582564677258" name="common_google_play_services_unknown_issue">"Приложению \"<ns1:g id="APP_NAME">%1$s</ns1:g>\" не удается подключиться к сервисам Google Play. Повторите попытку."</string>
+    <string msgid="5501187292256987189" name="common_google_play_services_unsupported_text">"Для работы с приложением \"<ns1:g id="APP_NAME">%1$s</ns1:g>\" требуются сервисы Google Play. Они не поддерживаются на вашем устройстве."</string>
+    <string msgid="8172070149091615356" name="common_google_play_services_update_button">"Обновить"</string>
+    <string msgid="7773943415006962566" name="common_google_play_services_update_text">"Чтобы запустить приложение \"<ns1:g id="APP_NAME">%1$s</ns1:g>\", обновите сервисы Google Play."</string>
+    <string msgid="8706675115216073244" name="common_google_play_services_update_title">"Обновите сервисы Google Play"</string>
+    <string msgid="7894275749778928941" name="common_google_play_services_updating_text">"Сервисы Google Play, необходимые для работы приложения \"<ns1:g id="APP_NAME">%1$s</ns1:g>\", в настоящий момент обновляются."</string>
+    <string msgid="2804989272736383918" name="common_google_play_services_wear_update_text">"Версия сервисов Google Play устарела. Они автоматически обновятся в ближайшее время."</string>
+    <string msgid="5201977337835724196" name="common_open_on_phone">"Открыть на телефоне"</string>
+    <string msgid="3441753203274453993" name="common_signin_button_text">"Войти"</string>
+    <string msgid="669893613918351210" name="common_signin_button_text_long">"Войти через аккаунт Google"</string>
+    <string name="edit_change_password_button">Смена пароля</string>
+    <string name="edit_refueling">Правка</string>
+    <string name="edit_refueling_save_button">Сохрани</string>
+    <string name="edit_refueling_updated">Данные заправки обновлены</string>
+    <string name="edit_user_header">Правка</string>
+    <string name="edit_user_save_button">Сохрани</string>
+    <string name="edit_user_updated">Данные пользователя обновлены</string>
+    <string name="history_cancel_button">Отмени</string>
+    <string name="history_delete_button">Удали</string>
+    <string name="history_delete_header">Удаление заправки</string>
+    <string name="history_delete_message">Вы хотите удалить эти данные о заправке?</string>
+    <string name="history_deleted">Данные заправки удалены</string>
+    <string name="login_button">Bойди</string>
+    <string name="login_email">Эл. почта</string>
+    <string name="login_forgot_button">Вы не помните пароль?</string>
+    <string name="login_header">Bойди</string>
+    <string name="login_password">Пароль</string>
+    <string name="login_register_button">Создай новый аккаунт</string>
+    <string name="login_success">Успешный вход в систему</string>
+    <string name="login_welcome_header">Добро пожаловать</string>
+    <string msgid="6301633601645100427" name="nav_app_bar_navigate_up_description">"Перейти вверх"</string>
+    <string msgid="7456070600745802113" name="nav_app_bar_open_drawer_description">"Открыть панель навигации"</string>
+    <string name="nav_bar_history">История</string>
+    <string name="nav_bar_home">Главная</string>
+    <string name="nav_bar_user">Профиль</string>
+    <string name="new_refueling_avg_error">Не удалось обновить средний расход топлива автомобиля</string>
+    <string name="new_refueling_compare_error">Пробег не может быть меньше текущего</string>
+    <string name="new_refueling_cost">Стоимость</string>
+    <string name="new_refueling_created">Заправка успешно добавлена</string>
+    <string name="new_refueling_date">Число</string>
+    <string name="new_refueling_date_error">Неправильная дата или формат даты (ДД/ММ/ГГГГ)</string>
+    <string name="new_refueling_header">Заправка</string>
+    <string name="new_refueling_liters">Литров</string>
+    <string name="new_refueling_mileage">Пробег</string>
+    <string name="new_refueling_price_liter">Цена / L</string>
+    <string name="new_refueling_price_liters_error">Неправильный формат (NNNN.NN)</string>
+    <string name="new_refueling_save_button">Добав</string>
+    <string name="new_refueling_time">Время</string>
+    <string name="new_refueling_time_error">Неправильное время или формат времени (ЧЧ: ММ)</string>
+    <string name="new_user">Пользователь</string>
+    <string name="new_user_car">Автомобиль</string>
+    <string name="new_user_car_brand">Марка</string>
+    <string name="new_user_car_mileage">Пробег</string>
+    <string name="new_user_car_model">Модель</string>
+    <string name="new_user_car_registration_number">Регистрационный номер</string>
+    <string name="new_user_car_year">Дата выпуска</string>
+    <string name="new_user_confirm_button">Следующий</string>
+    <string name="new_user_created">Аккаунт успешно создан</string>
+    <string name="new_user_data_added">Данные пользователя добавлены</string>
+    <string name="new_user_error">Ошибка:</string>
+    <string name="new_user_error_empty">Поле не может быть пустым</string>
+    <string name="new_user_error_mileage">Указанный пробег недействителен</string>
+    <string name="new_user_error_year">Указанный год недействителен</string>
+    <string name="new_user_name">Имя пользователя</string>
+    <string name="new_user_welcome_header">Заполните данные</string>
+    <string name="news_click">Щелкните здесь, чтобы узнать подробности</string>
+    <string name="news_header">Сообщения</string>
+    <string name="news_text1">- полоса отвода пешеходов на переходах,</string>
+    <string name="news_text2">- запрет на использование телефона при переходе дороги,</string>
+    <string name="news_text3">- больше никакой \"езды по бамперу\".</string>
+    <string name="news_title">Новый регламент 2021 года!</string>
+    <string name="refueling_avg_fuel_consumption">Расход топлива</string>
+    <string name="refueling_clear_all">Очистить историю топлива</string>
+    <string name="refueling_cost">Стоимость</string>
+    <string name="refueling_date_time">Дата и время</string>
+    <string name="refueling_liters">Литров</string>
+    <string name="refueling_mileage">Пробег</string>
+    <string name="refueling_price_liter">Цена / литр</string>
+    <string name="register_button">Регистр</string>
+    <string name="register_email">Эл. почта</string>
+    <string name="register_error_different_password">Предоставленные пароли разные</string>
+    <string name="register_error_empty_email">Поле не может быть пустым</string>
+    <string name="register_error_existing_email">Указанный адрес электронной почты уже существует</string>
+    <string name="register_error_incorrect_email">Неверный адрес электронной почты</string>
+    <string name="register_error_short_password">Пароль должен содержать не менее 8 символов</string>
+    <string name="register_header">Зарегистрируйтесь</string>
+    <string name="register_login_button">Уже есть аккаунт?</string>
+    <string name="register_password">Пароль</string>
+    <string name="register_repeat_password">Повторите пароль</string>
+    <string name="register_welcome_header">Добро пожаловать</string>
+    <string name="reset_password_button">Сброс</string>
+    <string name="reset_password_email">Эл. почта</string>
+    <string name="reset_password_error_email">Указанный e-mail не существует в базе данных</string>
+    <string name="reset_password_header">Сброс пароля</string>
+    <string name="reset_password_message">Введите ваш адрес электронной почты</string>
+    <string name="reset_password_sent">Ссылка для сброса пароля отправлена ​​на указанный адрес электронной почты</string>
+    <string msgid="6264217191555673260" name="search_menu_title">"Поиск"</string>
+    <string msgid="6277540029070332960" name="status_bar_notification_info_overflow">">999"</string>
+    <string name="user_car_avg_fuel_consumption">Расход топлива</string>
+    <string name="user_car_avg_fuel_consumption_header">Средний расход топлива</string>
+    <string name="user_car_brand">Марка</string>
+    <string name="user_car_mileage">Пробег</string>
+    <string name="user_car_model">Модель</string>
+    <string name="user_car_registration_number">Регистрация</string>
+    <string name="user_car_year">Дата выпуска</string>
+    <string name="user_edit_profile">Редактировать</string>
+    <string name="user_logout">Выйти</string>
+    <string name="user_name">Пользователь</string>
+    <string name="user_photo_added">Фото пользователя добавлено</string>
+    <string name="weather_city">Город</string>
+    <string name="weather_city_edit">Смени город</string>
+    <string name="weather_error">Не удалось скачать данные о погоде</string>
+    <string name="weather_humidity">Влажность</string>
+    <string name="weather_humidity_placeholder">- %</string>
+    <string name="weather_loaded">Загруженные данные о погоде для местоположения</string>
+    <string name="weather_location_error">Включите местоположение, чтобы загрузить данные о погоде</string>
+    <string name="weather_pressure">Давление</string>
+    <string name="weather_pressure_placeholder">- hPa</string>
+    <string name="weather_temperature_placeholder">- °C</string>
+    <string name="youtube_app_error">Приложение YouTube не установлено</string>
+    <string name="youtube_button_click">Щелкните здесь, чтобы просмотреть материал</string>
+    <string name="youtube_button_header">Фильм</string>
+    <string name="youtube_button_title">Что составляет стоимость топлива?</string>
+    <string name="youtube_recommended_channels">Другие рекомендуемые автомобильные каналы:</string>
+    <string name="youtube_video_title">Посмотрите, сколько ДЕЙСТВИТЕЛЬНО стоит литр топлива <br/> (и сколько зарабатывает станция)</string>
+</resources>

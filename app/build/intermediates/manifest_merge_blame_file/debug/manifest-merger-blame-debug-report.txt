@@ -53,9 +53,9 @@
 28        android:testOnly="true"
 29        android:theme="@style/Theme.CarAssistant" >
 29-->C:\Users\Mateusz\Documents\GitHub\CarAssistant\app\src\main\AndroidManifest.xml:19:9-50
-30        <activity android:name="pl.edu.pb.carassistant.Parking.YouTubeActivity" />
-30-->C:\Users\Mateusz\Documents\GitHub\CarAssistant\app\src\main\AndroidManifest.xml:20:9-70
-30-->C:\Users\Mateusz\Documents\GitHub\CarAssistant\app\src\main\AndroidManifest.xml:20:19-58
+30        <activity android:name="pl.edu.pb.carassistant.Home.YouTubeActivity" />
+30-->C:\Users\Mateusz\Documents\GitHub\CarAssistant\app\src\main\AndroidManifest.xml:20:9-67
+30-->C:\Users\Mateusz\Documents\GitHub\CarAssistant\app\src\main\AndroidManifest.xml:20:19-55
 31        <activity android:name="pl.edu.pb.carassistant.History.DeleteRefuelingActivity" />
 31-->C:\Users\Mateusz\Documents\GitHub\CarAssistant\app\src\main\AndroidManifest.xml:21:9-69
 31-->C:\Users\Mateusz\Documents\GitHub\CarAssistant\app\src\main\AndroidManifest.xml:21:19-66

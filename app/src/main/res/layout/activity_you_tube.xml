@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@color/ligth_gray"
-    tools:context=".Parking.YouTubeActivity">
+    tools:context=".Home.YouTubeActivity">
 
     <com.google.android.material.card.MaterialCardView
         android:id="@+id/youtube_card_view"
