@@ -147,16 +147,146 @@
 
     </com.google.android.material.card.MaterialCardView>
 
-    <Button
-        android:id="@+id/youtube_button"
-        style="@style/GrayButtonStyle"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="24dp"
-        android:text="@string/youtube_player_button"
+    <com.google.android.material.card.MaterialCardView
+        android:id="@+id/youtube_card_view"
+        android:layout_width="match_parent"
+        android:layout_height="120dp"
+        android:layout_marginStart="24dp"
+        android:layout_marginTop="32dp"
+        android:layout_marginEnd="24dp"
+        app:cardCornerRadius="@dimen/data_card_radius"
+        app:cardElevation="@dimen/data_card_elevation"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.498"
+        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/weather_card_view" />
+        app:layout_constraintTop_toBottomOf="@+id/weather_card_view">
+
+        <TextView
+            android:id="@+id/youtube_button_header"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="12dp"
+            android:layout_marginVertical="12dp"
+            android:fontFamily="@font/bungee"
+            android:includeFontPadding="false"
+            android:text="@string/youtube_button_header"
+            android:textAllCaps="true"
+            android:textColor="@color/hint_gray"
+            android:textSize="18sp"
+            android:textStyle="bold" />
+
+        <TextView
+            android:id="@+id/youtube_button_title"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="45dp"
+            android:text="@string/youtube_button_title"
+            android:textAlignment="center"
+            android:textAllCaps="true"
+            android:textColor="@color/orange"
+            android:textSize="18sp"
+            android:textStyle="bold" />
+
+        <TextView
+            android:id="@+id/youtube_button_click"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="75dp"
+            android:text="@string/youtube_button_click"
+            android:textAlignment="center"
+            android:textColor="@color/hint_gray"
+            android:textSize="13sp" />
+
+    </com.google.android.material.card.MaterialCardView>
+
+    <com.google.android.material.card.MaterialCardView
+        android:id="@+id/news_card_view"
+        android:layout_width="match_parent"
+        android:layout_height="250dp"
+        android:layout_marginStart="24dp"
+        android:layout_marginTop="20dp"
+        android:layout_marginEnd="24dp"
+        app:cardCornerRadius="@dimen/data_card_radius"
+        app:cardElevation="@dimen/data_card_elevation"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/youtube_card_view">
+
+        <TextView
+            android:id="@+id/news_header"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="12dp"
+            android:layout_marginVertical="10dp"
+            android:fontFamily="@font/bungee"
+            android:includeFontPadding="false"
+            android:paddingTop="3dp"
+            android:text="@string/news_header"
+            android:textAllCaps="true"
+            android:textColor="@color/hint_gray"
+            android:textSize="18sp"
+            android:textStyle="bold" />
+
+        <TextView
+            android:id="@+id/news_title"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="45dp"
+            android:layout_weight="1"
+            android:ellipsize="none"
+            android:text="@string/news_title"
+            android:textAlignment="center"
+            android:textAllCaps="true"
+            android:textColor="@color/orange"
+            android:textSize="18sp"
+            android:textStyle="bold" />
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="15dp"
+            android:layout_marginTop="85dp"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/news_text1"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/news_text1"
+                android:textColor="@color/text_gray"
+                android:textSize="15sp" />
+
+            <TextView
+                android:id="@+id/news_text2"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/news_text2"
+                android:layout_marginTop="10dp"
+                android:textColor="@color/text_gray"
+                android:textSize="15sp" />
+
+            <TextView
+                android:id="@+id/news_text3"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/news_text3"
+                android:layout_marginTop="10dp"
+                android:textColor="@color/text_gray"
+                android:textSize="15sp" />
+
+        </LinearLayout>
+
+        <TextView
+            android:id="@+id/news_click"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="205dp"
+            android:text="@string/news_click"
+            android:textAlignment="center"
+            android:textColor="@color/hint_gray"
+            android:textSize="13sp" />
+
+    </com.google.android.material.card.MaterialCardView>
 
 </androidx.constraintlayout.widget.ConstraintLayout>
