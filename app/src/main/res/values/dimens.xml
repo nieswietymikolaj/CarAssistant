@@ -18,4 +18,11 @@
 
     <dimen name="edit_text_padding">14dp</dimen>
 
+    <dimen name="refueling_image_size">50dp</dimen>
+
+    <dimen name="refueling_picture_size">21dp</dimen>
+
+    <dimen name="refueling_mileage_date_size">15sp</dimen>
+    <dimen name="refueling_liters_cost_size">17sp</dimen>
+
 </resources>
