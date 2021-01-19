@@ -54,7 +54,7 @@
    <string name="user_car_year">Production date</string>
    <string name="user_car_registration_number">Registration</string>
    <string name="user_car_mileage">Mileage</string>
-  <string name="user_car_avg_fuel_consumption_header">Average fuel consumption</string>
+  <string name="user_car_avg_fuel_consumption_header">Fuel consumption</string>
   <string name="user_car_avg_fuel_consumption">Fuel consumption</string>
   <string name="user_photo_added">User photo added</string>
   <string name="edit_user_header">Edit the data</string>
