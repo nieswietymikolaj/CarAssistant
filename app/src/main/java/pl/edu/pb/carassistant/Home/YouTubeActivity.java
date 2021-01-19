@@ -28,7 +28,7 @@ public class YouTubeActivity extends YouTubeBaseActivity {
     YouTubePlayerView youTubePlayerView;
     YouTubePlayer.OnInitializedListener onInitializedListener;
 
-    public class Config {
+    public static class Config {
         private Config() {}
         public static final String DEVELOPER_KEY="AIzaSyCkabbDMoBRBytn53D2v_W4f9SaQ4XWJt0";
         public static final String VIDEO_ID="2aPb2Xvlfuw";
@@ -49,14 +49,7 @@ public class YouTubeActivity extends YouTubeBaseActivity {
         onInitializedListener = new YouTubePlayer.OnInitializedListener() {
             @Override
             public void onInitializationSuccess(YouTubePlayer.Provider provider, YouTubePlayer youTubePlayer, boolean b) {
-
                 youTubePlayer.cueVideo(Config.VIDEO_ID);
-
-                //youTubePlayer.setFullscreen(true);
-                //youTubePlayer.setPlayerStyle(YouTubePlayer.PlayerStyle.DEFAULT);
-                //youTubePlayer.cuePlaylist("PL4o29bINVT4EG_y-k5jGoOu3-Am8Nvi10");
-                //youTubePlayer.loadVideo("2aPb2Xvlfuw");
-                //youTubePlayer.play();
             }
 
             @Override

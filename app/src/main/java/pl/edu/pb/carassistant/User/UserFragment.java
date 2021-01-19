@@ -113,7 +113,7 @@ public class UserFragment extends Fragment {
                 Uri resultUri = result.getUri();
                 SaveUserPhotoInDatabase(resultUri);
             } else if (resultCode == CropImage.CROP_IMAGE_ACTIVITY_RESULT_ERROR_CODE) {
-                Toast.makeText(context, "Error: " + result.getError(), Toast.LENGTH_LONG).show();
+                Toast.makeText(context, getResources().getString(R.string.new_user_error) + " " + result.getError(), Toast.LENGTH_LONG).show();
                 photoProgressBar.setVisibility(View.INVISIBLE);
             } else {
                 photoProgressBar.setVisibility(View.INVISIBLE);
