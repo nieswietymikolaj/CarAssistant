@@ -54,7 +54,7 @@
    <string name="user_car_registration_number">Регистрация</string>
    <string name="user_car_year">Дата выпуска</string>
    <string name="user_car_mileage">Пробег</string>
-  <string name="user_car_avg_fuel_consumption_header">Средний расход топлива</string>
+  <string name="user_car_avg_fuel_consumption_header">Расход топлива</string>
   <string name="user_car_avg_fuel_consumption">Расход топлива</string>
   <string name="user_photo_added">Фото пользователя добавлено</string>
   <string name="edit_user_header">Правка</string>
